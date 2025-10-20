@@ -116,6 +116,13 @@
         <div class="footer">
             <p>Este email foi enviado automaticamente pelo sistema DevStarter Kit</p>
             <p>Data: {{ now()->format('d/m/Y H:i:s') }}</p>
+            <hr style="margin: 15px 0; border: none; border-top: 1px solid #e5e7eb;">
+            <p style="font-size: 12px; color: #9ca3af;">
+                <a href="{{ route('email.unsubscribe', ['email' => $leadData['email']]) }}" 
+                   style="color: #6b7280; text-decoration: underline;">
+                    📧 Cancelar recebimento de emails
+                </a>
+            </p>
         </div>
     </div>
 </body>

@@ -23,6 +23,18 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses.index');
 Route::get('/courses/{course}', [HomeController::class, 'showCourse'])->name('courses.show');
 
+// Rotas de Produtos/Serviços
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+Route::get('/products/{slug}', [App\Http\Controllers\ProductController::class, 'show'])->name('products.show');
+Route::get('/products/category/{category}', [App\Http\Controllers\ProductController::class, 'category'])->name('products.category');
+
+// Rota para envio de mensagem de especialista
+Route::post('/specialist/send-message', [App\Http\Controllers\SpecialistController::class, 'sendMessage'])->name('specialist.send-message');
+
+// Rotas de controle de email
+Route::get('/email/unsubscribe', [App\Http\Controllers\EmailController::class, 'unsubscribe'])->name('email.unsubscribe');
+Route::get('/email/resubscribe', [App\Http\Controllers\EmailController::class, 'resubscribe'])->name('email.resubscribe');
+
 // Rotas de captura de leads
 Route::post('/leads', [App\Http\Controllers\LeadController::class, 'store'])->name('leads.store');
 
@@ -105,8 +117,28 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/leads', [AdminLeadController::class, 'index'])->name('leads.index');
     Route::get('/leads/{lead}', [AdminLeadController::class, 'show'])->name('leads.show');
     Route::post('/leads/{lead}/send-email', [AdminLeadController::class, 'sendEmail'])->name('leads.send-email');
+    Route::post('/leads/{lead}/send-custom-email', [AdminLeadController::class, 'sendCustomEmail'])->name('leads.send-custom-email');
+    Route::post('/leads/{lead}/send-template-email', [AdminLeadController::class, 'sendTemplateEmail'])->name('leads.send-template-email');
     Route::post('/leads/send-bulk-email', [AdminLeadController::class, 'sendBulkEmail'])->name('leads.send-bulk-email');
+    Route::post('/leads/send-bulk-custom-email', [AdminLeadController::class, 'sendBulkCustomEmail'])->name('leads.send-bulk-custom-email');
+    Route::post('/leads/send-bulk-template-email', [AdminLeadController::class, 'sendBulkTemplateEmail'])->name('leads.send-bulk-template-email');
     Route::delete('/leads/{lead}', [AdminLeadController::class, 'destroy'])->name('leads.destroy');
+    
+    // Gerenciamento de Templates de Email
+    Route::get('/email-templates', [App\Http\Controllers\Admin\EmailTemplateController::class, 'index'])->name('email-templates.index');
+    Route::get('/email-templates/create', [App\Http\Controllers\Admin\EmailTemplateController::class, 'create'])->name('email-templates.create');
+    Route::post('/email-templates', [App\Http\Controllers\Admin\EmailTemplateController::class, 'store'])->name('email-templates.store');
+    Route::get('/email-templates/{emailTemplate}/edit', [App\Http\Controllers\Admin\EmailTemplateController::class, 'edit'])->name('email-templates.edit');
+    Route::put('/email-templates/{emailTemplate}', [App\Http\Controllers\Admin\EmailTemplateController::class, 'update'])->name('email-templates.update');
+    Route::delete('/email-templates/{emailTemplate}', [App\Http\Controllers\Admin\EmailTemplateController::class, 'destroy'])->name('email-templates.destroy');
+    
+    // Gerenciamento de Produtos/Serviços
+    Route::get('/products', [App\Http\Controllers\Admin\ProductController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('products.create');
+    Route::post('/products', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('products.store');
+    Route::get('/products/{product}/edit', [App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{product}', [App\Http\Controllers\Admin\ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{product}', [App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('products.destroy');
     
     // Relatórios
     Route::get('/reports', [AdminReportController::class, 'index'])->name('reports.index');

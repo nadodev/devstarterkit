@@ -37,6 +37,7 @@
                         <i class="fas fa-play mr-2"></i>
                         Explorar Cursos
                     </a>
+            
                     <a href="{{ route('register') }}" 
                        class="group border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm">
                         <i class="fas fa-user-plus mr-2"></i>

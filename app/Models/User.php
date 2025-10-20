@@ -25,6 +25,9 @@ class User extends Authenticatable
         'phone',
         'bio',
         'avatar',
+        'email_notifications',
+        'unsubscribe_token',
+        'unsubscribed_at',
     ];
 
     /**
@@ -47,6 +50,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'email_notifications' => 'boolean',
+            'unsubscribed_at' => 'datetime',
         ];
     }
 
@@ -100,5 +105,33 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->role === 'admin';
+    }
+
+    // Métodos de controle de email
+    public function generateUnsubscribeToken()
+    {
+        $this->unsubscribe_token = \Str::random(32);
+        $this->save();
+        return $this->unsubscribe_token;
+    }
+
+    public function unsubscribe()
+    {
+        $this->email_notifications = false;
+        $this->unsubscribed_at = now();
+        $this->save();
+    }
+
+    public function resubscribe()
+    {
+        $this->email_notifications = true;
+        $this->unsubscribed_at = null;
+        $this->unsubscribe_token = null;
+        $this->save();
+    }
+
+    public function canReceiveEmails()
+    {
+        return $this->email_notifications && !$this->unsubscribed_at;
     }
 }

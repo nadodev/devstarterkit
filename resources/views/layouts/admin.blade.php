@@ -80,6 +80,18 @@
                         Relatórios
                     </a>
 
+    <!-- Templates de Email -->
+    <a href="{{ route('admin.email-templates.index') }}" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md {{ request()->routeIs('admin.email-templates.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900' }}">
+        <i class="fas fa-envelope mr-3 text-gray-400 group-hover:text-gray-500"></i>
+        Templates de Email
+    </a>
+    
+    <!-- Produtos & Serviços -->
+    <a href="{{ route('admin.products.index') }}" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md {{ request()->routeIs('admin.products.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900' }}">
+        <i class="fas fa-box mr-3 text-gray-400 group-hover:text-gray-500"></i>
+        Produtos & Serviços
+    </a>
+
                     <!-- Configurações -->
                     <a href="{{ route('admin.settings.index') }}" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md {{ request()->routeIs('admin.settings.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900' }}">
                         <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-gray-500"></i>
