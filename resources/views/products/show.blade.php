@@ -1,6 +1,60 @@
 @extends('layouts.landing')
 
-@section('title', $product->name)
+@section('title', $product->name . ' | Produto Digital - DevStarter Kit')
+
+@section('meta')
+<meta name="description" content="{{ $product->short_description ?: $product->name }} - {{ $product->type === 'digital' ? 'Produto digital' : 'Serviço' }} para desenvolvedores. {{ $product->formatted_final_price }} - Acesso imediato!">
+<meta name="keywords" content="{{ $product->name }}, {{ $product->category }}, produto digital, {{ $product->type }}, desenvolvedor, programação, {{ strtolower($product->name) }}">
+<meta name="author" content="DevStarter Kit">
+<meta name="robots" content="index, follow">
+<meta name="language" content="pt-BR">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="product">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:title" content="{{ $product->name }} - DevStarter Kit">
+<meta property="og:description" content="{{ $product->short_description ?: $product->name }} - {{ $product->type === 'digital' ? 'Produto digital' : 'Serviço' }} para desenvolvedores.">
+<meta property="og:image" content="{{ $product->image ? Storage::url($product->image) : asset('images/product-default.jpg') }}">
+<meta property="og:site_name" content="DevStarter Kit">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url()->current() }}">
+<meta property="twitter:title" content="{{ $product->name }} - DevStarter Kit">
+<meta property="twitter:description" content="{{ $product->short_description ?: $product->name }} - {{ $product->type === 'digital' ? 'Produto digital' : 'Serviço' }} para desenvolvedores.">
+<meta property="twitter:image" content="{{ $product->image ? Storage::url($product->image) : asset('images/product-default.jpg') }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ url()->current() }}">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ $product->name }}",
+  "description": "{{ $product->description ?: $product->short_description }}",
+  "url": "{{ url()->current() }}",
+  "image": "{{ $product->image ? Storage::url($product->image) : asset('images/product-default.jpg') }}",
+  "category": "{{ $product->category }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "DevStarter Kit"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ $product->discount_price ?: $product->price }}",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "DevStarter Kit"
+    }
+  }
+}
+</script>
+@endsection
 
 @section('content')
 <div class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">

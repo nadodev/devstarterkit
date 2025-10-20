@@ -1,6 +1,62 @@
 @extends('layouts.landing')
 
-@section('title', 'DevStarter Kit - O Kit Completo para Desenvolvedores Iniciantes')
+@section('title', 'DevStarter Kit - Sistema Base Completo para Desenvolvedores | Laravel + Blade + Tailwind')
+
+@section('meta')
+<meta name="description" content="DevStarter Kit: Sistema base completo para desenvolvedores iniciantes. Laravel + Vue + Tailwind CSS. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
+<meta name="keywords" content="devstarter kit, sistema base, laravel, blade, tailwind, desenvolvedor iniciante, painel admin, login, autenticação, sistema completo, base de projeto">
+<meta name="author" content="DevStarter Kit">
+<meta name="robots" content="index, follow">
+<meta name="language" content="pt-BR">
+<meta name="revisit-after" content="7 days">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:title" content="DevStarter Kit - Sistema Base Completo para Desenvolvedores">
+<meta property="og:description" content="Sistema base completo com Laravel + blade + Tailwind. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
+<meta property="og:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
+<meta property="og:site_name" content="DevStarter Kit">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url()->current() }}">
+<meta property="twitter:title" content="DevStarter Kit - Sistema Base Completo para Desenvolvedores">
+<meta property="twitter:description" content="Sistema base completo com Laravel + blade + Tailwind. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
+<meta property="twitter:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ url()->current() }}">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DevStarter Kit",
+  "description": "Sistema base completo para desenvolvedores iniciantes com Laravel, Vue.js e Tailwind CSS",
+  "url": "{{ url()->current() }}",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "97.00",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "127"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "DevStarter Kit"
+  }
+}
+</script>
+@endsection
 
 @section('content')
 <!-- Hero Section -->
@@ -62,7 +118,7 @@
 <!-- Problema/Dor do Usuário -->
 <section class="py-20 px-4 bg-gradient-red-orange-50">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
+        <header class="text-center mb-16">
             <div class="inline-flex items-center bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 <i class="fas fa-exclamation-triangle mr-2"></i>
                 Você reconhece esses problemas?
@@ -73,7 +129,7 @@
             <p class="text-xl text-gray-700 max-w-3xl mx-auto">
                 Se você se identifica com pelo menos um desses problemas, o DevStarter Kit foi feito para você!
             </p>
-        </div>
+        </header>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="bg-white rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-red-500">
                 <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
@@ -118,7 +174,7 @@
 <!-- Solução - Produto -->
 <section class="py-20 px-4 bg-gradient-green-blue-50">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
+        <header class="text-center mb-16">
             <div class="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 <i class="fas fa-check-circle mr-2"></i>
                 A solução definitiva
@@ -130,7 +186,7 @@
                 O DevStarter Kit é uma base completa para iniciar projetos modernos. 
                 <span class="text-green-600 font-bold">Tudo pronto para você começar a desenvolver em minutos!</span>
             </p>
-        </div>
+        </header>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div>
                 <div class="space-y-6">

@@ -1,6 +1,61 @@
 @extends('layouts.landing')
 
-@section('title', 'Produtos Digitais')
+@section('title', 'Produtos e Serviços Digitais | DevStarter Kit - Ferramentas para Desenvolvedores')
+
+@section('meta')
+<meta name="description" content="Produtos e serviços digitais para desenvolvedores. Templates, cursos, consultoria e ferramentas essenciais. Acelere seu desenvolvimento com nossos produtos profissionais.">
+<meta name="keywords" content="produtos digitais, serviços para desenvolvedores, templates, cursos programação, consultoria desenvolvimento, ferramentas dev, software, digital products">
+<meta name="author" content="DevStarter Kit">
+<meta name="robots" content="index, follow">
+<meta name="language" content="pt-BR">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:title" content="Produtos e Serviços Digitais - DevStarter Kit">
+<meta property="og:description" content="Produtos e serviços digitais para desenvolvedores. Templates, cursos, consultoria e ferramentas essenciais.">
+<meta property="og:image" content="{{ asset('images/products-og.jpg') }}">
+<meta property="og:site_name" content="DevStarter Kit">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url()->current() }}">
+<meta property="twitter:title" content="Produtos e Serviços Digitais - DevStarter Kit">
+<meta property="twitter:description" content="Produtos e serviços digitais para desenvolvedores. Templates, cursos, consultoria e ferramentas essenciais.">
+<meta property="twitter:image" content="{{ asset('images/products-og.jpg') }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ url()->current() }}">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Produtos e Serviços Digitais",
+  "description": "Catálogo de produtos e serviços digitais para desenvolvedores",
+  "url": "{{ url()->current() }}",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "name": "DevStarter Kit Completo",
+        "description": "Kit essencial para desenvolvedores iniciantes e experientes",
+        "category": "Ferramentas"
+      },
+      {
+        "@type": "Product", 
+        "name": "Curso Master de React.js",
+        "description": "Domine React.js do zero ao avançado com projetos práticos",
+        "category": "Cursos"
+      }
+    ]
+  }
+}
+</script>
+@endsection
 
 @section('content')
 <div class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">

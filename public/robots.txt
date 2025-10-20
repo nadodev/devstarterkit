@@ -1,2 +1,23 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://devstarterkit.leonardogeja.com.br/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /my-courses/
+Disallow: /profile/
+Disallow: /instructor/
+
+# Allow important pages
+Allow: /
+Allow: /landing
+Allow: /about
+Allow: /courses
+Allow: /products
+Allow: /products/*
+
+# Crawl delay
+Crawl-delay: 1

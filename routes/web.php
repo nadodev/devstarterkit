@@ -35,6 +35,9 @@ Route::post('/specialist/send-message', [App\Http\Controllers\SpecialistControll
 Route::get('/email/unsubscribe', [App\Http\Controllers\EmailController::class, 'unsubscribe'])->name('email.unsubscribe');
 Route::get('/email/resubscribe', [App\Http\Controllers\EmailController::class, 'resubscribe'])->name('email.resubscribe');
 
+// Sitemap
+Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
+
 // Rotas de captura de leads
 Route::post('/leads', [App\Http\Controllers\LeadController::class, 'store'])->name('leads.store');
 

@@ -1,6 +1,59 @@
 @extends('layouts.app')
 
-@section('title', 'EduPlatform - A melhor plataforma de cursos online')
+@section('title', 'EduPlatform - Plataforma de Cursos Online | Aprenda Programação, Design e Marketing Digital')
+
+@section('meta')
+<meta name="description" content="EduPlatform: A melhor plataforma de cursos online do Brasil. Cursos de programação, design, marketing digital e muito mais. Aprenda com os melhores especialistas!">
+<meta name="keywords" content="cursos online, programação, design, marketing digital, educação online, aprendizado, desenvolvimento web, javascript, python, react, laravel">
+<meta name="author" content="EduPlatform">
+<meta name="robots" content="index, follow">
+<meta name="language" content="pt-BR">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:title" content="EduPlatform - Plataforma de Cursos Online">
+<meta property="og:description" content="A melhor plataforma de cursos online do Brasil. Cursos de programação, design, marketing digital e muito mais.">
+<meta property="og:image" content="{{ asset('images/eduplatform-og.jpg') }}">
+<meta property="og:site_name" content="EduPlatform">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ url()->current() }}">
+<meta property="twitter:title" content="EduPlatform - Plataforma de Cursos Online">
+<meta property="twitter:description" content="A melhor plataforma de cursos online do Brasil. Cursos de programação, design, marketing digital e muito mais.">
+<meta property="twitter:image" content="{{ asset('images/eduplatform-og.jpg') }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ url()->current() }}">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "EduPlatform",
+  "description": "Plataforma de cursos online com foco em programação, design e marketing digital",
+  "url": "{{ url()->current() }}",
+  "logo": "{{ asset('images/eduplatform-logo.png') }}",
+  "sameAs": [
+    "https://facebook.com/eduplatform",
+    "https://twitter.com/eduplatform",
+    "https://instagram.com/eduplatform"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+55-11-99999-9999",
+    "contactType": "customer service"
+  }
+}
+</script>
+@endsection
 
 @section('content')
 <!-- Hero Section -->
