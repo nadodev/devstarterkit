@@ -1,0 +1,206 @@
+{
+  "site": {
+    "title": "DevStarter Kit - O Kit Completo para Desenvolvedores Iniciantes",
+    "description": "Aprenda, crie e entregue projetos de forma rápida com nosso sistema pronto e guia passo a passo.",
+    "url": "https://devstarterkit.com",
+    "logo": "assets/logo.png"
+  },
+  "colors": {
+    "primary": {
+      "blue-dark": "#1E3A8A",
+      "purple-vibrant": "#8B5CF6",
+      "blue-light": "#3B82F6",
+      "yellow-vibrant": "#FACC15",
+      "gray-light": "#F3F4F6",
+      "gray-medium": "#9CA3AF",
+      "white": "#FFFFFF"
+    },
+    "gradients": {
+      "hero": "linear-gradient(135deg, #1E3A8A 0%, #8B5CF6 100%)",
+      "text": "linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": "O Kit Completo para Desenvolvedores Iniciantes e Pequenas Agências",
+      "subheadline": "Aprenda, crie e entregue projetos de forma rápida com nosso sistema pronto e guia passo a passo.",
+      "cta_primary": "Quero o Guia Gratuito",
+      "cta_secondary": "Ver Demonstração"
+    },
+    "problems": [
+      {
+        "icon": "fas fa-clock",
+        "title": "Organizar projetos rapidamente",
+        "description": "Perde tempo tentando estruturar projetos do zero, sem saber por onde começar."
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Entregar soluções completas aos clientes",
+        "description": "Dificuldade em apresentar projetos profissionais e organizados para seus clientes."
+      },
+      {
+        "icon": "fas fa-graduation-cap",
+        "title": "Aprender boas práticas sem se perder",
+        "description": "Muita informação dispersa, sem um guia claro de como aplicar na prática."
+      }
+    ],
+    "solutions": [
+      {
+        "icon": "fas fa-cogs",
+        "title": "Sistema Core Pronto",
+        "description": "Gerenciamento completo de projetos e tarefas, sem necessidade de configuração complexa."
+      },
+      {
+        "icon": "fas fa-globe",
+        "title": "Página Pública Personalizável",
+        "description": "Apresente seus projetos de forma profissional para clientes com páginas totalmente customizáveis."
+      },
+      {
+        "icon": "fas fa-book",
+        "title": "Guia Passo a Passo",
+        "description": "Aprenda a usar cada funcionalidade com nosso guia completo e didático."
+      }
+    ],
+    "benefits": [
+      {
+        "icon": "fas fa-rocket",
+        "title": "Pronto para Usar",
+        "description": "Comece projetos sem configurar nada do zero. Tudo já está preparado para você."
+      },
+      {
+        "icon": "fas fa-graduation-cap",
+        "title": "Aprendizado Guiado",
+        "description": "Guia completo para dominar cada função e aplicar as melhores práticas."
+      },
+      {
+        "icon": "fas fa-clock",
+        "title": "Economia de Tempo",
+        "description": "Automatize tarefas comuns e foque no que realmente importa para seus projetos."
+      },
+      {
+        "icon": "fas fa-cogs",
+        "title": "Totalmente Flexível",
+        "description": "Funciona perfeitamente para projetos próprios ou para clientes. Adaptável a qualquer necessidade."
+      }
+    ],
+    "how_it_works": [
+      {
+        "step": "1",
+        "title": "Cadastro Rápido",
+        "description": "Crie sua conta em poucos segundos e acesse o sistema imediatamente."
+      },
+      {
+        "step": "2",
+        "title": "Crie seu Projeto",
+        "description": "Configure seu primeiro projeto ou página pública em minutos."
+      },
+      {
+        "step": "3",
+        "title": "Acesse o Guia",
+        "description": "Siga o guia passo a passo para dominar todas as funcionalidades."
+      },
+      {
+        "step": "4",
+        "title": "Entregue Resultados",
+        "description": "Apresente projetos profissionais e organize seu trabalho de forma eficiente."
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Maria Silva",
+        "role": "Desenvolvedora Frontend",
+        "avatar": "M",
+        "quote": "O DevStarter Kit me ajudou a entregar meu primeiro projeto completo em apenas uma semana! O guia é muito claro e o sistema é intuitivo."
+      },
+      {
+        "name": "João Santos",
+        "role": "Agência Digital",
+        "avatar": "J",
+        "quote": "Perfeito para nossa pequena agência. Conseguimos organizar todos os projetos e apresentar resultados profissionais para nossos clientes."
+      },
+      {
+        "name": "Ana Costa",
+        "role": "Freelancer",
+        "avatar": "A",
+        "quote": "Economizei horas de trabalho com o DevStarter Kit. Agora consigo focar no que realmente importa: criar soluções incríveis para meus clientes."
+      }
+    ],
+    "faq": [
+      {
+        "question": "Preciso saber programar para usar o sistema?",
+        "answer": "Não! O DevStarter Kit foi criado especificamente para iniciantes. Nosso guia passo a passo ensina tudo que você precisa saber, mesmo sem experiência prévia em programação."
+      },
+      {
+        "question": "Posso usar para projetos de clientes?",
+        "answer": "Sim! O sistema é totalmente personalizável e perfeito para projetos de clientes. Você pode criar páginas públicas personalizadas e gerenciar múltiplos projetos simultaneamente."
+      },
+      {
+        "question": "O guia é em PDF ou online?",
+        "answer": "O guia é totalmente online e interativo. Você acessa através da plataforma e pode seguir passo a passo, com exemplos práticos e suporte direto quando precisar."
+      },
+      {
+        "question": "Quanto tempo leva para começar a usar?",
+        "answer": "Em menos de 5 minutos você já pode estar criando seu primeiro projeto! O sistema é intuitivo e o guia te leva por todo o processo de forma simples e rápida."
+      }
+    ]
+  },
+  "forms": {
+    "lead_capture": {
+      "title": "Comece Agora Mesmo",
+      "subtitle": "Receba o guia completo do DevStarter Kit gratuitamente em seu email",
+      "fields": {
+        "name": {
+          "label": "Nome",
+          "placeholder": "Seu nome (opcional)",
+          "required": false
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Seu email",
+          "required": true
+        },
+        "whatsapp": {
+          "label": "WhatsApp",
+          "placeholder": "Seu WhatsApp (opcional)",
+          "required": false,
+          "type": "tel"
+        }
+      },
+      "cta": "Quero o Guia Grátis",
+      "success_message": "Obrigado! Confira seu email para acessar o guia completo do DevStarter Kit.",
+      "privacy_text": "Não enviamos spam. Cancele a qualquer momento."
+    }
+  },
+  "social": {
+    "twitter": "#",
+    "linkedin": "#",
+    "github": "#"
+  },
+  "footer": {
+    "links": {
+      "about": "Sobre",
+      "contact": "Contato",
+      "privacy": "Política de Privacidade"
+    },
+    "support": {
+      "help": "Central de Ajuda",
+      "docs": "Documentação",
+      "community": "Comunidade"
+    },
+    "tagline": "DevStarter Kit – Aprenda, crie e entregue projetos completos de forma simples."
+  },
+  "animations": {
+    "fade_in": true,
+    "slide_up": true,
+    "hover_scale": true,
+    "duration": "0.3s"
+  },
+  "responsive": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    }
+  }
+}
