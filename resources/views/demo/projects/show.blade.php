@@ -106,6 +106,7 @@
                             $endDate = \Carbon\Carbon::parse($project['end_date']);
                             $isOverdue = now()->isAfter($endDate);
                             $daysRemaining = $isOverdue ? now()->diffInDays($endDate) : $endDate->diffInDays(now());
+                            $daysRemaining = abs((int) $daysRemaining); // Garantir que seja inteiro e positivo
                         @endphp
                         <div class="text-2xl font-bold {{ $isOverdue ? 'text-red-600' : 'text-purple-600' }}">
                             {{ $daysRemaining }} dias
@@ -222,6 +223,7 @@
                             $endDate = \Carbon\Carbon::parse($project['end_date']);
                             $isOverdue = now()->isAfter($endDate);
                             $daysRemaining = $isOverdue ? now()->diffInDays($endDate) : $endDate->diffInDays(now());
+                            $daysRemaining = abs((int) $daysRemaining); // Garantir que seja inteiro e positivo
                         @endphp
                         <span class="text-lg font-semibold {{ $isOverdue ? 'text-red-600' : 'text-gray-900' }}">
                             {{ $isOverdue ? $daysRemaining . ' dias atrasado' : $daysRemaining . ' dias' }}
