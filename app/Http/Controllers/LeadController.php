@@ -63,24 +63,24 @@ class LeadController extends Controller
                           Mail::to($request->email)->send(new GuideWelcomeMail($lead));
                           \Log::info('Email 1 (Guia) enviado para:', ['email' => $request->email]);
                           
-                          // Email 2: +1 minuto - Educação e valor (TESTE)
-                          $this->scheduleEmail($lead, EducationValueMail::class, Carbon::now()->addMinute());
+                          // Email 2: +1 dia - Educação e valor
+                          $this->scheduleEmail($lead, EducationValueMail::class, Carbon::now()->addDay());
                           
-                          // Email 3: +2 minutos - Oferta e conversão (TESTE)
-                          $this->scheduleEmail($lead, OfferConversionMail::class, Carbon::now()->addMinutes(2));
+                          // Email 3: +2 dias - Oferta e conversão
+                          $this->scheduleEmail($lead, OfferConversionMail::class, Carbon::now()->addDays(2));
                           
                           // Sequência de Conversão (após consumir o bônus)
-                          // Email 4: +3 minutos - Oferta inicial de conversão (TESTE)
-                          $this->scheduleEmail($lead, ConversionInitialMail::class, Carbon::now()->addMinutes(3));
+                          // Email 4: +3 dias - Oferta inicial de conversão
+                          $this->scheduleEmail($lead, ConversionInitialMail::class, Carbon::now()->addDays(3));
                           
-                          // Email 5: +4 minutos - Prova social (TESTE)
-                          $this->scheduleEmail($lead, ConversionSocialProofMail::class, Carbon::now()->addMinutes(4));
+                          // Email 5: +4 dias - Prova social
+                          $this->scheduleEmail($lead, ConversionSocialProofMail::class, Carbon::now()->addDays(4));
                           
-                          // Email 6: +5 minutos - Escassez (TESTE)
-                          $this->scheduleEmail($lead, ConversionScarcityMail::class, Carbon::now()->addMinutes(5));
+                          // Email 6: +5 dias - Escassez
+                          $this->scheduleEmail($lead, ConversionScarcityMail::class, Carbon::now()->addDays(5));
                           
-                          // Email 7: +7 minutos - Última chamada (TESTE)
-                          $this->scheduleEmail($lead, ConversionFinalMail::class, Carbon::now()->addMinutes(7));
+                          // Email 7: +7 dias - Última chamada
+                          $this->scheduleEmail($lead, ConversionFinalMail::class, Carbon::now()->addDays(7));
                           
                       } catch (\Exception $e) {
                           \Log::error('Erro ao enviar sequência de emails:', ['error' => $e->getMessage()]);
