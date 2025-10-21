@@ -47,10 +47,10 @@
                             <i class="fas fa-home mr-1"></i>
                             Início
                         </a>
-                        <a href="{{ route('products.index') }}" 
+                        {{-- <a href="{{ route('products.index') }}" 
                         class="group bg-gradient-green text-white px-4 py-2 rounded-sm text-md hover:shadow-lg transition-all duration-300 transform">
                          Ver Produtos
-                     </a>
+                     </a> --}}
                     </div>
                 </div>
             </div>
