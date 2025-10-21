@@ -224,8 +224,8 @@ class EmailTemplateSeeder extends Seeder
                         <li>📱 Totalmente responsivo</li>
                     </ul>
                     
-                    <p><strong>Valor normal: R$497</strong><br>
-                    <strong>Seu preço: R$248</strong> (50% OFF)</p>
+                    <p><strong>Valor normal: R$197,00</strong><br>
+                    <strong>Seu preço: R$97,00</strong> (50% OFF)</p>
                     
                     <div style="text-align: center;">
                         <a href="{{url(\'/conversion\')}}" class="cta-button">
@@ -317,7 +317,7 @@ class EmailTemplateSeeder extends Seeder
                     
                     <p>Sua oferta especial do DevStarter Kit com 50% OFF <strong>expira hoje à meia-noite</strong>!</p>
                     
-                    <p>Após isso, o preço volta ao normal (R$497) e você perderá:</p>
+                    <p>Após isso, o preço volta ao normal (R$197,00) e você perderá:</p>
                     <ul>
                         <li>❌ 50% de desconto</li>
                         <li>❌ Bônus exclusivos</li>
