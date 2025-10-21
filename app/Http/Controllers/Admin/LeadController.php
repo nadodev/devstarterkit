@@ -274,6 +274,10 @@ class LeadController extends Controller
             '{{name}}' => $lead->name ?? 'Amigo(a)',
             '{{email}}' => $lead->email,
             '{{whatsapp}}' => $lead->whatsapp ?? 'Não informado',
+            '{{$demoLink}}' => url('/products'),
+            '{{url(\'/conversion\')}}' => url('/conversion'),
+            '{{url(\'/unsubscribe\')}}' => url('/unsubscribe?token=' . ($lead->unsubscribe_token ?? 'demo')),
+            '{{url(\'/resubscribe\')}}' => url('/resubscribe?token=' . ($lead->unsubscribe_token ?? 'demo')),
         ];
 
         return str_replace(array_keys($variables), array_values($variables), $content);
