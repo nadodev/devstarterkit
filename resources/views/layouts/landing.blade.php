@@ -43,7 +43,7 @@
                     </div>
                     
                     <div class="flex items-center space-x-4">
-                        <a href="{{ route('landing') }}" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                        <a href="{{ route('conversion') }}" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                             <i class="fas fa-home mr-1"></i>
                             Início
                         </a>
