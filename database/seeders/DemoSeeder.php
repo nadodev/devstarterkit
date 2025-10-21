@@ -229,7 +229,7 @@ class DemoSeeder extends Seeder
             [
                 'name' => 'DevStarter Kit - Básico',
                 'slug' => 'devstarter-kit-basico',
-                'short_description' => 'Sistema completo para desenvolvimento web com Laravel + Vue',
+                'short_description' => 'Sistema completo para desenvolvimento web com Laravel + Blade',
                 'description' => 'O DevStarter Kit Básico inclui todas as funcionalidades essenciais para começar seu projeto web profissional. Inclui autenticação, dashboard, CRUD básico e muito mais.',
                 'price' => 197.00,
                 'image' => 'products/devstarter-basico.jpg',

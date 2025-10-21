@@ -201,7 +201,7 @@
             <div class="benefits">
                 <h3>✅ O que você recebe:</h3>
                 <ul>
-                    <li>Base pronta para Laravel + Vue + Tailwind</li>
+                    <li>Base pronta para Laravel + Blade + Tailwind</li>
                     <li>Templates de login, dashboard e CRUD</li>
                     <li>Acesso imediato e suporte completo</li>
                 </ul>

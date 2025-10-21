@@ -192,7 +192,7 @@
             <ul>
                 <li>Painel + página pública conectados</li>
                 <li>Autenticação pronta</li>
-                <li>Layout Vue + Tailwind</li>
+                <li>Layout Blade + Tailwind</li>
                 <li>Estrutura modular em Laravel</li>
             </ul>
         </div>

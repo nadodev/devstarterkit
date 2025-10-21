@@ -1,10 +1,10 @@
 @extends('layouts.landing')
 
-@section('title', 'DevStarter Kit - Crie Sistemas Completos em Horas | Laravel + Vue + Tailwind')
+@section('title', 'DevStarter Kit - Crie Sistemas Completos em Horas | Laravel + Blade + Tailwind')
 
 @section('meta')
-<meta name="description" content="DevStarter Kit: Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Vue + Tailwind. Crie sistemas em horas, não em semanas!">
-<meta name="keywords" content="devstarter kit, laravel, vue, tailwind, sistema base, desenvolvedor, projeto completo, dashboard, login, crud">
+<meta name="description" content="DevStarter Kit: Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind. Crie sistemas em horas, não em semanas!">
+<meta name="keywords" content="devstarter kit, laravel, Blade, tailwind, sistema base, desenvolvedor, projeto completo, dashboard, login, crud">
 <meta name="author" content="DevStarter Kit">
 <meta name="robots" content="index, follow">
 <meta name="language" content="pt-BR">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ request()->url() }}">
 <meta property="og:title" content="DevStarter Kit - Crie Sistemas Completos em Horas">
-<meta property="og:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Vue + Tailwind.">
+<meta property="og:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
 <meta property="og:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
 <meta property="og:site_name" content="DevStarter Kit">
 <meta property="og:locale" content="pt_BR">
@@ -22,7 +22,7 @@
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ request()->url() }}">
 <meta property="twitter:title" content="DevStarter Kit - Crie Sistemas Completos em Horas">
-<meta property="twitter:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Vue + Tailwind.">
+<meta property="twitter:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
 <meta property="twitter:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
 
 <!-- Canonical URL -->
@@ -57,7 +57,7 @@
                     Crie sistemas completos em <span class="text-orange-400">HORAS</span>, não em semanas!
                 </h1>
                 <p class="text-xl lg:text-2xl mb-8 text-gray-200 font-medium">
-                    O DevStarter Kit já ajudou <strong class="text-orange-400">+127 desenvolvedores</strong> a acelerar projetos com Laravel + Vue + Tailwind.
+                    O DevStarter Kit já ajudou <strong class="text-orange-400">+127 desenvolvedores</strong> a acelerar projetos com Laravel + Blade + Tailwind.
                 </p>
                 
                 <!-- Extras visuais -->
@@ -216,7 +216,7 @@
                     <i class="fas fa-rocket text-white text-2xl"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-4">Performance otimizada</h3>
-                <p class="text-gray-600">Código otimizado e seguindo as melhores práticas de Laravel, Vue e Tailwind.</p>
+                <p class="text-gray-600">Código otimizado e seguindo as melhores práticas de Laravel, Blade e Tailwind.</p>
             </div>
         </div>
         

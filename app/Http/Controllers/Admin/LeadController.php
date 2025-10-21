@@ -14,6 +14,7 @@ class LeadController extends Controller
     public function index()
     {
         $leads = Lead::orderBy('created_at', 'desc')->paginate(20);
+    
         $templates = EmailTemplate::active()->get();
         
         $stats = [

@@ -27,6 +27,7 @@ class LeadController extends Controller
             'name' => 'nullable|string|max:255',
             'email' => 'required|email|max:255',
             'whatsapp' => 'nullable|string|max:20',
+            'newsletter' => 'nullable|boolean',
         ]);
 
         if ($validator->fails()) {
@@ -47,7 +48,7 @@ class LeadController extends Controller
                 'ip_address' => $request->ip(),
                 'user_agent' => $request->userAgent(),
             ]);
-
+ 
             $leadData = [
                 'name' => $request->name,
                 'email' => $request->email,
@@ -56,9 +57,6 @@ class LeadController extends Controller
                 'user_agent' => $request->userAgent(),
                 'created_at' => now(),
             ];
-
-            \Log::info('Lead salvo no banco:', ['lead_id' => $lead->id]);
-
                       // Enviar sequência de emails automática
                       try {
                           // Email 1: Imediato - Guia de boas-vindas
@@ -91,13 +89,11 @@ class LeadController extends Controller
             // Enviar notificação para admin
             try {
                 $adminEmail = config('mail.admin_email', 'contato@leonardogeja.com.br');
-                \Log::info('Enviando email para admin:', ['email' => $adminEmail]);
                 Mail::to($adminEmail)->send(new LeadCaptured($leadData));
             } catch (\Exception $e) {
                 \Log::error('Erro ao enviar notificação para admin:', ['error' => $e->getMessage()]);
             }
 
-            \Log::info('Lead processado com sucesso');
 
             return response()->json([
                 'success' => true,

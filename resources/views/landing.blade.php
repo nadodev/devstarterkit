@@ -4,7 +4,7 @@
 
 @section('meta')
 <meta name="description" content="Receba gratuitamente o guia 'Como Criar Estruturas de Sistema Profissionais do Zero' e descubra como economizar até 40 horas de trabalho por projeto.">
-<meta name="keywords" content="guia gratuito, sistema profissional, estrutura base, desenvolvedor, laravel, vue, tailwind">
+<meta name="keywords" content="guia gratuito, sistema profissional, estrutura base, desenvolvedor, laravel, Blade, tailwind">
 <meta name="author" content="DevStarter Kit">
 <meta name="robots" content="index, follow">
 <meta name="language" content="pt-BR">
@@ -89,11 +89,8 @@
                     <div class="text-center">
                         <p class="text-gray-600 font-medium mb-3">Sistema DevStarter Kit em Ação</p>
                         <div class="flex justify-center space-x-4">
-                            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                            <a href="{{ route('demo.login') }}" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
                                 <i class="fas fa-play mr-1"></i>Ver Demo
-                            </a>
-                            <a href="#" class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors">
-                                <i class="fas fa-download mr-1"></i>Teste Grátis
                             </a>
                         </div>
                     </div>
@@ -188,7 +185,7 @@
                             <i class="fas fa-palette text-white text-2xl"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-blue-600 mb-2">🎨 Layout moderno com Vue + Tailwind</h4>
+                            <h4 class="text-xl font-bold text-blue-600 mb-2">🎨 Layout moderno com Blade + Tailwind</h4>
                             <p class="text-gray-600">Design responsivo e profissional, sem precisar criar do zero!</p>
                         </div>
                     </div>
@@ -414,8 +411,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                    name: null, // Nome não é obrigatório
                     email: email,
-                    newsletter: newsletter
+                    whatsapp: null,
                 })
             })
             .then(response => {

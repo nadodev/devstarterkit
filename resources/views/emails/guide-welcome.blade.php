@@ -123,7 +123,7 @@
             </ul>
         </div>
         
-        <p>Esse é o mesmo método que uso no DevStarter Kit, nossa base completa em Laravel + Vue para criar sistemas profissionais em horas.</p>
+        <p>Esse é o mesmo método que uso no DevStarter Kit, nossa base completa em Laravel + Blade para criar sistemas profissionais em horas.</p>
         
         <p>Aproveite o material — e amanhã te envio um e-mail mostrando como aplicar isso na prática com o Kit.</p>
         

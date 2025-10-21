@@ -42,7 +42,7 @@
                         <i class="fas fa-palette text-white text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">🎨 Design Moderno</h3>
-                    <p class="text-blue-200">Layout responsivo com Vue + Tailwind</p>
+                    <p class="text-blue-200">Layout responsivo com Blade + Tailwind</p>
                 </div>
                 
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
