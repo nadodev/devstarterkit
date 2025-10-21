@@ -113,7 +113,7 @@
             <ul>
                 <li>🧩 <strong>Estrutura pronta e modular</strong> - Tudo organizado e pronto para usar</li>
                 <li>🔐 <strong>Login, registro e painel administrativo integrados</strong> - Sistema de autenticação completo</li>
-                <li>🎨 <strong>Layout profissional com Tailwind + Vue</strong> - Design moderno e responsivo</li>
+                <li>🎨 <strong>Layout profissional com Tailwind + Blade</strong> - Design moderno e responsivo</li>
                 <li>🌐 <strong>Página pública e sistema conectados</strong> - Landing page e painel integrados</li>
                 <li>🚀 <strong>Pronto para personalizar e lançar</strong> - Base sólida para qualquer projeto</li>
             </ul>
