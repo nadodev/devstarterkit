@@ -284,7 +284,7 @@
                 </p>
             </div>
             
-            <a href="#" class="bg-orange-500 text-white px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
+            <a href="https://pay.kiwify.com.br/i0FGVRc" class="bg-orange-500 text-white px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
                 Quero o DevStarter Kit + Bônus Agora
             </a>
         </div>
