@@ -84,13 +84,14 @@
              @click="mobileMenuOpen = false"></div>
 
         <!-- Sidebar -->
-        <div class="fixed inset-y-0 left-0 z-50 w-72 sidebar-gradient transform transition-transform duration-300 ease-in-out"
+        <div class="fixed inset-y-0 left-0 z-50 w-72 sidebar-gradient transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0"
              :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-             x-show="sidebarOpen || !mobileMenuOpen">
+             x-show="sidebarOpen || !mobileMenuOpen"
+             x-init="if (window.innerWidth >= 1024) { sidebarOpen = true; }">
             
-            <!-- Toggle Button -->
+            <!-- Toggle Button - Mobile Only -->
             <button @click="sidebarOpen = !sidebarOpen" 
-                    class="absolute -right-12 top-6 z-50 bg-white/90 backdrop-blur-sm text-gray-700 hover:text-gray-900 hover:bg-white rounded-full p-3 shadow-lg border border-gray-200/50 transition-all duration-200 hover:scale-110">
+                    class="absolute -right-12 top-6 z-50 bg-white/90 backdrop-blur-sm text-gray-700 hover:text-gray-900 hover:bg-white rounded-full p-3 shadow-lg border border-gray-200/50 transition-all duration-200 hover:scale-110 lg:hidden">
                 <i class="fas fa-bars text-lg" x-show="!sidebarOpen"></i>
                 <i class="fas fa-times text-lg" x-show="sidebarOpen"></i>
             </button>
@@ -161,7 +162,7 @@
         </div>
 
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col transition-all duration-300 ease-in-out"
+        <div class="flex-1 flex flex-col transition-all duration-300 ease-in-out lg:ml-0"
              :class="sidebarOpen ? 'ml-0' : 'ml-0'">
             <!-- Top Bar -->
             <header class="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-200/50 sticky top-0 z-30">
@@ -173,12 +174,6 @@
                             <i class="fas fa-bars text-lg"></i>
                         </button>
                         
-                        <!-- Desktop Sidebar Toggle -->
-                        <button @click="sidebarOpen = !sidebarOpen" 
-                                class="hidden lg:block p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-colors mr-4">
-                            <i class="fas fa-bars text-lg" x-show="!sidebarOpen"></i>
-                            <i class="fas fa-times text-lg" x-show="sidebarOpen"></i>
-                        </button>
                         
                         <div>
                             <h2 class="text-2xl font-bold text-gray-900">@yield('page-title', 'Dashboard')</h2>
@@ -237,7 +232,7 @@
             </main>
         </div>
         
-        <!-- Floating Sidebar Toggle (when closed) -->
+        <!-- Floating Sidebar Toggle (when closed) - Mobile Only -->
         <div x-show="!sidebarOpen" 
              x-transition:enter="transition-all duration-300 ease-out"
              x-transition:enter-start="opacity-0 transform scale-75"
@@ -245,11 +240,8 @@
              x-transition:leave="transition-all duration-300 ease-in"
              x-transition:leave-start="opacity-100 transform scale-100"
              x-transition:leave-end="opacity-0 transform scale-75"
-             class="fixed top-6 left-6 z-40">
-            <button @click="sidebarOpen = true" 
-                    class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 floating-action">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+             class="fixed top-6 left-6 z-40 lg:hidden">
+ 
         </div>
     </div>
 
