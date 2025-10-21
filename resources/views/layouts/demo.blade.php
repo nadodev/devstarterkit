@@ -70,7 +70,7 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen" x-data="{ sidebarOpen: true, mobileMenuOpen: false }">
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen" x-data="{ sidebarOpen: false, mobileMenuOpen: false }" x-init="if (window.innerWidth >= 1024) { sidebarOpen = true; }">
     <div class="flex h-screen">
         <!-- Mobile Overlay -->
         <div x-show="mobileMenuOpen" 
@@ -86,8 +86,7 @@
         <!-- Sidebar -->
         <div class="fixed inset-y-0 left-0 z-50 w-72 sidebar-gradient transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0"
              :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-             x-show="sidebarOpen || !mobileMenuOpen"
-             x-init="if (window.innerWidth >= 1024) { sidebarOpen = true; }">
+             x-show="sidebarOpen || !mobileMenuOpen">
             
             <!-- Toggle Button - Mobile Only -->
             <button @click="sidebarOpen = !sidebarOpen" 
