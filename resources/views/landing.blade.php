@@ -1,5 +1,6 @@
 @extends('layouts.landing')
 
+
 @section('title', 'DevStarter Kit - Sistema Base Completo para Desenvolvedores | Laravel + Blade + Tailwind')
 
 @section('meta')
@@ -12,50 +13,24 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:url" content="{{ request()->url() }}">
 <meta property="og:title" content="DevStarter Kit - Sistema Base Completo para Desenvolvedores">
-<meta property="og:description" content="Sistema base completo com Laravel + blade + Tailwind. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
+<meta property="og:description" content="Sistema base completo com Laravel + Vue + Tailwind. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
 <meta property="og:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
 <meta property="og:site_name" content="DevStarter Kit">
 <meta property="og:locale" content="pt_BR">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ url()->current() }}">
+<meta property="twitter:url" content="{{ request()->url() }}">
 <meta property="twitter:title" content="DevStarter Kit - Sistema Base Completo para Desenvolvedores">
-<meta property="twitter:description" content="Sistema base completo com Laravel + blade + Tailwind. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
+<meta property="twitter:description" content="Sistema base completo com Laravel + Vue + Tailwind. Login, painel admin, landing page prontos. Economize semanas de desenvolvimento!">
 <meta property="twitter:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="{{ url()->current() }}">
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "DevStarter Kit",
-  "description": "Sistema base completo para desenvolvedores iniciantes com Laravel, Vue.js e Tailwind CSS",
-  "url": "{{ url()->current() }}",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "97.00",
-    "priceCurrency": "BRL",
-    "availability": "https://schema.org/InStock"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "127"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "DevStarter Kit"
-  }
-}
-</script>
+<link rel="canonical" href="{{ request()->url() }}">
+    
+    
 @endsection
 
 @section('content')
@@ -80,9 +55,53 @@
                 <p class="text-xl lg:text-2xl mb-6 text-orange-100 font-medium">
                     O DevStarter Kit é o sistema base que todo desenvolvedor e pequena agência precisa para começar projetos com estrutura profissional, design moderno e performance pronta.
                 </p>
-                <p class="text-lg mb-8 text-yellow-300 font-bold bg-white/10 backdrop-blur-sm rounded-lg p-4 inline-block">
-                    ⚡ +100 devs já estão acelerando seus projetos com o DevStarter Kit!
-                </p>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-8">
+                    <h3 class="text-lg font-bold text-yellow-300 mb-4">🎯 Perfeito para você se:</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-300 mr-2"></i>
+                            <span>Desenvolve com Laravel + Vue/Tailwind</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-300 mr-2"></i>
+                            <span>Quer montar SaaS ou sistemas web</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-300 mr-2"></i>
+                            <span>Gerencia micro-time de desenvolvimento</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-300 mr-2"></i>
+                            <span>Quer acelerar entregas de projetos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 inline-block">
+                    <div class="flex items-center justify-center mb-3">
+                        <div class="flex -space-x-2">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="João Silva" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Maria Santos" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Carlos Lima" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" alt="Ana Costa" class="w-10 h-10 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-3 text-left">
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-300">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-sm font-bold">4.9/5</span>
+                            </div>
+                            <p class="text-sm text-yellow-100">+127 desenvolvedores já aceleraram seus projetos</p>
+                        </div>
+                    </div>
+                    <p class="text-lg text-yellow-300 font-bold text-center">
+                        ⚡ Economize até 40 horas de desenvolvimento por projeto!
+                    </p>
+                </div>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <button id="hero-cta" class="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
                         <i class="fas fa-rocket mr-2"></i>
@@ -96,19 +115,31 @@
             </div>
             <div class="animate-slide-up">
                 <div class="bg-white rounded-2xl p-8 shadow-2xl">
-                    <div class="bg-gray-100 rounded-lg p-6 mb-4">
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-6 mb-4 border">
                         <div class="flex items-center mb-4">
                             <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
                             <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
                             <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            <span class="ml-4 text-sm font-medium text-gray-600">Painel Administrativo</span>
                         </div>
-                        <div class="space-y-2">
-                            <div class="h-4 bg-blue-500 rounded w-3/4"></div>
-                            <div class="h-4 bg-purple-500 rounded w-1/2"></div>
-                            <div class="h-4 bg-yellow-400 rounded w-2/3"></div>
+                        <div class="space-y-3">
+                            <div class="h-3 bg-blue-500 rounded w-full"></div>
+                            <div class="h-3 bg-purple-500 rounded w-4/5"></div>
+                            <div class="h-3 bg-yellow-400 rounded w-3/4"></div>
+                            <div class="h-3 bg-green-500 rounded w-2/3"></div>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-center font-medium">Sistema DevStarter Kit em Ação</p>
+                    <div class="text-center">
+                        <p class="text-gray-600 font-medium mb-3">Sistema DevStarter Kit em Ação</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-play mr-1"></i>Ver Demo
+                            </a>
+                            <a href="#" class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors">
+                                <i class="fas fa-download mr-1"></i>Teste Grátis
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -355,34 +386,54 @@
                 Siga passos simples para começar a entregar projetos completos rapidamente:
             </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span class="text-blue-900 text-2xl font-bold">1</span>
+        <div class="relative">
+            <!-- Funil visual -->
+            <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-yellow-400 via-blue-500 to-green-500 transform -translate-y-1/2 z-0"></div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+                <div class="text-center bg-white rounded-2xl p-8 shadow-lg border-2 border-yellow-400">
+                    <div class="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-blue-900 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">📝 Cadastro em 30 segundos</h3>
+                    <p class="text-gray-600 mb-4">Crie sua conta e acesse o sistema imediatamente.</p>
+                    <div class="bg-yellow-100 rounded-lg p-3">
+                        <p class="text-sm font-semibold text-yellow-800">⏱️ Tempo: 30 segundos</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-blue-900 mb-4">Cadastro rápido no sistema</h3>
-                <p class="text-gray-600">Crie sua conta em poucos segundos e acesse o sistema imediatamente.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span class="text-blue-900 text-2xl font-bold">2</span>
+                
+                <div class="text-center bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-500">
+                    <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">⚙️ Configure em 1 hora</h3>
+                    <p class="text-gray-600 mb-4">Configure painel admin e página pública em minutos.</p>
+                    <div class="bg-blue-100 rounded-lg p-3">
+                        <p class="text-sm font-semibold text-blue-800">⏱️ Tempo: 1 hora</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-blue-900 mb-4">Criação de projetos e páginas públicas</h3>
-                <p class="text-gray-600">Configure seu primeiro projeto ou página pública em minutos.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span class="text-blue-900 text-2xl font-bold">3</span>
+                
+                <div class="text-center bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-500">
+                    <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🎨 Personalize em 1 dia</h3>
+                    <p class="text-gray-600 mb-4">Customize cores, logos e conteúdo com o guia passo a passo.</p>
+                    <div class="bg-purple-100 rounded-lg p-3">
+                        <p class="text-sm font-semibold text-purple-800">⏱️ Tempo: 1 dia</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-blue-900 mb-4">Acesso ao guia passo a passo</h3>
-                <p class="text-gray-600">Siga o guia passo a passo para dominar todas as funcionalidades.</p>
-            </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span class="text-blue-900 text-2xl font-bold">4</span>
+                
+                <div class="text-center bg-white rounded-2xl p-8 shadow-lg border-2 border-green-500">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10">
+                        <span class="text-white text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">🚀 Lance seu sistema</h3>
+                    <p class="text-gray-600 mb-4">Sistema profissional no ar e pronto para receber usuários!</p>
+                    <div class="bg-green-100 rounded-lg p-3">
+                        <p class="text-sm font-semibold text-green-800">⏱️ Tempo: Imediato</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-blue-900 mb-4">Entrega do projeto finalizado</h3>
-                <p class="text-gray-600">Apresente projetos profissionais e organize seu trabalho de forma eficiente.</p>
             </div>
         </div>
     </div>
@@ -391,12 +442,19 @@
 <!-- Captura de Leads -->
 <section class="py-20 px-4 bg-white">
     <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl lg:text-3xl font-bold mb-6 text-blue-900 font-display">
-            Receba o Guia Gratuito
-        </h2>
-        <p class="text-base lg:text-lg mb-8 text-gray-600 max-w-2xl mx-auto">
-            Deixe seu email e receba o guia passo a passo para começar a usar o DevStarter Kit hoje mesmo.
-        </p>
+        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-8 mb-8 max-w-4xl mx-auto">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white font-display text-center">
+                🎁 Receba o Guia Gratuito AGORA
+            </h2>
+            <p class="text-xl text-white/90 text-center mb-6">
+                <strong>Guia completo:</strong> "Como Criar Estruturas de Sistema Profissionais do Zero"
+            </p>
+            <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center">
+                <p class="text-white font-bold text-lg">
+                    💰 Valor: R$ 197 - <span class="text-yellow-300">SEU GRÁTIS!</span>
+                </p>
+            </div>
+        </div>
         <form id="lead-form" class="max-w-lg mx-auto">
             @csrf
             <div class="space-y-4">
@@ -410,9 +468,9 @@
                     <input type="tel" id="whatsapp" name="whatsapp" placeholder="WhatsApp (opcional)" class="w-full px-4 py-3 rounded-lg text-gray-800 text-base focus:outline-none focus:ring-2 focus:ring-yellow-400 border border-gray-300">
                 </div>
                 <div>
-                    <button type="submit" class="w-full bg-yellow-400 text-blue-900 px-6 py-3 rounded-lg font-bold text-base hover:bg-yellow-300 transition-colors hover-scale">
+                    <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl">
                         <i class="fas fa-download mr-2"></i>
-                        Quero o Guia Grátis
+                        🚀 RECEBER GUIA GRÁTIS AGORA
                     </button>
                 </div>
             </div>
@@ -420,6 +478,52 @@
         <p class="text-sm text-gray-600 mt-4">
             Sem spam. Você pode cancelar a qualquer momento.
         </p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-6 font-display">
+                Perguntas Frequentes
+            </h2>
+            <p class="text-xl text-gray-600">
+                Tire suas dúvidas sobre o DevStarter Kit
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-3">❓ Preciso saber Laravel?</h3>
+                <p class="text-gray-600">Não! O DevStarter Kit vem com documentação completa e exemplos práticos. Mesmo iniciantes conseguem usar em poucas horas.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-3">❓ Funciona em hospedeiro compartilhado?</h3>
+                <p class="text-gray-600">Sim! O DevStarter Kit é otimizado para funcionar em qualquer hospedagem que suporte PHP 8.0+ e MySQL.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-3">❓ Posso personalizar tudo?</h3>
+                <p class="text-gray-600">Absolutamente! Cores, logos, textos, funcionalidades - tudo pode ser personalizado. É seu código, você tem total controle.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-3">❓ E se eu não conseguir usar?</h3>
+                <p class="text-gray-600">Temos garantia de 30 dias! Se você não conseguir entregar seu primeiro sistema, devolvemos 100% do valor.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-3">❓ Posso usar em vários projetos?</h3>
+                <p class="text-gray-600">Sim! Uma vez adquirido, você pode usar o DevStarter Kit em quantos projetos quiser, sem limitações.</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <h3 class="text-lg font-bold text-blue-900 mb-3">❓ Tem suporte técnico?</h3>
+                <p class="text-gray-600">Sim! Incluímos suporte completo por email e acesso à nossa comunidade exclusiva de desenvolvedores.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -431,34 +535,80 @@
                 Depoimentos
             </h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-xl p-8 shadow-lg">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-blue-500">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                        <span class="text-white font-bold">L</span>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Lucas Pereira" class="w-12 h-12 rounded-full mr-4">
                     <div>
-                        <h4 class="font-bold text-blue-900">Lucas P.</h4>
+                        <h4 class="font-bold text-blue-900">Lucas Pereira</h4>
                         <p class="text-gray-600 text-sm">Freelancer Full Stack</p>
+                        <div class="flex text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
-                <p class="text-gray-600 italic text-base">
-                    💬 "Eu gastava dias pra montar autenticação e layout. Com o DevStarter Kit, em 30 minutos eu tinha tudo rodando."
+                <p class="text-gray-600 italic text-base mb-4">
+                    "Eu gastava 3-4 dias pra montar autenticação e layout. Com o DevStarter Kit, em 30 minutos eu tinha tudo rodando. <strong>Economizei 25 horas no último projeto!</strong>"
                 </p>
+                <div class="bg-green-50 rounded-lg p-3">
+                    <p class="text-sm text-green-700 font-semibold">
+                        ✅ Resultado: Entregou projeto 3 dias antes do prazo
+                    </p>
+                </div>
             </div>
-            <div class="bg-white rounded-xl p-8 shadow-lg">
+            
+            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-purple-500">
                 <div class="flex items-center mb-6">
-                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
-                        <span class="text-white font-bold">M</span>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Marina Santos" class="w-12 h-12 rounded-full mr-4">
                     <div>
-                        <h4 class="font-bold text-blue-900">Marina S.</h4>
+                        <h4 class="font-bold text-blue-900">Marina Santos</h4>
                         <p class="text-gray-600 text-sm">Desenvolvedora Front-End</p>
+                        <div class="flex text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
-                <p class="text-gray-600 italic text-base">
-                    💬 "Usei como base para meu sistema de gestão. Economizei pelo menos 20 horas de setup."
+                <p class="text-gray-600 italic text-base mb-4">
+                    "Usei como base para meu sistema de gestão. <strong>Economizei 20 horas de setup</strong> e consegui focar na lógica de negócio desde o primeiro dia."
                 </p>
+                <div class="bg-blue-50 rounded-lg p-3">
+                    <p class="text-sm text-blue-700 font-semibold">
+                        ✅ Resultado: Sistema no ar em 2 dias
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-lg border-l-4 border-green-500">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Carlos Lima" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold text-blue-900">Carlos Lima</h4>
+                        <p class="text-gray-600 text-sm">Agência Digital</p>
+                        <div class="flex text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-600 italic text-base mb-4">
+                    "Nossa agência usa o DevStarter Kit em todos os projetos. <strong>Reduzimos o tempo de entrega de 2 semanas para 3 dias</strong>. Clientes ficam impressionados!"
+                </p>
+                <div class="bg-purple-50 rounded-lg p-3">
+                    <p class="text-sm text-purple-700 font-semibold">
+                        ✅ Resultado: +40% de produtividade da equipe
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -521,9 +671,9 @@
                 <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
                 
                 <div class="relative z-10">
-                    <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 text-sm font-semibold">
+                    <div class="inline-flex items-center bg-red-500 text-white rounded-full px-4 py-2 mb-6 text-sm font-bold animate-pulse">
                         <i class="fas fa-fire mr-2"></i>
-                        🔥 OFERTA DE LANÇAMENTO
+                        🔥 OFERTA LIMITADA - SÓ PARA OS PRIMEIROS 50!
                     </div>
                     
                     <h3 class="text-3xl font-bold mb-6">💰 Preço promocional:</h3>
@@ -532,21 +682,33 @@
                         <div class="text-6xl font-bold mb-2 text-yellow-300">R$ 97</div>
                         <div class="text-lg line-through opacity-75">De R$ 197</div>
                         <div class="text-xl font-bold text-yellow-300 mt-2">50% DE DESCONTO!</div>
+                        <div class="text-sm opacity-90 mt-2">⏰ Preço volta ao normal em:</div>
+                        <div class="text-2xl font-bold text-red-300" id="countdown">23:59:59</div>
                     </div>
                     
-                    <p class="text-lg mb-8 opacity-90">
-                        ⏰ Oferta válida apenas por tempo limitado!
-                    </p>
+                    <div class="bg-yellow-300/20 backdrop-blur-sm rounded-xl p-4 mb-6">
+                        <h4 class="text-lg font-bold text-yellow-300 mb-2">🎁 BÔNUS INCLUÍDO (R$ 197):</h4>
+                        <p class="text-sm opacity-90">
+                            <strong>Guia "Como Criar Estruturas de Sistema Profissionais do Zero"</strong><br>
+                            <span class="text-yellow-200">Valor de mercado: R$ 197 - SEU GRÁTIS!</span>
+                        </p>
+                    </div>
                     
                     <button class="bg-white text-red-600 px-8 py-4 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl w-full">
                         🚀 QUERO O DEVSTARTER KIT + BÔNUS AGORA
                     </button>
                     
-                    <p class="text-sm mt-4 opacity-75">
-                        ✅ Acesso imediato após o pagamento<br>
-                        ✅ Suporte completo incluído<br>
-                        ✅ Garantia de 30 dias
-                    </p>
+                    <div class="bg-green-500/20 backdrop-blur-sm rounded-xl p-4 mt-4">
+                        <h4 class="text-lg font-bold text-green-300 mb-2">🛡️ GARANTIA TOTAL DE 30 DIAS</h4>
+                        <p class="text-sm opacity-90 mb-2">
+                            <strong>Se você não conseguir entregar seu primeiro sistema em 30 dias, devolvemos 100% do valor!</strong>
+                        </p>
+                        <p class="text-xs opacity-75">
+                            ✅ Acesso imediato após o pagamento<br>
+                            ✅ Suporte completo incluído<br>
+                            ✅ Sem perguntas, sem burocracias
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -868,10 +1030,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Countdown timer
+    function updateCountdown() {
+        const countdownElement = document.getElementById('countdown');
+        if (countdownElement) {
+            const now = new Date().getTime();
+            const endTime = now + (24 * 60 * 60 * 1000); // 24 horas
+            
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+                
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                countdownElement.innerHTML = hours.toString().padStart(2, '0') + ":" + 
+                                          minutes.toString().padStart(2, '0') + ":" + 
+                                          seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    countdownElement.innerHTML = "EXPIRADO!";
+                }
+            }, 1000);
+        }
+    }
+    
+    // Iniciar countdown
+    updateCountdown();
+    
     // Console welcome message
     console.log('%c🚀 DevStarter Kit Landing Page', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
     console.log('%cDesenvolvido com ❤️ para desenvolvedores iniciantes', 'color: #3B82F6; font-size: 14px;');
-    
 });
 </script>
 @endsection

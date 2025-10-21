@@ -19,6 +19,9 @@ use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Rotas públicas
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/landing', [HomeController::class, 'landing'])->name('landing');
+Route::get('/landing-test', function() {
+    return view('landing-test');
+});
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses.index');
 Route::get('/courses/{course}', [HomeController::class, 'showCourse'])->name('courses.show');
