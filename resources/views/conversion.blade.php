@@ -99,12 +99,10 @@
                     <div class="text-center">
                         <p class="text-gray-600 font-medium mb-3">Sistema completo funcionando</p>
                         <div class="flex justify-center space-x-4">
-                            <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
+                            <a href="{{ route('demo.login') }}" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors">
                                 <i class="fas fa-play mr-1"></i>Ver Demo
                             </a>
-                            <a href="#" class="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors">
-                                <i class="fas fa-download mr-1"></i>Teste Grátis
-                            </a>
+                        
                         </div>
                     </div>
                 </div>
@@ -266,12 +264,13 @@
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-check text-green-400 mr-3"></i>
-                        <span>Templates prontos: Login, Dashboard e CRUD básico</span>
+                        <span>Template prontos: Login, Dashboard e CRUD básico</span>
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-check text-green-400 mr-3"></i>
-                        <span>Checklist rápido de setup</span>
+                        <span>1 hora de suporte comigo por call, para configurar o sistema e resolver qualquer dúvida.</span>
                     </li>
+
                     <li class="flex items-center">
                         <i class="fas fa-check text-green-400 mr-3"></i>
                         <span>Suporte e comunidade exclusiva</span>
@@ -388,7 +387,7 @@
             Tenha uma base sólida e entregue projetos profissionais hoje mesmo!
         </p>
         
-        <a href="#oferta" class="bg-white text-orange-500 px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block mb-8">
+        <a href="https://pay.kiwify.com.br/i0FGVRc" class="bg-white text-orange-500 px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block mb-8">
             Quero o DevStarter Kit Agora
         </a>
         

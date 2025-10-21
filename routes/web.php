@@ -164,3 +164,6 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/settings/clear-cache', [AdminSettingController::class, 'clearCache'])->name('settings.clear-cache');
     Route::get('/settings/system', [AdminSettingController::class, 'systemInfo'])->name('settings.system');
 });
+
+// Demo Routes
+require __DIR__.'/demo.php';
