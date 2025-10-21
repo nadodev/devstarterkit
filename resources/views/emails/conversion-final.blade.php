@@ -246,13 +246,6 @@
                     💻 Acessar Templates no GitHub
                 </a>
             </div>
-
-            <div style="background-color: #FEF3C7; border: 2px solid #F59E0B; padding: 20px; border-radius: 8px; text-align: center; margin: 25px 0;">
-                <p style="margin: 0; color: #92400E; font-weight: bold; font-size: 16px;">
-                    ⏰ Oferta expira em: <span id="countdown" style="color: #DC2626; font-size: 18px;">23:59:59</span>
-                </p>
-            </div>
-
             <p style="text-align: center; color: #6B7280; font-size: 14px;">
                 🎁 Bônus inclusos • 🛡️ Garantia de 30 dias • ⚡ Acesso imediato
             </p>

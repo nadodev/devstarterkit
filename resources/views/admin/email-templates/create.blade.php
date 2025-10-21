@@ -38,13 +38,13 @@
                     <label for="content" class="block text-sm font-medium text-gray-700">Conteúdo do Email</label>
                     <div class="mt-1">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-sm text-gray-500">Use HTML para formatação. Variáveis: {{name}}, {{email}}</span>
+                            <span class="text-sm text-gray-500">Use HTML para formatação. Variáveis: @{{name}}, @{{email}}</span>
                             <div class="flex space-x-2">
                                 <button type="button" onclick="insertVariable('name')" class="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200">
-                                    Inserir {{name}}
+                                    Inserir @{{name}}
                                 </button>
                                 <button type="button" onclick="insertVariable('email')" class="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200">
-                                    Inserir {{email}}
+                                    Inserir @{{email}}
                                 </button>
                                 <button type="button" onclick="insertButton()" class="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200">
                                     Inserir Botão

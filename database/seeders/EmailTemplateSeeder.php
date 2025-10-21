@@ -170,6 +170,183 @@ class EmailTemplateSeeder extends Seeder
                 ',
                 'is_active' => true,
             ],
+            [
+                'name' => 'Education Value Mail',
+                'subject' => 'Como eu economizo 40h por projeto (sem começar do zero)',
+                'content' => '
+                    <p>Olá <strong>{{name}}</strong>!</p>
+                    
+                    <p>Hoje quero te contar como eu economizo mais de 40 horas por projeto usando uma estratégia que qualquer dev pode aplicar.</p>
+                    
+                    <p><strong>O problema:</strong> Todo projeto novo = começar do zero</p>
+                    <p><strong>A solução:</strong> Ter uma base sólida e reutilizável</p>
+                    
+                    <p>Com o DevStarter Kit, eu tenho:</p>
+                    <ul>
+                        <li>✅ Sistema de login pronto</li>
+                        <li>✅ Dashboard administrativo</li>
+                        <li>✅ CRUD básico funcionando</li>
+                        <li>✅ Design responsivo</li>
+                    </ul>
+                    
+                    <p><strong>Em média, isso me economiza mais de 40 horas por projeto.</strong></p>
+                    <p>E o melhor: qualquer dev pode usar, mesmo começando agora.</p>
+                    
+                    <div style="text-align: center;">
+                        <a href="{{$demoLink}}" class="cta-button">
+                            👉 Veja a demo do DevStarter Kit em ação
+                        </a>
+                    </div>
+                    
+                    <p>Amanhã te mando um bônus especial que normalmente vendo por R$197, mas quero liberar pra você de graça.</p>
+                    
+                    <p>Abraços,<br>Leonardo</p>
+                ',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Offer Conversion Mail',
+                'subject' => 'Oferta especial: DevStarter Kit com 50% OFF',
+                'content' => '
+                    <p>Olá <strong>{{name}}</strong>!</p>
+                    
+                    <p>Como prometido, aqui está sua oferta especial! 🎯</p>
+                    
+                    <p>Por tempo limitado, você pode ter o <strong>DevStarter Kit completo</strong> com <strong>50% DE DESCONTO</strong>!</p>
+                    
+                    <p>O que você vai receber:</p>
+                    <ul>
+                        <li>🚀 Sistema completo Laravel + Vue</li>
+                        <li>🎨 Design moderno e responsivo</li>
+                        <li>🔐 Autenticação segura</li>
+                        <li>📊 Dashboard administrativo</li>
+                        <li>💾 CRUD completo</li>
+                        <li>📱 Totalmente responsivo</li>
+                    </ul>
+                    
+                    <p><strong>Valor normal: R$497</strong><br>
+                    <strong>Seu preço: R$248</strong> (50% OFF)</p>
+                    
+                    <div style="text-align: center;">
+                        <a href="{{url(\'/conversion\')}}" class="cta-button">
+                            🎯 Quero o DevStarter Kit com 50% OFF
+                        </a>
+                    </div>
+                    
+                    <p>Esta oferta é válida apenas por 48 horas. Não perca!</p>
+                    
+                    <p>Abraços,<br>Leonardo</p>
+                ',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Conversion Initial Mail',
+                'subject' => 'Última chance: DevStarter Kit com desconto especial',
+                'content' => '
+                    <p>Olá <strong>{{name}}</strong>!</p>
+                    
+                    <p>Esta é sua <strong>última chance</strong> de garantir o DevStarter Kit com desconto especial! ⏰</p>
+                    
+                    <p>Muitos desenvolvedores já estão usando o DevStarter Kit para:</p>
+                    <ul>
+                        <li>🚀 Entregar projetos 3x mais rápido</li>
+                        <li>💰 Faturar mais com menos trabalho</li>
+                        <li>🎯 Impressionar clientes com qualidade profissional</li>
+                        <li>⏱️ Economizar horas de desenvolvimento</li>
+                    </ul>
+                    
+                    <p><strong>O que você está perdendo:</strong></p>
+                    <p>Enquanto você hesita, outros devs já estão usando o DevStarter Kit para acelerar seus projetos e faturar mais.</p>
+                    
+                    <div style="text-align: center;">
+                        <a href="{{url(\'/conversion\')}}" class="cta-button">
+                            Quero o DevStarter Kit Agora
+                        </a>
+                    </div>
+                    
+                    <p>Esta oferta expira em breve. Não deixe passar!</p>
+                    
+                    <p>Abraços,<br>Leonardo</p>
+                ',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Conversion Social Proof Mail',
+                'subject' => 'Veja o que outros desenvolvedores dizem sobre o DevStarter Kit',
+                'content' => '
+                    <p>Olá <strong>{{name}}</strong>!</p>
+                    
+                    <p>Veja o que outros desenvolvedores estão falando sobre o DevStarter Kit:</p>
+                    
+                    <blockquote style="background: #f8f9fa; padding: 20px; border-left: 4px solid #3B82F6; margin: 20px 0;">
+                        <p><em>"Economizei 30 horas no meu último projeto usando o DevStarter Kit. Simplesmente incrível!"</em></p>
+                        <p><strong>- Maria Silva, Desenvolvedora Full Stack</strong></p>
+                    </blockquote>
+                    
+                    <blockquote style="background: #f8f9fa; padding: 20px; border-left: 4px solid #10B981; margin: 20px 0;">
+                        <p><em>"O DevStarter Kit me ajudou a entregar um projeto em 2 dias que normalmente levaria 2 semanas. Cliente ficou impressionado!"</em></p>
+                        <p><strong>- João Santos, Freelancer</strong></p>
+                    </blockquote>
+                    
+                    <blockquote style="background: #f8f9fa; padding: 20px; border-left: 4px solid #8B5CF6; margin: 20px 0;">
+                        <p><em>"Melhor investimento que fiz na minha carreira. ROI em menos de 1 mês!"</em></p>
+                        <p><strong>- Ana Costa, Tech Lead</strong></p>
+                    </blockquote>
+                    
+                    <p><strong>+127 desenvolvedores</strong> já estão usando o DevStarter Kit para acelerar seus projetos.</p>
+                    
+                    <div style="text-align: center;">
+                        <a href="{{url(\'/conversion\')}}" class="cta-button">
+                            Aproveitar Oferta e Começar Agora
+                        </a>
+                    </div>
+                    
+                    <p>Junte-se a eles e acelere seus projetos também!</p>
+                    
+                    <p>Abraços,<br>Leonardo</p>
+                ',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Conversion Final Mail',
+                'subject' => 'ÚLTIMA CHAMADA: Oferta expira hoje!',
+                'content' => '
+                    <p>Olá <strong>{{name}}</strong>!</p>
+                    
+                    <p><strong>ATENÇÃO:</strong> Esta é sua <strong>ÚLTIMA CHAMADA</strong>! 🚨</p>
+                    
+                    <p>Sua oferta especial do DevStarter Kit com 50% OFF <strong>expira hoje à meia-noite</strong>!</p>
+                    
+                    <p>Após isso, o preço volta ao normal (R$497) e você perderá:</p>
+                    <ul>
+                        <li>❌ 50% de desconto</li>
+                        <li>❌ Bônus exclusivos</li>
+                        <li>❌ Suporte prioritário</li>
+                        <li>❌ Garantia de 30 dias</li>
+                    </ul>
+                    
+                    <p><strong>Não deixe esta oportunidade passar!</strong></p>
+                    
+                    <p>Mais de 127 desenvolvedores já estão usando o DevStarter Kit para:</p>
+                    <ul>
+                        <li>✅ Entregar projetos 3x mais rápido</li>
+                        <li>✅ Faturar mais com menos trabalho</li>
+                        <li>✅ Impressionar clientes</li>
+                        <li>✅ Economizar horas de desenvolvimento</li>
+                    </ul>
+                    
+                    <div style="text-align: center;">
+                        <a href="{{url(\'/conversion\')}}" class="cta-button">
+                            Quero Comprar Agora – Última Chance
+                        </a>
+                    </div>
+                    
+                    <p><strong>Esta é realmente sua última chance!</strong></p>
+                    
+                    <p>Abraços,<br>Leonardo</p>
+                ',
+                'is_active' => true,
+            ],
         ];
 
         foreach ($templates as $template) {

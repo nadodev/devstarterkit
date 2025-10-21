@@ -278,11 +278,7 @@
                 </ul>
             </div>
             
-            <div class="bg-red-500/20 backdrop-blur-sm rounded-xl p-4 mb-8">
-                <p class="text-xl font-bold text-red-300">
-                    ⏰ Oferta expira em: <span id="countdown" class="text-2xl">23:59:59</span>
-                </p>
-            </div>
+            
             
             <a href="https://pay.kiwify.com.br/i0FGVRc" class="bg-orange-500 text-white px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
                 Quero o DevStarter Kit + Bônus Agora
