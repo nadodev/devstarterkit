@@ -76,7 +76,7 @@
                 </div>
             </div>
             
-            <a href="/products" class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-12 py-6 rounded-2xl font-bold text-2xl hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+            <a href="{{ route('conversion') }}" class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-12 py-6 rounded-2xl font-bold text-2xl hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl">
                 🔍 Ver o DevStarter Kit em ação
             </a>
             
