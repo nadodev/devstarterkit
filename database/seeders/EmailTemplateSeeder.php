@@ -216,7 +216,7 @@ class EmailTemplateSeeder extends Seeder
                     
                     <p>O que você vai receber:</p>
                     <ul>
-                        <li>🚀 Sistema completo Laravel + Vue</li>
+                        <li>🚀 Sistema completo Laravel + Blade + TailwindCSS</li>
                         <li>🎨 Design moderno e responsivo</li>
                         <li>🔐 Autenticação segura</li>
                         <li>📊 Dashboard administrativo</li>
