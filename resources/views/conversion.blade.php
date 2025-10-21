@@ -280,7 +280,7 @@
             
             
             
-            <a href="https://pay.kiwify.com.br/i0FGVRc" class="bg-orange-500 text-white px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
+            <a href="https://pay.kiwify.com.br/8FjTcKO" class="bg-orange-500 text-white px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block">
                 Quero o DevStarter Kit + Bônus Agora
             </a>
         </div>
@@ -383,7 +383,7 @@
             Tenha uma base sólida e entregue projetos profissionais hoje mesmo!
         </p>
         
-        <a href="https://pay.kiwify.com.br/i0FGVRc" class="bg-white text-orange-500 px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block mb-8">
+        <a href="https://pay.kiwify.com.br/8FjTcKO" class="bg-white text-orange-500 px-16 py-8 rounded-2xl font-bold text-3xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block mb-8">
             Quero o DevStarter Kit Agora
         </a>
         
