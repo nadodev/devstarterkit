@@ -29,32 +29,7 @@
 <link rel="canonical" href="{{ url()->current() }}">
 
 <!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Produtos e Serviços Digitais",
-  "description": "Catálogo de produtos e serviços digitais para desenvolvedores",
-  "url": "{{ url()->current() }}",
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "Product",
-        "name": "DevStarter Kit Completo",
-        "description": "Kit essencial para desenvolvedores iniciantes e experientes",
-        "category": "Ferramentas"
-      },
-      {
-        "@type": "Product", 
-        "name": "Curso Master de React.js",
-        "description": "Domine React.js do zero ao avançado com projetos práticos",
-        "category": "Cursos"
-      }
-    ]
-  }
-}
-</script>
+
 @endsection
 
 @section('content')
