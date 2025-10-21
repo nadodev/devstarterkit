@@ -234,6 +234,18 @@
                     Quero Comprar Agora – Última Chance
                 </a>
             </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="{{ asset('Domine-Estruturas-Laravel-Do-Zero-ao-Sistema-Profissional.pdf') }}" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);">
+                    📘 Baixar Guia PDF (R$197)
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://github.com/nadodev/templates-login-dashboard-CRUD-basico" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #24292e 0%, #586069 100%);">
+                    💻 Acessar Templates no GitHub
+                </a>
+            </div>
 
             <div style="background-color: #FEF3C7; border: 2px solid #F59E0B; padding: 20px; border-radius: 8px; text-align: center; margin: 25px 0;">
                 <p style="margin: 0; color: #92400E; font-weight: bold; font-size: 16px;">

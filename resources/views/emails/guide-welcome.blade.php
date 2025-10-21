@@ -103,8 +103,14 @@
         <p>Como prometido, aqui está seu acesso ao mini-guia gratuito:</p>
         
         <div style="text-align: center;">
-            <a href="{{ $downloadLink }}" class="cta-button">
-                👉 Baixar "Como Criar Estruturas de Sistema Profissionais do Zero"
+            <a href="{{ asset('Domine-Estruturas-Laravel-Do-Zero-ao-Sistema-Profissional.pdf') }}" class="cta-button" target="_blank">
+                📘 Baixar "Como Criar Estruturas de Sistema Profissionais do Zero"
+            </a>
+        </div>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <a href="https://github.com/nadodev/templates-login-dashboard-CRUD-basico" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #24292e 0%, #586069 100%);">
+                💻 Acessar Templates no GitHub
             </a>
         </div>
         

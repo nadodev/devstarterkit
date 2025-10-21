@@ -40,7 +40,7 @@
     <div class="max-w-6xl mx-auto relative">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="animate-fade-in">
-                <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-white font-display">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white font-display">
                     Crie sistemas completos em <span class="text-yellow-300">horas</span> — com a base que desenvolvedores profissionais usam.
                 </h1>
                 <p class="text-xl lg:text-2xl mb-8 text-blue-100 font-medium">
@@ -62,7 +62,7 @@
                             </label>
                         </div>
                         <button type="submit" class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                            🎁 Quero o Mini Combo gratuito (R$197)
+                            🎁 Quero o Mini Combo gratuito
                         </button>
                         <p class="text-sm text-blue-200 text-center">
                             🔒 Sem spam. Você pode cancelar a qualquer momento.
@@ -152,7 +152,7 @@
         </div>
         
         <button class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-            🎁 Quero o Mini Combo gratuito (R$197)
+            🎁 Quero o Mini Combo gratuito
         </button>
     </div>
 </section>
@@ -296,7 +296,7 @@
         </p>
         
         <button id="final-cta" class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-12 py-6 rounded-2xl font-bold text-2xl hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-            🎁 Quero o Mini Combo gratuito (R$197)
+            🎁 Quero o Mini Combo gratuito
         </button>
         
         <div class="mt-8 text-blue-200">

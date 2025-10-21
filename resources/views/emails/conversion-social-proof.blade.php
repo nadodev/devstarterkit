@@ -212,6 +212,18 @@
                     Aproveitar Oferta e Começar Agora
                 </a>
             </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="{{ asset('Domine-Estruturas-Laravel-Do-Zero-ao-Sistema-Profissional.pdf') }}" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);">
+                    📘 Baixar Guia PDF
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://github.com/nadodev/templates-login-dashboard-CRUD-basico" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #24292e 0%, #586069 100%);">
+                    💻 Acessar Templates no GitHub
+                </a>
+            </div>
 
             <p style="text-align: center; color: #6B7280; font-size: 14px;">
                 🛡️ Garantia de 30 dias • Acesso imediato • Suporte completo

@@ -175,6 +175,18 @@
                     Quero o DevStarter Kit Agora
                 </a>
             </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="{{ asset('Domine-Estruturas-Laravel-Do-Zero-ao-Sistema-Profissional.pdf') }}" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);">
+                    📘 Baixar Guia PDF (R$197)
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://github.com/nadodev/templates-login-dashboard-CRUD-basico" class="cta-button" target="_blank" style="background: linear-gradient(135deg, #24292e 0%, #586069 100%);">
+                    💻 Acessar Templates no GitHub
+                </a>
+            </div>
 
             <div class="benefits">
                 <h3>🎁 Bônus Inclusos (R$ 197):</h3>
