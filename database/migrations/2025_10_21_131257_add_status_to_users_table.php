@@ -15,6 +15,9 @@ return new class extends Migration
             if (!Schema::hasColumn('users', 'status')) {
                 $table->enum('status', ['active', 'inactive'])->default('active')->after('role');
             }
+            if (!Schema::hasColumn('users', 'phone')) {
+                $table->string('phone')->nullable()->after('email');
+            }
             if (!Schema::hasColumn('users', 'company')) {
                 $table->string('company')->nullable()->after('phone');
             }
