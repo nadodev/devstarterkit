@@ -103,9 +103,9 @@ function insertVariable(variable) {
     const textBefore = textarea.value.substring(0, cursorPos);
     const textAfter = textarea.value.substring(cursorPos);
     
-    textarea.value = textBefore + `{{${variable}}}` + textAfter;
+    textarea.value = textBefore + '{{' + variable + '}}' + textAfter;
     textarea.focus();
-    textarea.setSelectionRange(cursorPos + `{{${variable}}}`.length, cursorPos + `{{${variable}}}`.length);
+    textarea.setSelectionRange(cursorPos + ('{{' + variable + '}}').length, cursorPos + ('{{' + variable + '}}').length);
     updatePreview();
 }
 
@@ -140,7 +140,7 @@ function updatePreview() {
     if (subject.trim() || content.trim()) {
         let html = '';
         if (subject.trim()) {
-            html += `<h3 class="font-bold text-lg mb-4">${subject}</h3>`;
+            html += '<h3 class="font-bold text-lg mb-4">' + subject + '</h3>';
         }
         if (content.trim()) {
             html += content.replace(/\n/g, '<br>');
