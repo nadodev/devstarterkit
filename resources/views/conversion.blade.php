@@ -536,6 +536,7 @@
                 <h4 class="text-base font-semibold mb-4 text-white">Links</h4>
                 <ul class="space-y-2">
                     <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Sobre</a></li>
+                    <li><a href="{{ route(name: 'contact') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Contato</a></li>
                     <li><a href="{{ route('privacy-policy') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Política de Privacidade</a></li>
                 </ul>
             </div>
