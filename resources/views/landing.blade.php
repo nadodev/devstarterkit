@@ -89,7 +89,7 @@
                     <div class="text-center">
                         <p class="text-gray-600 font-medium mb-3 text-sm sm:text-base">Sistema DevStarter Kit em Ação</p>
                         <div class="flex justify-center space-x-4">
-                            <a href="{{ route('demo.login') }}" class="w-full bg-blue-500 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors">
+                            <a href="https://devkit-demo.leonardogeja.com.br" target="_blank" rel="noopener noreferrer" class="w-full bg-blue-500 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-blue-600 transition-colors">
                                 <i class="fas fa-play mr-1"></i>Ver Demo
                             </a>
                         </div>

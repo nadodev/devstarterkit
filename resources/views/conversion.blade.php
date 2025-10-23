@@ -126,7 +126,7 @@
                     <div class="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
                     
-                    <a href="{{ route('demo.login') }}" class="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-all duration-300">
+                    <a href="https://devkit-demo.leonardogeja.com.br" target="_blank" rel="noopener noreferrer"  class="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-all duration-300">
                         <i class="fas fa-play mr-2"></i>Ver Demo
                     </a>
                 </div>
