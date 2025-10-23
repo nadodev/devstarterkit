@@ -421,14 +421,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function goToQuestion(category, question) {
-        // Hide search results
         searchResults.classList.add('hidden');
         searchInput.value = '';
         
-        // Filter to the specific category directly
         filterByCategory(category);
         
-        // Scroll to the specific question after a short delay
         setTimeout(() => {
             const categoryElement = document.querySelector(`.faq-category[data-category="${category}"]`);
             if (categoryElement) {
@@ -436,7 +433,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 questionElements.forEach(q => {
                     if (q.querySelector('h4').textContent === question) {
                         q.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        // Highlight the question briefly
                         q.classList.add('highlighted');
                         setTimeout(() => {
                             q.classList.remove('highlighted');
@@ -447,7 +443,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 
-    // Search event listeners
     searchInput.addEventListener('input', function() {
         const query = this.value.trim();
         if (query.length > 2) {
@@ -466,7 +461,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Category filtering
     categoryCards.forEach(card => {
         card.addEventListener('click', function() {
             const category = this.dataset.category;
@@ -475,12 +469,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function filterByCategory(category) {
-        // Hide all categories
         faqCategories.forEach(cat => {
             cat.style.display = 'none';
         });
 
-        // Show selected category
         const selectedCategory = document.querySelector(`.faq-category[data-category="${category}"]`);
         
         if (selectedCategory) {
@@ -489,27 +481,22 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedCategory.style.opacity = '1';
             selectedCategory.scrollIntoView({ behavior: 'smooth' });
             
-            // Show "Show All" button
             document.getElementById('showAllBtn').classList.remove('hidden');
         }
     }
 
     function showAllCategories() {
-        // Show all categories
         faqCategories.forEach(cat => {
             cat.style.display = 'block';
             cat.style.visibility = 'visible';
             cat.style.opacity = '1';
         });
         
-        // Hide "Show All" button
         document.getElementById('showAllBtn').classList.add('hidden');
     }
 
-    // Show all categories button
     document.getElementById('showAllBtn').addEventListener('click', showAllCategories);
 
-    // FAQ item toggle (if you want to add expand/collapse functionality)
     faqItems.forEach(item => {
         const question = item.querySelector('h4');
         const answer = item.querySelector('.faq-answer');
@@ -545,7 +532,6 @@ document.addEventListener('DOMContentLoaded', function() {
     transition: background-color 0.3s ease;
 }
 
-/* Melhorar a aparência dos cards de categoria */
 .category-card {
     transition: all 0.3s ease;
 }
@@ -554,7 +540,6 @@ document.addEventListener('DOMContentLoaded', function() {
     transform: translateY(-4px);
 }
 
-/* Estilo para o destaque da pergunta encontrada */
 .faq-item.highlighted {
     background-color: #fef3c7 !important;
     border-left: 4px solid #f59e0b;

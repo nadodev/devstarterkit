@@ -9,7 +9,6 @@
 <meta name="robots" content="index, follow">
 <meta name="language" content="pt-BR">
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ request()->url() }}">
 <meta property="og:title" content="DevStarter Kit - Crie Sistemas Completos em Horas">
@@ -18,19 +17,16 @@
 <meta property="og:site_name" content="DevStarter Kit">
 <meta property="og:locale" content="pt_BR">
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ request()->url() }}">
 <meta property="twitter:title" content="DevStarter Kit - Crie Sistemas Completos em Horas">
 <meta property="twitter:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
 <meta property="twitter:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
 
-<!-- Canonical URL -->
 <link rel="canonical" href="{{ request()->url() }}">
 @endsection
 
 @section('content')
-<!-- Sticky CTA -->
 <div id="sticky-cta" class="fixed top-0 left-0 right-0 bg-orange-500 text-white py-2 sm:py-3 px-2 sm:px-4 z-50 transform -translate-y-full transition-transform duration-300">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
         <div class="flex items-center text-center sm:text-left">
@@ -43,11 +39,8 @@
     </div>
 </div>
 
-<!-- Seção 1 – Hero -->
 <section class="pt-6 pb-6 relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-    <!-- Animated Background -->
     <div class="absolute inset-0">
-        <!-- Floating particles -->
         <div class="absolute inset-0 opacity-20">
             <div class="particle absolute w-2 h-2 bg-orange-400 rounded-full animate-float-1"></div>
             <div class="particle absolute w-3 h-3 bg-blue-400 rounded-full animate-float-2"></div>
@@ -56,21 +49,17 @@
             <div class="particle absolute w-1 h-1 bg-yellow-400 rounded-full animate-float-5"></div>
         </div>
         
-        <!-- Gradient overlay -->
         <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-blue-500/10"></div>
     </div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <!-- Left Content -->
             <div class="text-center lg:text-left">
-                <!-- Badge -->
                 <div class="inline-flex items-center bg-orange-500/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs font-medium">
                     <span class="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
                     <span class="text-center">🔥 +127 desenvolvedores já aceleraram</span>
                 </div>
                 
-                <!-- Main Headline -->
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
                     <span class="block text-white">Crie sistemas</span>
                     <span class="block text-white">completos em</span>
@@ -80,13 +69,11 @@
                     <span class="block text-white">não em semanas!</span>
                 </h1>
                 
-                <!-- Subtitle -->
                 <p class="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 lg:mb-10 text-gray-300 max-w-2xl mx-auto lg:mx-0">
                     O <strong class="text-orange-400">DevStarter Kit</strong> é a base completa que você precisa para 
                     entregar projetos profissionais em tempo recorde.
                 </p>
                 
-                <!-- Features Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 lg:mb-10">
                     <div class="flex items-center justify-center lg:justify-start space-x-3 bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10">
                         <div class="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full flex items-center justify-center">
@@ -118,8 +105,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="#oferta" class="group relative bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-orange-500/25 animate-pulse-border">
                     <span class="relative z-10">Quero o DevStarter Kit Agora</span>
@@ -131,7 +116,6 @@
                     </a>
                 </div>
                 
-                <!-- Trust Indicators -->
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-6 mt-6 sm:mt-8 lg:mt-10">
                     <div class="flex items-center space-x-2">
                         <div class="flex text-yellow-400">
@@ -149,11 +133,8 @@
                 </div>
             </div>
             
-            <!-- Right Content - Interactive Demo -->
             <div class="relative">
-                <!-- Main Demo Card -->
                 <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <!-- Browser Header -->
                     <div class="bg-gray-100 px-4 py-3 flex items-center space-x-2">
                         <div class="w-3 h-3 bg-red-500 rounded-full"></div>
                         <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
@@ -163,9 +144,7 @@
                         </div>
                     </div>
                     
-                    <!-- Demo Content -->
                     <div class="p-6 bg-gradient-to-br from-gray-50 to-white">
-                        <!-- Stats Cards -->
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <div class="bg-blue-50 rounded-xl p-4">
                                 <div class="text-2xl font-bold text-blue-600">127</div>
@@ -177,7 +156,6 @@
                             </div>
                         </div>
                         
-                        <!-- Progress Bars -->
                         <div class="space-y-3 mb-6">
                             <div>
                                 <div class="flex justify-between text-xs text-gray-600 mb-1">
@@ -208,21 +186,18 @@
                             </div>
                         </div>
                         
-                        <!-- Action Button -->
                         <button class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105">
                             <i class="fas fa-rocket mr-2"></i>Sistema Funcionando
                         </button>
                     </div>
                 </div>
                 
-                <!-- Floating Elements -->
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse"></div>
                 <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
             </div>
         </div>
     </div>
     
-    <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
@@ -230,7 +205,6 @@
     </div>
 </section>
 
-<!-- Seção 2 – Prova Social -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-white">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12 sm:mb-16">
@@ -280,7 +254,6 @@
     </div>
 </section>
 
-<!-- Seção 3 – Benefícios -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-100">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12 sm:mb-16">
@@ -347,14 +320,11 @@
     </div>
 </section>
 
-<!-- Tabela Comparativa -->
 <section class="py-20 px-4 bg-white">
     @include('components.comparison-table')
 </section>
 
-<!-- Seção 4 – Oferta e Escassez -->
 <section id="oferta" class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-800 text-white relative overflow-hidden">
-    <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
         <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     </div>
@@ -403,7 +373,6 @@
     </div>
 </section>
 
-<!-- Seção 5 – Garantia -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-white">
     <div class="max-w-4xl mx-auto text-center">
         <div class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8">
@@ -441,7 +410,6 @@
     </div>
 </section>
 
-<!-- Seção 6 – FAQs -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-100">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 sm:mb-16">
@@ -484,9 +452,7 @@
     </div>
 </section>
 
-<!-- Seção 7 – Última Chamada -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-orange-500 text-white relative overflow-hidden">
-    <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
         <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     </div>
@@ -511,7 +477,6 @@
     </div>
 </section>
 
-<!-- Rodapé -->
 <footer class="bg-gray-900 text-white py-12 px-4">
     <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-4 gap-8">
@@ -535,7 +500,6 @@
             <div>
                 <h4 class="text-base font-semibold mb-4 text-white">Links</h4>
                 <ul class="space-y-2">
-                    <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Sobre</a></li>
                     <li><a href="{{ route(name: 'contact') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Contato</a></li>
                     <li><a href="{{ route('privacy-policy') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Política de Privacidade</a></li>
                 </ul>
