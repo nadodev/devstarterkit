@@ -368,17 +368,83 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             let html = '<div class="space-y-4">';
             results.forEach(item => {
+                const question = item.querySelector('h4').textContent;
+                const answer = item.querySelector('.faq-answer').textContent;
+                const category = item.closest('.faq-category').dataset.category;
+                const categoryName = getCategoryName(category);
+                
                 html += `
-                    <div class="bg-white rounded-lg p-4 shadow-md">
-                        <h4 class="font-semibold text-gray-800 mb-2">${item.querySelector('h4').textContent}</h4>
-                        <div class="text-gray-600 text-sm">${item.querySelector('.faq-answer').textContent.substring(0, 150)}...</div>
+                    <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all cursor-pointer search-result-item" 
+                         data-category="${category}" data-question="${question}">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <div class="flex items-center mb-2">
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-3">${categoryName}</span>
+                                    <span class="text-xs text-gray-500">Clique para ver</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-800 mb-2">${question}</h4>
+                                <div class="text-gray-600 text-sm">${answer.substring(0, 200)}${answer.length > 200 ? '...' : ''}</div>
+                            </div>
+                            <div class="ml-4 flex items-center">
+                                <i class="fas fa-arrow-right text-gray-400 transition-all"></i>
+                            </div>
+                        </div>
                     </div>
                 `;
             });
             html += '</div>';
             searchResults.innerHTML = html;
+            
+            // Add click event listeners to search result items
+            document.querySelectorAll('.search-result-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    const question = this.dataset.question;
+                    goToQuestion(category, question);
+                });
+            });
         }
         searchResults.classList.remove('hidden');
+    }
+
+    function getCategoryName(category) {
+        const categoryNames = {
+            'instalacao': 'Instalação',
+            'configuracao': 'Configuração',
+            'personalizacao': 'Personalização',
+            'troubleshooting': 'Solução de Problemas',
+            'desenvolvimento': 'Desenvolvimento',
+            'deploy': 'Deploy',
+            'suporte': 'Suporte'
+        };
+        return categoryNames[category] || category;
+    }
+
+    function goToQuestion(category, question) {
+        // Hide search results
+        searchResults.classList.add('hidden');
+        searchInput.value = '';
+        
+        // Filter to the specific category directly
+        filterByCategory(category);
+        
+        // Scroll to the specific question after a short delay
+        setTimeout(() => {
+            const categoryElement = document.querySelector(`.faq-category[data-category="${category}"]`);
+            if (categoryElement) {
+                const questionElements = categoryElement.querySelectorAll('.faq-item');
+                questionElements.forEach(q => {
+                    if (q.querySelector('h4').textContent === question) {
+                        q.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Highlight the question briefly
+                        q.classList.add('highlighted');
+                        setTimeout(() => {
+                            q.classList.remove('highlighted');
+                        }, 3000);
+                    }
+                });
+            }
+        }, 100);
     }
 
     // Search event listeners
@@ -416,14 +482,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show selected category
         const selectedCategory = document.querySelector(`.faq-category[data-category="${category}"]`);
+        
         if (selectedCategory) {
             selectedCategory.style.display = 'block';
+            selectedCategory.style.visibility = 'visible';
+            selectedCategory.style.opacity = '1';
             selectedCategory.scrollIntoView({ behavior: 'smooth' });
             
             // Show "Show All" button
             document.getElementById('showAllBtn').classList.remove('hidden');
-        } else {
-            console.log('Category not found:', category);
         }
     }
 
@@ -431,6 +498,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show all categories
         faqCategories.forEach(cat => {
             cat.style.display = 'block';
+            cat.style.visibility = 'visible';
+            cat.style.opacity = '1';
         });
         
         // Hide "Show All" button
@@ -455,5 +524,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<style>
+.search-result-item {
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.search-result-item:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.search-result-item:hover .fas.fa-arrow-right {
+    color: #3b82f6;
+    transform: translateX(4px);
+}
+
+.faq-item {
+    transition: background-color 0.3s ease;
+}
+
+/* Melhorar a aparência dos cards de categoria */
+.category-card {
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Estilo para o destaque da pergunta encontrada */
+.faq-item.highlighted {
+    background-color: #fef3c7 !important;
+    border-left: 4px solid #f59e0b;
+    padding-left: 1rem;
+}
+</style>
 @endsection
 
