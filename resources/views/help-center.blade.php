@@ -74,6 +74,14 @@
                 <p class="text-gray-600">Adicionar novas funcionalidades e módulos</p>
             </div>
 
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer category-card" data-category="deploy">
+                <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Deploy</h3>
+                <p class="text-gray-600">Como fazer deploy em produção</p>
+            </div>
+
             <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer category-card" data-category="suporte">
                 <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
                     <i class="fas fa-headset text-white text-2xl"></i>
@@ -85,7 +93,12 @@
 
         <!-- FAQ Section -->
         <div id="faqSection">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 text-center">Perguntas Frequentes</h2>
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Perguntas Frequentes</h2>
+                <button id="showAllBtn" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors hidden">
+                    Ver Todas as Categorias
+                </button>
+            </div>
             
             <!-- Installation FAQ -->
             <div class="faq-category" data-category="instalacao">
@@ -110,7 +123,7 @@
                         <h4 class="text-lg font-semibold text-gray-800 mb-3">Quais são os requisitos do sistema?</h4>
                         <div class="faq-answer text-gray-600">
                             <ul class="list-disc pl-6 space-y-1">
-                                <li>PHP 8.0 ou superior</li>
+                                <li>PHP 8.3 ou superior</li>
                                 <li>MySQL 5.7 ou superior</li>
                                 <li>Composer</li>
                                 <li>Node.js e NPM (para assets)</li>
@@ -234,6 +247,51 @@ php artisan storage:link</code></pre>
                 </div>
             </div>
 
+            <!-- Deploy FAQ -->
+            <div class="faq-category" data-category="deploy">
+                <h3 class="text-xl font-bold text-gray-700 mb-6">🚀 Deploy</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="faq-item bg-white rounded-2xl p-6 shadow-lg">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Como fazer deploy na Hostinger?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p class="mb-3">Para fazer deploy na Hostinger:</p>
+                            <ol class="list-decimal pl-6 space-y-2">
+                                <li>Suba seu projeto para o GitHub</li>
+                                <li>Acesse o painel da Hostinger via SSH</li>
+                                <li>Configure o banco de dados no painel</li>
+                                <li>Clone o repositório no servidor</li>
+                                <li>Configure .htaccess e index.php</li>
+                                <li>Execute composer install e npm run build</li>
+                                <li>Configure o arquivo .env para produção</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-2xl p-6 shadow-lg">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Erro ao compilar assets (npm run build)</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p class="mb-3">Se encontrar erro de Node.js, execute:</p>
+                            <pre class="bg-gray-100 p-4 rounded-lg text-sm"><code>export RAYON_NUM_THREADS=1
+export UV_THREADPOOL_SIZE=1
+npm run build</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-2xl p-6 shadow-lg">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Como configurar o .htaccess para Laravel?</h4>
+                        <div class="faq-answer text-gray-600">
+                            <p class="mb-3">Crie um arquivo .htaccess na raiz com:</p>
+                            <pre class="bg-gray-100 p-4 rounded-lg text-sm"><code>&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+&lt;/IfModule&gt;
+Options -Indexes</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Support FAQ -->
             <div class="faq-category" data-category="suporte">
                 <h3 class="text-xl font-bold text-gray-700 mb-6">🎧 Suporte</h3>
@@ -265,7 +323,7 @@ php artisan storage:link</code></pre>
         <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 text-white text-center">
             <h3 class="text-2xl font-bold mb-4">Não encontrou o que procurava?</h3>
             <p class="text-orange-100 mb-6">Entre em contato conosco e teremos prazer em ajudar!</p>
-            <a href="mailto:suporte@devstarterkit.com" class="bg-white text-orange-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <a href="{{ route(name: 'contact') }}" class="bg-white text-orange-500 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Entrar em Contato
             </a>
         </div>
@@ -357,12 +415,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Show selected category
-        const selectedCategory = document.querySelector(`[data-category="${category}"]`);
+        const selectedCategory = document.querySelector(`.faq-category[data-category="${category}"]`);
         if (selectedCategory) {
             selectedCategory.style.display = 'block';
             selectedCategory.scrollIntoView({ behavior: 'smooth' });
+            
+            // Show "Show All" button
+            document.getElementById('showAllBtn').classList.remove('hidden');
+        } else {
+            console.log('Category not found:', category);
         }
     }
+
+    function showAllCategories() {
+        // Show all categories
+        faqCategories.forEach(cat => {
+            cat.style.display = 'block';
+        });
+        
+        // Hide "Show All" button
+        document.getElementById('showAllBtn').classList.add('hidden');
+    }
+
+    // Show all categories button
+    document.getElementById('showAllBtn').addEventListener('click', showAllCategories);
 
     // FAQ item toggle (if you want to add expand/collapse functionality)
     faqItems.forEach(item => {
@@ -380,3 +456,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endsection
+
