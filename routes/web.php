@@ -30,6 +30,19 @@ Route::get('/conversion', function() {
 Route::get('/thank-you', function() {
     return view('thank-you');
 });
+Route::get('/privacy-policy', function() {
+    return view('privacy-policy');
+})->name('privacy-policy');
+Route::get('/help-center', function() {
+    return view('help-center');
+})->name('help-center');
+Route::get('/conversion/documentation', function() {
+    return view('documentation');
+})->name('documentation');
+Route::get('/contact', function() {
+    return view('contact');
+})->name('contact');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses.index');
 Route::get('/courses/{course}', [HomeController::class, 'showCourse'])->name('courses.show');
