@@ -536,7 +536,6 @@
                 <h4 class="text-base font-semibold mb-4 text-white">Links</h4>
                 <ul class="space-y-2">
                     <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Sobre</a></li>
-                    <li><a href="{{ route('contact') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Contato</a></li>
                     <li><a href="{{ route('privacy-policy') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Política de Privacidade</a></li>
                 </ul>
             </div>
@@ -545,7 +544,6 @@
                 <ul class="space-y-2">
                     <li><a href="{{ route('help-center') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Central de Ajuda</a></li>
                     <li><a href="{{ route('documentation') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Documentação</a></li>
-                    <li><a href="{{ route('contact') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Comunidade</a></li>
                 </ul>
             </div>
         </div>
