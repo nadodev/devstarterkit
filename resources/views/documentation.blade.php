@@ -108,9 +108,9 @@
                                 <h3 class="text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4">Requisitos do Sistema</h3>
                                 <div class="bg-gray-50 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6">
                                     <ul class="list-disc pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-700">
-                                        <li><strong>PHP:</strong> 8.0 ou superior</li>
+                                        <li><strong>PHP:</strong> 8.3 ou superior</li>
                                         <li><strong>Composer:</strong> Última versão</li>
-                                        <li><strong>Node.js:</strong> 16.x ou superior</li>
+                                        <li><strong>Node.js:</strong> 18.x ou superior</li>
                                         <li><strong>NPM:</strong> 8.x ou superior</li>
                                         <li><strong>MySQL:</strong> 5.7 ou superior</li>
                                         <li><strong>Servidor Web:</strong> Apache/Nginx</li>
@@ -121,10 +121,10 @@
 
                                 <div class="space-y-4 sm:space-y-6">
                                     <div class="border-l-4 border-blue-500 pl-4 sm:pl-6">
-                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">1. Download e Extração</h4>
-                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Após a compra, você receberá um link para download do
+                                    <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">1. Download e Extração</h4>
+                                    <p class="text-sm sm:text-base text-gray-600 mb-3">Após a compra, você receberá um link para download do
                                             arquivo ZIP.</p>
-                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Extrair o arquivo ZIP no diretório do seu servidor
+                                    <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Extrair o arquivo ZIP no diretório do seu servidor
     unzip devstarter-kit.zip
     cd devstarter-kit</code></pre>
                                     </div>
@@ -393,37 +393,166 @@
                                  <div class="w-8 h-8 sm:w-10 sm:h-10 bg-red-500 rounded-full flex items-center justify-center mr-3 sm:mr-4">
                                      <i class="fas fa-rocket text-white text-sm sm:text-lg"></i>
                                  </div>
-                                 <h2 class="text-lg sm:text-xl font-bold text-gray-800">Deploy</h2>
+                                 <h2 class="text-lg sm:text-xl font-bold text-gray-800">Deploy em Produção</h2>
                              </div>
 
                             <div class="prose prose-sm sm:prose-lg max-w-none">
-                                <h3 class="text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4">Deploy em Produção</h3>
+                                <h3 class="text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4">Deploy na Hostinger</h3>
+                                <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">Guia completo para fazer deploy do seu sistema Laravel na Hostinger.</p>
 
                                 <div class="space-y-4 sm:space-y-6">
+                                    <div class="bg-blue-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">1. Preparar o Projeto no GitHub</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Primeiro, faça upload do seu projeto para o GitHub:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Inicializar repositório Git
+    git init
+    git add .
+    git commit -m "Initial commit"
+    
+    # Conectar ao repositório remoto
+    git remote add origin https://github.com/seuusuario/seu-repositorio.git
+    git push -u origin main</code></pre>
+                                    </div>
+
+                                    <div class="bg-green-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">2. Acessar o Painel da Hostinger</h4>
+                                        <ol class="list-decimal pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-700">
+                                            <li>Acesse <code class="bg-gray-200 px-2 py-1 rounded text-xs sm:text-sm">https://hpanel.hostinger.com/websites</code></li>
+                                            <li>Entre no painel de controle do seu site</li>
+                                            <li>No menu, acesse <strong>Avançado</strong> → <strong>SSH</strong></li>
+                                            <li>Copie o comando SSH (exemplo: <code class="bg-gray-200 px-2 py-1 rounded text-xs sm:text-sm">ssh -p 65002 u98565651@185.123.133.132</code>)</li>
+                                            <li>Cole no terminal e digite a senha do painel</li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="bg-orange-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">3. Configurar o Banco de Dados</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">No painel da Hostinger:</p>
+                                        <ol class="list-decimal pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-sm sm:text-base text-gray-700">
+                                            <li>Acesse <strong>Gerenciamento de Banco de Dados</strong></li>
+                                            <li>Crie um novo usuário e senha para o banco</li>
+                                            <li>Anote as credenciais para usar no arquivo .env</li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="bg-purple-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">4. Configurar o Servidor</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Após conectar via SSH, execute os seguintes comandos:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Navegar para o diretório do domínio
+    cd domains
+    cd teudominio.com.br
+    cd public_html
+    
+    # Remover arquivo padrão e clonar o projeto
+    rm default.php
+    git clone https://github.com/seuusuario/seu-repositorio.git .</code></pre>
+                                    </div>
+
+                                    <div class="bg-indigo-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">5. Configurar o .htaccess</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Criar arquivo .htaccess na raiz:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Criar arquivo .htaccess
+    touch .htaccess
+    nano .htaccess</code></pre>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3 mt-3">Adicione o seguinte conteúdo:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code>&lt;IfModule mod_rewrite.c&gt;
+    RewriteEngine On
+    
+    # Redireciona todas as requisições para o index.php na raiz
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+&lt;/IfModule&gt;
+
+# Proteção contra listagem de diretórios
+Options -Indexes</code></pre>
+                                        <p class="text-sm sm:text-base text-gray-600 mt-3">Salve com <code class="bg-gray-200 px-2 py-1 rounded text-xs sm:text-sm">Ctrl + O</code> e saia com <code class="bg-gray-200 px-2 py-1 rounded text-xs sm:text-sm">Ctrl + X</code></p>
+                                    </div>
+
+                                    <div class="bg-teal-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">6. Configurar o index.php</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Editar o arquivo index.php na pasta public:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Navegar para a pasta public
+    cd public
+    nano index.php</code></pre>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3 mt-3">Substitua todo o conteúdo por:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code>&lt;?php
+
+use Illuminate\Http\Request;
+
+define('LARAVEL_START', microtime(true));
+
+// Determine if the application is in maintenance mode...
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
+
+// Register the Composer autoloader...
+require __DIR__.'/../vendor/autoload.php';
+
+// Bootstrap Laravel and handle the request...
+(require_once __DIR__.'/../bootstrap/app.php')
+    -&gt;handleRequest(Request::capture());</code></pre>
+                                    </div>
+
                                     <div class="bg-red-50 rounded-lg p-4 sm:p-6">
-                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">1. Configurações de Produção
-                                        </h4>
-                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Configurar .env para produção
-    APP_ENV=production
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">7. Instalar Dependências e Configurar</h4>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Voltar para a raiz do projeto
+    cd ..
+    
+    # Instalar dependências PHP
+    composer install
+    
+    # Gerar chave da aplicação
+    php artisan key:generate
+    
+    # Configurar banco de dados
+    php artisan migrate:install
+    php artisan migrate --force
+    php artisan db:seed
+    
+    # Instalar dependências Node.js
+    npm install</code></pre>
+                                    </div>
+
+                                    <div class="bg-yellow-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">8. Compilar Assets</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Se encontrar erro de Node.js, execute primeiro:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Configurar variáveis de ambiente para evitar erro
+    export RAYON_NUM_THREADS=1
+    export UV_THREADPOOL_SIZE=1
+    
+    # Compilar assets
+    npm run build</code></pre>
+                                    </div>
+
+                                    <div class="bg-gray-50 rounded-lg p-4 sm:p-6">
+                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">9. Configurar .env para Produção</h4>
+                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Edite o arquivo .env com as configurações de produção:</p>
+                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code>APP_ENV=production
     APP_DEBUG=false
-    APP_URL=https://seudominio.com</code></pre>
+    APP_URL=https://seudominio.com
+    
+    # Configurações do banco de dados
+    DB_CONNECTION=mysql
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_DATABASE=seu_banco
+    DB_USERNAME=seu_usuario
+    DB_PASSWORD=sua_senha
+    
+    # Configurações de e-mail
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.gmail.com
+    MAIL_PORT=587
+    MAIL_USERNAME=seu_email@gmail.com
+    MAIL_PASSWORD=sua_senha_app
+    MAIL_ENCRYPTION=tls</code></pre>
                                     </div>
+                                </div>
 
-                                    <div class="bg-red-50 rounded-lg p-4 sm:p-6">
-                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">2. Otimizar Aplicação</h4>
-                                        <pre class="bg-gray-900 text-green-400 p-3 sm:p-4 rounded-lg text-xs sm:text-sm overflow-x-auto"><code># Otimizar para produção
-    composer install --optimize-autoloader --no-dev
-    npm run build
-    php artisan config:cache
-    php artisan route:cache
-    php artisan view:cache</code></pre>
-                                    </div>
-
-                                    <div class="bg-red-50 rounded-lg p-4 sm:p-6">
-                                        <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">3. Configurar Servidor Web</h4>
-                                        <p class="text-sm sm:text-base text-gray-600 mb-3">Configure o Apache/Nginx para apontar para a pasta
-                                            <code class="bg-gray-200 px-2 py-1 rounded text-xs sm:text-sm">public</code></p>
-                                    </div>
+                                <div class="bg-green-100 border-l-4 border-green-500 p-4 sm:p-6 mt-6">
+                                    <h4 class="text-base sm:text-lg font-semibold text-green-800 mb-2">✅ Deploy Concluído!</h4>
+                                    <p class="text-sm sm:text-base text-green-700">Seu sistema Laravel está agora 100% em produção na Hostinger!</p>
                                 </div>
                             </div>
                         </div>

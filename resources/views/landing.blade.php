@@ -334,7 +334,7 @@
                 <h4 class="text-sm sm:text-base font-semibold mb-3 sm:mb-4 text-white">Suporte</h4>
                 <ul class="space-y-1 sm:space-y-2">
                     <li><a href="{{ route('help-center') }}" class="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">Central de Ajuda</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">Documentação</a></li>
+                    <li><a href="{{ route('documentation') }}" class="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm">Documentação</a></li>
                 </ul>
             </div>
         </div>
