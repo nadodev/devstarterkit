@@ -20,11 +20,11 @@ use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/', function() {
-   return redirect()->route('conversion');
+    return view('conversion');
 })->name('home');
 
 Route::get('/landing', [HomeController::class, 'landing'])->name('landing');
-Route::get('/', function() {
+Route::get('/conversion', function() {
     return view('conversion');
 })->name('conversion');
 Route::get('/thank-you', function() {
