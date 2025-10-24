@@ -43,11 +43,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
-                        <a href="{{ route('home') }}" class="flex items-center">
+                        <a href="{{ route('conversion') }}" class="flex items-center">
                             <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-3">
                                 <i class="fas fa-rocket text-white text-sm"></i>
                             </div>
-                            <span class="text-xl font-bold text-gray-900">DevStarter Kit</span>
+                            <span class="text-xl font-bold text-gray-900">Laravel ProStarter</span>
                         </a>
                     </div>
                     
