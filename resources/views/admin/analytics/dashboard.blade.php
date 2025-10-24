@@ -285,16 +285,26 @@
         console.log('🔄 Dados do funil:', funnelData);
         console.log('🔢 Valores individuais:', funnelData.map(d => d.value));
         
+        // NORMALIZAR DADOS: Converter para porcentagens para manter escala fixa
+        const maxValue = Math.max(...funnelData.map(d => d.value));
+        const normalizedData = funnelData.map(d => ({
+            name: d.name,
+            value: maxValue > 0 ? Math.round((d.value / maxValue) * 100) : 0,
+            originalValue: d.value // Manter valor original para tooltip
+        }));
+        
+        console.log('📊 Dados normalizados:', normalizedData);
+        
         // Verificar se os dados são os mesmos para evitar recriação desnecessária
         if (window.conversionChart && window.lastConversionData) {
-            const currentData = JSON.stringify(funnelData);
+            const currentData = JSON.stringify(normalizedData);
             if (currentData === window.lastConversionData) {
                 console.log('📊 Dados de conversão inalterados, pulando atualização');
                 return;
             }
         }
         
-        window.lastConversionData = JSON.stringify(funnelData);
+        window.lastConversionData = JSON.stringify(normalizedData);
         
         const ctx = document.getElementById('conversion-funnel').getContext('2d');
         
@@ -303,14 +313,14 @@
             window.conversionChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de conversão');
+        console.log('🆕 Criando novo gráfico de conversão normalizado');
         window.conversionChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: funnelData.map(d => d.name),
+                labels: normalizedData.map(d => d.name),
                 datasets: [{
-                    label: 'Número de Usuários',
-                    data: funnelData.map(d => d.value),
+                    label: 'Proporção (%)',
+                    data: normalizedData.map(d => d.value),
                     backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'],
                     borderColor: ['#2563EB', '#059669', '#D97706', '#DC2626'],
                     borderWidth: 1
@@ -319,19 +329,26 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const originalValue = funnelData[context.dataIndex].value;
+                                return context.label + ': ' + originalValue.toLocaleString() + ' usuários';
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
-                        max: 2000, // Limite máximo reduzido do eixo Y
+                        max: 100, // Escala fixa de 0-100%
                         min: 0,
                         ticks: { 
-                            maxTicksLimit: 6, // Limitar número de ticks
+                            maxTicksLimit: 6,
                             callback: function(value) { 
-                                if (value >= 1000) {
-                                    return (value / 1000).toFixed(1) + 'k';
-                                }
-                                return value.toLocaleString(); 
+                                return value + '%';
                             }
                         }
                     }
@@ -354,8 +371,16 @@
         console.log('🏷️ Labels:', trafficLabels);
         console.log('📈 Valores:', trafficValues);
 
+        // NORMALIZAR DADOS: Converter para porcentagens para manter escala fixa
+        const totalVisitors = trafficValues.reduce((sum, val) => sum + val, 0);
+        const normalizedValues = trafficValues.map(val => 
+            totalVisitors > 0 ? Math.round((val / totalVisitors) * 100) : 0
+        );
+        
+        console.log('📊 Dados normalizados:', normalizedValues);
+
         // Verificar se os dados são os mesmos para evitar recriação desnecessária
-        const currentTrafficData = JSON.stringify({labels: trafficLabels, values: trafficValues});
+        const currentTrafficData = JSON.stringify({labels: trafficLabels, values: normalizedValues});
         if (window.trafficChart && window.lastTrafficData) {
             if (currentTrafficData === window.lastTrafficData) {
                 console.log('📊 Dados de tráfego inalterados, pulando atualização');
@@ -372,13 +397,13 @@
             window.trafficChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de tráfego');
+        console.log('🆕 Criando novo gráfico de tráfego normalizado');
         window.trafficChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: trafficLabels,
                 datasets: [{
-                    data: trafficValues,
+                    data: normalizedValues,
                     backgroundColor: ['#3B82F6', '#EF4444', '#10B981', '#F59E0B'],
                     hoverOffset: 4
                 }]
@@ -391,11 +416,9 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                const value = context.parsed;
-                                if (value >= 1000) {
-                                    return context.label + ': ' + (value / 1000).toFixed(1) + 'k visitantes';
-                                }
-                                return context.label + ': ' + value.toLocaleString() + ' visitantes';
+                                const originalValue = trafficValues[context.dataIndex];
+                                const percentage = normalizedValues[context.dataIndex];
+                                return context.label + ': ' + originalValue.toLocaleString() + ' visitantes (' + percentage + '%)';
                             }
                         }
                     }
