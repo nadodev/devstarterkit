@@ -61,13 +61,17 @@ Route::get('/cookies/consent', [App\Http\Controllers\CookieController::class, 'g
 Route::delete('/cookies/consent', [App\Http\Controllers\CookieController::class, 'revokeConsent'])->name('cookies.revoke');
 
 // Analytics Dashboard Routes
-Route::get('/admin/analytics', [App\Http\Controllers\AnalyticsController::class, 'dashboard'])->name('analytics.dashboard');
-Route::get('/admin/analytics/api', [App\Http\Controllers\AnalyticsController::class, 'api'])->name('analytics.api');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/analytics', [App\Http\Controllers\AnalyticsController::class, 'dashboard'])->name('analytics.dashboard');
+    Route::get('/admin/analytics/api', [App\Http\Controllers\AnalyticsController::class, 'api'])->name('analytics.api');
+});
 
 // Analytics Configuration Routes
-Route::get('/admin/analytics/config', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'index'])->name('admin.analytics.config');
-Route::post('/admin/analytics/config', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'store'])->name('admin.analytics.config.store');
-Route::post('/admin/analytics/config/test', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'test'])->name('admin.analytics.config.test');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/analytics/config', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'index'])->name('admin.analytics.config');
+    Route::post('/admin/analytics/config', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'store'])->name('admin.analytics.config.store');
+    Route::post('/admin/analytics/config/test', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'test'])->name('admin.analytics.config.test');
+});
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses.index');
 Route::get('/courses/{course}', [HomeController::class, 'showCourse'])->name('courses.show');

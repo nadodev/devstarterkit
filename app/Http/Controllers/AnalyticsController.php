@@ -14,6 +14,11 @@ class AnalyticsController extends Controller
      */
     public function dashboard()
     {
+        // Verificar se o usuário está autenticado
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('error', 'Você precisa estar logado para acessar o dashboard.');
+        }
+
         // Debug: verificar configurações
         $config = AnalyticsConfigHelper::getConfig();
         
