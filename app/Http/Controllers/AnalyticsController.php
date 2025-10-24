@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\CookieHelper;
 use App\Helpers\AnalyticsConfigHelper;
+use App\Models\AnalyticsEvent;
 
 class AnalyticsController extends Controller
 {
@@ -104,15 +105,21 @@ class AnalyticsController extends Controller
      */
     private function getEventData()
     {
+        $eventCounts = AnalyticsEvent::getEventCounts();
+        
+        $events = [
+            ['name' => 'page_view', 'count' => $eventCounts['page_view'] ?? 0],
+            ['name' => 'cta_click', 'count' => $eventCounts['cta_click'] ?? 0],
+            ['name' => 'video_click', 'count' => $eventCounts['video_click'] ?? 0],
+            ['name' => 'faq_interaction', 'count' => $eventCounts['faq_interaction'] ?? 0],
+            ['name' => 'deep_scroll', 'count' => $eventCounts['deep_scroll'] ?? 0],
+            ['name' => 'time_on_page', 'count' => $eventCounts['time_on_page'] ?? 0],
+        ];
+
         return response()->json([
             'success' => true,
             'data' => [
-                'events' => [
-                    ['name' => 'page_view', 'count' => 9719],
-                    ['name' => 'cta_click', 'count' => 0], // Sem dados ainda
-                    ['name' => 'video_click', 'count' => 0], // Sem dados ainda
-                    ['name' => 'faq_interaction', 'count' => 0], // Sem dados ainda
-                ],
+                'events' => $events,
             ]
         ]);
     }
@@ -202,5 +209,30 @@ class AnalyticsController extends Controller
             ['type' => 'New', 'percentage' => rand(60, 80)],
             ['type' => 'Returning', 'percentage' => rand(20, 40)],
         ];
+    }
+
+    /**
+     * Registrar evento de analytics
+     */
+    public function track(Request $request)
+    {
+        $request->validate([
+            'event_type' => 'required|string',
+            'event_name' => 'required|string',
+            'event_data' => 'nullable|array',
+        ]);
+
+        try {
+            AnalyticsEvent::track(
+                $request->event_type,
+                $request->event_name,
+                $request->event_data ?? [],
+                $request
+            );
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
+        }
     }
 }

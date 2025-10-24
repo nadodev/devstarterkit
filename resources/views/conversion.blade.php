@@ -844,13 +844,50 @@
             console.log('📊 Inicializando tracking de eventos...');
             
             // Tracking de visualização da página
+            fetch('/analytics/track', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    event_type: 'page_view',
+                    event_name: 'Page Viewed',
+                    event_data: {
+                        page_title: document.title,
+                        page_url: window.location.href,
+                        timestamp: new Date().toISOString()
+                    }
+                })
+            }).catch(error => console.error('Erro ao enviar evento:', error));
+            
             if (typeof trackConversion === 'function') {
                 trackConversion('page_view');
             }
             
             // Tracking de cliques nos botões CTA
-            document.querySelectorAll('a[href*="checkout"], button[onclick*="checkout"], .cta-button').forEach(button => {
+            document.querySelectorAll('a[href*="checkout"], button[onclick*="checkout"], .cta-button, a[href*="kiwify"]').forEach(button => {
                 button.addEventListener('click', function() {
+                    console.log('🎯 CTA clicado!');
+                    
+                    // Enviar para o servidor
+                    fetch('/analytics/track', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        },
+                        body: JSON.stringify({
+                            event_type: 'cta_click',
+                            event_name: 'CTA Button Clicked',
+                            event_data: {
+                                button_text: this.textContent.trim(),
+                                button_url: this.href || 'N/A',
+                                timestamp: new Date().toISOString()
+                            }
+                        })
+                    }).catch(error => console.error('Erro ao enviar evento:', error));
+                    
                     if (typeof trackConversion === 'function') {
                         trackConversion('cta_click', 97.00);
                     }
@@ -862,6 +899,24 @@
             if (videoContainer) {
                 videoContainer.addEventListener('click', function() {
                     console.log('🎥 Vídeo clicado!');
+                    
+                    // Enviar para o servidor
+                    fetch('/analytics/track', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        },
+                        body: JSON.stringify({
+                            event_type: 'video_click',
+                            event_name: 'Video Clicked',
+                            event_data: {
+                                video_id: 'EdrQPJZ77vY',
+                                timestamp: new Date().toISOString()
+                            }
+                        })
+                    }).catch(error => console.error('Erro ao enviar evento:', error));
+                    
                     if (typeof trackConversion === 'function') {
                         trackConversion('video_click');
                     }

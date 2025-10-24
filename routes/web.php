@@ -72,6 +72,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/analytics/config', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'store'])->name('admin.analytics.config.store');
     Route::post('/admin/analytics/config/test', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'test'])->name('admin.analytics.config.test');
 });
+
+// Analytics Tracking Routes
+Route::post('/analytics/track', [App\Http\Controllers\AnalyticsController::class, 'track'])->name('analytics.track');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses.index');
 Route::get('/courses/{course}', [HomeController::class, 'showCourse'])->name('courses.show');
