@@ -10,6 +10,15 @@
     <meta name="author" content="Laravel ProStarter">
 <meta name="robots" content="index, follow">
 <meta name="language" content="pt-BR">
+    
+    <!-- Performance -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ request()->url() }}">
@@ -96,11 +105,12 @@
                         <div class="relative bg-black rounded-b-3xl overflow-hidden" style="height: 500px;">
                             <!-- Iframe do YouTube -->
                             <iframe width="100%" height="100%"
-                                src="https://www.youtube.com/embed/EdrQPJZ77vY?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1"
+                                src="https://www.youtube.com/embed/EdrQPJZ77vY?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1&origin={{ request()->getHost() }}"
                                 title="Laravel ProStarter Demo" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" id="youtube-video">
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" id="youtube-video"
+                                loading="lazy">
                             </iframe>
 
                             <!-- Loading indicator -->
@@ -125,8 +135,13 @@
                         
             <!-- Conteúdo centralizado abaixo -->
             <div class="text-center mb-10">
-                <!-- Subtítulo -->
-                <p class="text-xl md:text-2xl mb-10 font-medium text-gray-200 max-w-4xl mx-auto leading-relaxed">
+                <!-- Subtítulo emocional -->
+                <p class="text-xl md:text-2xl mb-6 font-medium text-gray-200 max-w-4xl mx-auto leading-relaxed">
+                    Entregue seu sistema completo em <span class="text-yellow-400 font-bold">horas, não semanas</span> — economize até <span class="text-yellow-400 font-bold">33h por projeto!</span>
+                </p>
+                
+                <!-- Sub-subtítulo técnico -->
+                <p class="text-lg md:text-xl mb-10 font-medium text-gray-300 max-w-4xl mx-auto leading-relaxed">
                     Laravel ProStarter: a base pronta de sistema profissional para acelerar seus projetos Laravel
                 </p>
 
@@ -203,7 +218,7 @@
                         <i class="fas fa-tachometer-alt text-white text-2xl"></i>
                                 </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Painel administrativo moderno</h3>
-                    <p class="text-gray-600 leading-relaxed">Dashboard inicial com CRUD funcional integrado e métricas em
+                    <p class="text-gray-600 leading-relaxed">Dashboard inicial com sistema de cadastros <span class="text-blue-600 font-semibold" title="Create, Read, Update, Delete - Sistema completo de gerenciamento de dados">(CRUD)</span> funcional integrado e métricas em
                         tempo real</p>
                                 </div>
 
@@ -226,7 +241,7 @@
                                 </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Sistema de usuários e permissões</h3>
                     <p class="text-gray-600 leading-relaxed">Controle completo sobre quem pode acessar o sistema com
-                        diferentes níveis de acesso</p>
+                        diferentes níveis de acesso <span class="text-green-600 font-semibold" title="Admin, Usuário comum, etc.">(Admin, Usuário, etc.)</span></p>
                         </div>
                         
                 <div
@@ -291,7 +306,7 @@
                     <h4 class="font-bold text-4xl mb-4 text-center">R$1.870</h4>
                     <p class="text-xl text-center text-yellow-100 mb-4">economizados por projeto</p>
                     <p class="text-lg text-center text-yellow-200">Dinheiro e tempo que você pode investir em mais projetos
-                    </p>
+                </p>
             </div>
             </div>
             
@@ -389,7 +404,8 @@
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <div class="bg-white rounded-3xl p-12 shadow-2xl">
                 <img src="https://github.com/nadodev.png" alt="Leonardo Geja"
-                    class="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-purple-500 shadow-lg">
+                    class="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-purple-500 shadow-lg"
+                    loading="lazy" width="128" height="128">
                 <blockquote class="text-2xl italic mb-6 text-gray-700 leading-relaxed">
                     "Criei o Laravel ProStarter porque sempre perdia horas configurando sistemas. Agora, você pode começar
                     pronto e focar na lógica do seu projeto."
@@ -419,7 +435,7 @@
                     class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
-                            alt="Lucas Pereira" class="w-16 h-16 rounded-full mr-4">
+                            alt="Lucas Pereira" class="w-16 h-16 rounded-full mr-4" loading="lazy" width="60" height="60">
                         <div>
                             <h3 class="font-bold text-lg text-gray-800">Lucas Pereira</h3>
                             <p class="text-gray-600">Freelancer Full Stack</p>
@@ -440,7 +456,7 @@
                     class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face"
-                            alt="Marina Santos" class="w-16 h-16 rounded-full mr-4">
+                            alt="Marina Santos" class="w-16 h-16 rounded-full mr-4" loading="lazy" width="60" height="60">
                         <div>
                             <h3 class="font-bold text-lg text-gray-800">Marina Santos</h3>
                             <p class="text-gray-600">Desenvolvedora Front-end</p>
@@ -461,7 +477,7 @@
                     class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-6">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
-                            alt="Carlos Lima" class="w-16 h-16 rounded-full mr-4">
+                            alt="Carlos Lima" class="w-16 h-16 rounded-full mr-4" loading="lazy" width="60" height="60">
                         <div>
                             <h3 class="font-bold text-lg text-gray-800">Carlos Lima</h3>
                             <p class="text-gray-600">Agência Digital</p>
@@ -796,6 +812,31 @@
     #sticky-cta {
         transform: translateY(0);
     }
+    
+    /* Performance optimizations */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-pulse,
+        .animate-bounce,
+        .animate-float-1,
+        .animate-float-2,
+        .animate-float-3,
+        .animate-float-4,
+        .animate-float-5,
+        .animate-float-6 {
+            animation: none;
+        }
+    }
+    
+    /* Critical CSS for above-the-fold content */
+    .hero-section {
+        contain: layout style paint;
+    }
 </style>
 
 <script>
@@ -836,30 +877,47 @@
         });
     });
     
-    // Console welcome message
-            console.log('%c🚀 Laravel ProStarter - Página de Conversão', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
-    console.log('%cCrie sistemas completos em horas, não em semanas!', 'color: #1F2937; font-size: 14px;');
-
             // Eventos de Tracking
-            console.log('📊 Inicializando tracking de eventos...');
+            
+            // Função auxiliar para enviar eventos
+            function sendAnalyticsEvent(eventType, eventName, eventData = {}) {
+                const csrfToken = document.querySelector('meta[name="csrf-token"]');
+                if (!csrfToken) {
+                    return;
+                }
+                
+                const url = '{{ url("/analytics/track") }}';
+                
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken.getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        event_type: eventType,
+                        event_name: eventName,
+                        event_data: {
+                            ...eventData,
+                            timestamp: new Date().toISOString(),
+                            user_agent: navigator.userAgent,
+                            page_url: window.location.href
+                        }
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(`✅ Evento ${eventType} enviado:`, data);
+                })
+                .catch(error => {
+                    console.error(`❌ Erro ao enviar evento ${eventType}:`, error);
+                });
+            }
             
             // Tracking de visualização da página
-            fetch('/analytics/track', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                },
-                body: JSON.stringify({
-                    event_type: 'page_view',
-                    event_name: 'Page Viewed',
-                    event_data: {
-                        page_title: document.title,
-                        page_url: window.location.href,
-                        timestamp: new Date().toISOString()
-                    }
-                })
-            }).catch(error => console.error('Erro ao enviar evento:', error));
+            sendAnalyticsEvent('page_view', 'Page Viewed', {
+                page_title: document.title
+            });
             
             if (typeof trackConversion === 'function') {
                 trackConversion('page_view');
@@ -870,23 +928,11 @@
                 button.addEventListener('click', function() {
                     console.log('🎯 CTA clicado!');
                     
-                    // Enviar para o servidor
-                    fetch('/analytics/track', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                        },
-                        body: JSON.stringify({
-                            event_type: 'cta_click',
-                            event_name: 'CTA Button Clicked',
-                            event_data: {
-                                button_text: this.textContent.trim(),
-                                button_url: this.href || 'N/A',
-                                timestamp: new Date().toISOString()
-                            }
-                        })
-                    }).catch(error => console.error('Erro ao enviar evento:', error));
+                    sendAnalyticsEvent('cta_click', 'CTA Button Clicked', {
+                        button_text: this.textContent.trim(),
+                        button_url: this.href || 'N/A',
+                        button_position: this.getBoundingClientRect()
+                    });
                     
                     if (typeof trackConversion === 'function') {
                         trackConversion('cta_click', 97.00);
@@ -900,22 +946,10 @@
                 videoContainer.addEventListener('click', function() {
                     console.log('🎥 Vídeo clicado!');
                     
-                    // Enviar para o servidor
-                    fetch('/analytics/track', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                        },
-                        body: JSON.stringify({
-                            event_type: 'video_click',
-                            event_name: 'Video Clicked',
-                            event_data: {
-                                video_id: 'EdrQPJZ77vY',
-                                timestamp: new Date().toISOString()
-                            }
-                        })
-                    }).catch(error => console.error('Erro ao enviar evento:', error));
+                    sendAnalyticsEvent('video_click', 'Video Clicked', {
+                        video_id: 'EdrQPJZ77vY',
+                        video_title: 'Laravel ProStarter Demo'
+                    });
                     
                     if (typeof trackConversion === 'function') {
                         trackConversion('video_click');
