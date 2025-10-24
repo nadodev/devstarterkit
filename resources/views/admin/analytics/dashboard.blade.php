@@ -313,17 +313,23 @@
             window.conversionChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de conversão normalizado');
+        console.log('🆕 Criando novo gráfico de conversão (linha)');
         window.conversionChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: normalizedData.map(d => d.name),
                 datasets: [{
-                    label: 'Proporção (%)',
+                    label: 'Funil de Conversão',
                     data: normalizedData.map(d => d.value),
-                    backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'],
-                    borderColor: ['#2563EB', '#059669', '#D97706', '#DC2626'],
-                    borderWidth: 1
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#3B82F6',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6
                 }]
             },
             options: {
@@ -343,13 +349,21 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        max: 100, // Escala fixa de 0-100%
+                        max: 100,
                         min: 0,
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
                         ticks: { 
                             maxTicksLimit: 6,
                             callback: function(value) { 
                                 return value + '%';
                             }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
                         }
                     }
                 }
@@ -397,22 +411,30 @@
             window.trafficChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de tráfego normalizado');
+        console.log('🆕 Criando novo gráfico de tráfego (área)');
         window.trafficChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'line',
             data: {
                 labels: trafficLabels,
                 datasets: [{
+                    label: 'Fontes de Tráfego',
                     data: normalizedValues,
-                    backgroundColor: ['#3B82F6', '#EF4444', '#10B981', '#F59E0B'],
-                    hoverOffset: 4
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#3B82F6',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2,
+                    pointRadius: 5
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: { 
-                    legend: { position: 'right' },
+                    legend: { display: false },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
@@ -420,6 +442,27 @@
                                 const percentage = normalizedValues[context.dataIndex];
                                 return context.label + ': ' + originalValue.toLocaleString() + ' visitantes (' + percentage + '%)';
                             }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        min: 0,
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
+                        ticks: { 
+                            maxTicksLimit: 6,
+                            callback: function(value) { 
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
                         }
                     }
                 }
