@@ -936,21 +936,6 @@
                 });
             });
             
-            // Tracking de cliques no vídeo
-            const videoContainer = document.querySelector('#youtube-video');
-            if (videoContainer) {
-                videoContainer.addEventListener('click', function() {
-                    sendAnalyticsEvent('video_click', 'Video Clicked', {
-                        video_id: 'KpTO4CUNE08',
-                        video_title: 'Laravel ProStarter Demo'
-                    });
-                    
-                    if (typeof trackConversion === 'function') {
-                        trackConversion('video_click');
-                    }
-                });
-            }
-            
             // Tracking de scroll profundo (75% da página)
             let deepScrollTracked = false;
             window.addEventListener('scroll', function() {
@@ -1014,62 +999,6 @@
                 }, 5000);
             }
             
-            // Eventos de Tracking
-            
-            // Função auxiliar para enviar eventos
-            function sendAnalyticsEvent(eventType, eventName, eventData = {}) {
-                const csrfToken = document.querySelector('meta[name="csrf-token"]');
-                if (!csrfToken) {
-                    return;
-                }
-                
-                fetch(window.location.origin + '/analytics/track', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        event_type: eventType,
-                        event_name: eventName,
-                        event_data: {
-                            ...eventData,
-                            timestamp: new Date().toISOString(),
-                            user_agent: navigator.userAgent,
-                            page_url: window.location.href
-                        }
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Evento enviado
-                })
-                .catch(error => {
-                    // Erro silencioso
-                });
-            }
-            
-            // Tracking de visualização da página
-            sendAnalyticsEvent('page_view', 'Page Viewed', {
-                page_title: document.title,
-                page_url: window.location.href
-            });
-            
-            // Tracking de cliques em CTAs
-            document.querySelectorAll('a[href*="checkout"], button[onclick*="checkout"], .cta-button, a[href*="kiwify"]').forEach(button => {
-                button.addEventListener('click', function() {
-                    sendAnalyticsEvent('cta_click', 'CTA Clicked', {
-                        button_text: this.textContent.trim(),
-                        button_href: this.href || this.getAttribute('onclick'),
-                        button_class: this.className
-                    });
-                    
-                    if (typeof trackConversion === 'function') {
-                        trackConversion('cta_click');
-                    }
-                });
-            });
             
             // Tracking de cliques no vídeo
             const videoContainer = document.querySelector('#youtube-video');
