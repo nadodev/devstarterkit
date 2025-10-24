@@ -117,13 +117,13 @@
             <!-- Funil de Conversão -->
             <div class="bg-white rounded-lg shadow p-6">
                 <h3 class="text-lg font-medium text-gray-900 mb-4">🎯 Funil de Conversão</h3>
-                <div id="conversion-funnel" class="h-64"></div>
+                <canvas id="conversion-funnel" class="h-64"></canvas>
             </div>
 
             <!-- Fontes de Tráfego -->
             <div class="bg-white rounded-lg shadow p-6">
                 <h3 class="text-lg font-medium text-gray-900 mb-4">🌐 Fontes de Tráfego</h3>
-                <div id="traffic-sources" class="h-64"></div>
+                <canvas id="traffic-sources" class="h-64"></canvas>
             </div>
         </div>
 
@@ -264,19 +264,13 @@
     }
 
     function updateConversionData(data) {
-        // Atualizar funil de conversão
-        const funnelData = data.conversion_funnel.map(stage => ({
-            name: stage.stage,
-            value: stage.count
-        }));
-        
-        // Aqui você pode integrar com uma biblioteca de gráficos como Chart.js
-        console.log('Funil de conversão:', funnelData);
+        // Função movida para @push('scripts')
+        console.log('Funil de conversão:', data);
     }
 
     function updateTrafficData(data) {
-        document.getElementById('page-views').textContent = data.page_views.toLocaleString();
-        // Outros dados de tráfego...
+        // Função movida para @push('scripts')
+        console.log('Fontes de tráfego:', data);
     }
 
     function refreshData() {
@@ -288,3 +282,106 @@
     setInterval(loadDashboardData, 30000);
 </script>
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    let conversionChart = null;
+    let trafficChart = null;
+
+    function updateConversionData(data) {
+        // Atualizar funil de conversão
+        const funnelData = data.conversion_funnel.map(stage => ({
+            name: stage.stage,
+            value: stage.value
+        }));
+        
+        const ctx = document.getElementById('conversion-funnel').getContext('2d');
+        
+        if (conversionChart) {
+            conversionChart.destroy();
+        }
+        
+        conversionChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: funnelData.map(d => d.name),
+                datasets: [{
+                    label: 'Número de Usuários',
+                    data: funnelData.map(d => d.value),
+                    backgroundColor: [
+                        '#3B82F6', // Blue
+                        '#10B981', // Green
+                        '#F59E0B', // Amber
+                        '#EF4444'  // Red
+                    ],
+                    borderColor: [
+                        '#2563EB',
+                        '#059669',
+                        '#D97706',
+                        '#DC2626'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function updateTrafficData(data) {
+        // Atualizar fontes de tráfego
+        const trafficLabels = data.traffic_sources.map(s => s.source);
+        const trafficValues = data.traffic_sources.map(s => s.visitors);
+
+        const ctx = document.getElementById('traffic-sources').getContext('2d');
+        
+        if (trafficChart) {
+            trafficChart.destroy();
+        }
+        
+        trafficChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: trafficLabels,
+                datasets: [{
+                    data: trafficValues,
+                    backgroundColor: [
+                        '#3B82F6', // Blue
+                        '#EF4444', // Red
+                        '#10B981', // Green
+                        '#F59E0B'  // Amber
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    }
+                }
+            }
+        });
+    }
+</script>
+@endpush

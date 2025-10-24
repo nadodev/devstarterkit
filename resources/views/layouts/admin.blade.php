@@ -190,6 +190,8 @@
                 }, 5000);
             });
         });
-    </script>
-</body>
-</html>
+            </script>
+            
+            @stack('scripts')
+        </body>
+        </html>
