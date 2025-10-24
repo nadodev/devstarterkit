@@ -57,12 +57,7 @@ Route::get('/suporte', function() {
 Route::post('/suporte/ticket', [App\Http\Controllers\SuporteController::class, 'enviarTicket'])->name('suporte.ticket');
 
 // Analytics Tracking Routes - Moved to top for priority
-Route::any('/analytics/track', function(\Illuminate\Http\Request $request) {
-    // Accept both GET and POST for testing
-    if ($request->isMethod('get')) {
-        return response()->json(['error' => 'Use POST method for /analytics/track', 'method' => 'GET']);
-    }
-    
+Route::post('/analytics/track', function(\Illuminate\Http\Request $request) {
     try {
         // Log the request for debugging
         \Log::info('Analytics track request received', [
@@ -82,7 +77,12 @@ Route::any('/analytics/track', function(\Illuminate\Http\Request $request) {
         \Log::error('Analytics track error: ' . $e->getMessage());
         return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
     }
-})->name('analytics.track');
+});
+
+// Fallback route for GET requests
+Route::get('/analytics/track', function() {
+    return response()->json(['error' => 'Use POST method for /analytics/track'], 405);
+});
 
 
 // Simple test route for analytics
@@ -103,6 +103,11 @@ Route::get('/debug-server', function() {
         'php_version' => PHP_VERSION,
         'laravel_version' => app()->version()
     ]);
+});
+
+// Ultra simple analytics route
+Route::post('/track', function() {
+    return response()->json(['success' => true, 'message' => 'Ultra simple route working']);
 });
 
 // Cookie Consent Routes

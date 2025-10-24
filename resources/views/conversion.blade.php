@@ -909,34 +909,53 @@
                     return;
                 }
                 
-                fetch(window.location.origin + '/analytics/track', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        event_type: eventType,
-                        event_name: eventName,
-                        event_data: {
-                            ...eventData,
-                            timestamp: new Date().toISOString(),
-                            user_agent: navigator.userAgent,
-                            page_url: window.location.href
+                // Try multiple endpoints
+                const endpoints = ['/analytics/track', '/track', '/test-analytics'];
+                let currentEndpoint = 0;
+                
+                function tryNextEndpoint() {
+                    if (currentEndpoint >= endpoints.length) {
+                        console.error('All analytics endpoints failed');
+                        return;
+                    }
+                    
+                    fetch(endpoints[currentEndpoint], {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            event_type: eventType,
+                            event_name: eventName,
+                            event_data: {
+                                ...eventData,
+                                timestamp: new Date().toISOString(),
+                                user_agent: navigator.userAgent,
+                                page_url: window.location.href
+                            }
+                        })
+                    })
+                    .then(response => {
+                        console.log(`Analytics response status (${endpoints[currentEndpoint]}):`, response.status);
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error(`HTTP ${response.status}`);
                         }
                     })
-                })
-                .then(response => {
-                    console.log('Analytics response status:', response.status);
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Analytics response data:', data);
-                })
-                .catch(error => {
-                    console.error('Analytics error:', error);
-                });
+                    .then(data => {
+                        console.log('Analytics response data:', data);
+                    })
+                    .catch(error => {
+                        console.error(`Analytics error (${endpoints[currentEndpoint]}):`, error);
+                        currentEndpoint++;
+                        tryNextEndpoint();
+                    });
+                }
+                
+                tryNextEndpoint();
             }
             
             // Tracking de visualização da página
