@@ -130,8 +130,8 @@ class AnalyticsController extends Controller
         // Buscar visitantes únicos baseados em sessões
         $uniqueSessions = AnalyticsEvent::distinct('session_id')->count();
         
-        // Se não há dados reais, usar dados de exemplo
-        return $uniqueSessions > 0 ? $uniqueSessions : 1000;
+        // Se não há dados reais, usar zero
+        return $uniqueSessions > 0 ? $uniqueSessions : 0;
     }
 
     private function getConversionRate()
@@ -240,11 +240,11 @@ class AnalyticsController extends Controller
         $ctaClicks = AnalyticsEvent::where('event_type', 'cta_click')->count();
         $videoClicks = AnalyticsEvent::where('event_type', 'video_click')->count();
         
-        // Se não há dados reais, usar dados de exemplo proporcionais
+        // Se não há dados reais, usar zeros
         if ($pageViews == 0) {
-            $pageViews = 1000;
-            $ctaClicks = 50;
-            $videoClicks = 25;
+            $pageViews = 0;
+            $ctaClicks = 0;
+            $videoClicks = 0;
         }
         
         return [
