@@ -927,12 +927,15 @@
                         }
                     })
                 })
-                .then(response => response.json())
+                .then(response => {
+                    console.log('Analytics response status:', response.status);
+                    return response.json();
+                })
                 .then(data => {
-                    // Evento enviado
+                    console.log('Analytics response data:', data);
                 })
                 .catch(error => {
-                    // Erro silencioso
+                    console.error('Analytics error:', error);
                 });
             }
             

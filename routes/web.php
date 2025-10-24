@@ -57,14 +57,52 @@ Route::get('/suporte', function() {
 Route::post('/suporte/ticket', [App\Http\Controllers\SuporteController::class, 'enviarTicket'])->name('suporte.ticket');
 
 // Analytics Tracking Routes - Moved to top for priority
-Route::post('/analytics/track', [App\Http\Controllers\AnalyticsController::class, 'track'])->name('analytics.track');
-Route::get('/analytics/track', function() {
-    return response()->json(['error' => 'Use POST method for /analytics/track'], 405);
-});
+Route::any('/analytics/track', function(\Illuminate\Http\Request $request) {
+    // Accept both GET and POST for testing
+    if ($request->isMethod('get')) {
+        return response()->json(['error' => 'Use POST method for /analytics/track', 'method' => 'GET']);
+    }
+    
+    try {
+        // Log the request for debugging
+        \Log::info('Analytics track request received', [
+            'method' => $request->method(),
+            'event_type' => $request->input('event_type'),
+            'event_name' => $request->input('event_name'),
+            'event_data' => $request->input('event_data'),
+            'headers' => $request->headers->all(),
+        ]);
+        
+        return response()->json([
+            'success' => true, 
+            'message' => 'Event tracked successfully',
+            'received_data' => $request->all()
+        ]);
+    } catch (\Exception $e) {
+        \Log::error('Analytics track error: ' . $e->getMessage());
+        return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
+    }
+})->name('analytics.track');
+
 
 // Simple test route for analytics
 Route::post('/analytics/simple', function() {
     return response()->json(['success' => true, 'message' => 'Simple analytics route working']);
+});
+
+// Ultra simple test route
+Route::any('/test-analytics', function() {
+    return response()->json(['status' => 'ok', 'timestamp' => now()]);
+});
+
+// Debug route to check if server is working
+Route::get('/debug-server', function() {
+    return response()->json([
+        'status' => 'server_working',
+        'timestamp' => date('Y-m-d H:i:s'),
+        'php_version' => PHP_VERSION,
+        'laravel_version' => app()->version()
+    ]);
 });
 
 // Cookie Consent Routes
