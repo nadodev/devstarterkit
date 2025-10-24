@@ -39,7 +39,7 @@
             <i class="fas fa-fire mr-1 sm:mr-2 text-sm sm:text-base"></i>
                 <span class="font-bold text-sm sm:text-base">🔥 Oferta limitada - Primeiros 50 compradores!</span>
         </div>
-            <a href="#compra"
+            <a href="https://pay.kiwify.com.br/i0FGVRc"
                 class="bg-purple-700 text-white px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg font-bold hover:bg-purple-800 transition-colors text-xs sm:text-sm whitespace-nowrap">
                 Quero o Laravel ProStarter Agora
         </a>
@@ -131,7 +131,7 @@
                 </p>
 
                 <!-- CTA Principal -->
-                <a href="#compra"
+                <a href="https://pay.kiwify.com.br/i0FGVRc"
                     class="group relative text-black font-bold px-12 py-6 rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-110 inline-block mb-8 animate-pulse-border"
                     style="background: linear-gradient(45deg, #FACC15, #F59E0B);">
                     <span class="relative z-10 text-lg">Quero o Laravel ProStarter Agora</span>
@@ -370,7 +370,7 @@
                 </div>
             </div>
             
-            <a href="#compra"
+            <a href="https://pay.kiwify.com.br/i0FGVRc"
                 class="group relative text-white font-bold px-12 py-6 rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-110 inline-block animate-pulse-border"
                 style="background: linear-gradient(45deg, #7C3AED, #6B21A8);">
                 <span class="relative z-10 text-lg">Garanta seu bônus agora</span>
@@ -569,7 +569,7 @@
                     </div>
                 </div>
 
-                <a href="/checkout"
+                <a href="https://pay.kiwify.com.br/i0FGVRc"
                     class="group relative text-black font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-6 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 inline-block mb-6 animate-pulse-border"
                     style="background: linear-gradient(45deg, #FACC15, #F59E0B);">
                     <span class="relative z-10 text-base sm:text-lg md:text-xl">Quero o Laravel ProStarter Agora</span>
@@ -851,7 +851,6 @@
             // Tracking de cliques nos botões CTA
             document.querySelectorAll('a[href*="checkout"], button[onclick*="checkout"], .cta-button').forEach(button => {
                 button.addEventListener('click', function() {
-                    console.log('🎯 CTA clicado!');
                     if (typeof trackConversion === 'function') {
                         trackConversion('cta_click', 97.00);
                     }
