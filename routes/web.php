@@ -19,12 +19,8 @@ use App\Http\Controllers\Admin\SettingController as AdminSettingController;
 // Rotas públicas
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', function() {
-   return redirect()->route('conversion');
-})->name('home');
-
 Route::get('/landing', [HomeController::class, 'landing'])->name('landing');
-Route::get('/conversion', function() {
+Route::get('/', function() {
     return view('conversion');
 })->name('conversion');
 Route::get('/thank-you', function() {
