@@ -109,7 +109,6 @@
 {{-- Scripts essenciais (sempre carregados) --}}
 <script>
     // Scripts essenciais que não precisam de consentimento
-    console.log('Scripts essenciais carregados');
     
     // Função global para tracking de eventos
     window.trackConversion = function(eventType, value = null) {

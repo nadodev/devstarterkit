@@ -295,8 +295,6 @@ class AnalyticsController extends Controller
      */
     public function track(Request $request)
     {
-        \Log::info('📊 Evento de analytics recebido:', $request->all());
-        
         $request->validate([
             'event_type' => 'required|string',
             'event_name' => 'required|string',
@@ -306,7 +304,6 @@ class AnalyticsController extends Controller
         try {
             // Verificar se a tabela existe, se não existir, criar
             if (!Schema::hasTable('analytics_events')) {
-                \Log::info('📊 Criando tabela analytics_events...');
                 Schema::create('analytics_events', function ($table) {
                     $table->id();
                     $table->string('event_type');
@@ -317,7 +314,6 @@ class AnalyticsController extends Controller
                     $table->string('ip_address')->nullable();
                     $table->timestamps();
                 });
-                \Log::info('✅ Tabela analytics_events criada com sucesso');
             }
             
             $event = AnalyticsEvent::track(
@@ -327,11 +323,8 @@ class AnalyticsController extends Controller
                 $request
             );
             
-            \Log::info('✅ Evento salvo com sucesso:', ['id' => $event->id, 'type' => $event->event_type]);
-            
             return response()->json(['success' => true, 'event_id' => $event->id]);
         } catch (\Exception $e) {
-            \Log::error('❌ Erro ao salvar evento:', ['error' => $e->getMessage()]);
             return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
         }
     }

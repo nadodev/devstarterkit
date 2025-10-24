@@ -275,9 +275,7 @@
             }
         });
 
-        // Console welcome message
-        console.log('%c🚀 Laravel ProStarter Landing Page', 'color: #7C3AED; font-size: 20px; font-weight: bold;');
-        console.log('%cDesenvolvido com ❤️ para desenvolvedores profissionais', 'color: #1D4ED8; font-size: 14px;');
+        // Scripts carregados
     </script>
 
     <!-- Cookie Banner -->

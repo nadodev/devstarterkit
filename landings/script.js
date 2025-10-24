@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const response = await fetch('config.json');
             config = await response.json();
         } catch (error) {
-            console.log('Configuração não encontrada, usando padrões');
+            // Configuração não encontrada, usando padrões
         }
     }
     
@@ -351,7 +351,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Analytics/Tracking (placeholder)
     function trackEvent(eventName, eventData = {}) {
-        console.log('Event tracked:', eventName, eventData);
         // Aqui você pode integrar com Google Analytics, Facebook Pixel, etc.
     }
     
@@ -374,8 +373,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Console welcome message
-    console.log('%c🚀 DevStarter Kit Landing Page', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
-    console.log('%cDesenvolvido com ❤️ para desenvolvedores iniciantes', 'color: #3B82F6; font-size: 14px;');
+    // Scripts carregados
     
 });

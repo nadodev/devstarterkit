@@ -155,35 +155,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const savePreferencesBtn = document.getElementById('cookie-save-preferences');
     const acceptAllModalBtn = document.getElementById('cookie-accept-all-modal');
 
-    console.log('🚀 Inicializando sistema de cookies...');
-    console.log('🔍 Banner encontrado:', banner);
-    console.log('🔍 Modal encontrado:', modal);
-    console.log('🔍 Botão Aceitar encontrado:', acceptBtn);
+    // Inicializando sistema de cookies
 
     // Verificar se já existe consentimento
     checkConsentStatus();
 
     // Verificar status do consentimento
     function checkConsentStatus() {
-        console.log('🔍 Verificando status do consentimento...');
         fetch('{{ route("cookies.get") }}')
         .then(response => response.json())
         .then(data => {
-            console.log('📡 Resposta do servidor:', data);
             if (data.success && data.consent) {
                 // Já há consentimento, esconder banner e mostrar ícone
-                console.log('✅ Consentimento já existe, escondendo banner');
                 hideBanner();
                 showCookieIcon();
                 updateCardVisuals(data.consent);
             } else {
                 // Não há consentimento, mostrar banner
-                console.log('❌ Nenhum consentimento encontrado, mostrando banner');
                 showBanner();
             }
         })
         .catch(error => {
-            console.error('❌ Erro ao verificar consentimento:', error);
             // Em caso de erro, mostrar banner
             showBanner();
         });
@@ -191,8 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Aceitar todos os cookies
     function acceptAllCookies() {
-        console.log('🍪 Aceitando todos os cookies...');
-        console.log('🔍 Banner antes:', banner.style.transform);
         saveConsentToServer({
             essential: true,
             analytics: true,
@@ -223,7 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Salvar consentimento no servidor
     function saveConsentToServer(consent) {
-        console.log('💾 Salvando consentimento:', consent);
         fetch('{{ route("cookies.consent") }}', {
             method: 'POST',
             headers: {
@@ -234,64 +223,46 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('📡 Resposta do servidor:', data);
             if (data.success) {
-                console.log('✅ Consentimento salvo com sucesso!');
                 hideBanner();
                 hideModal();
                 showSuccessMessage(data.message);
             } else {
-                console.error('❌ Erro ao salvar consentimento');
                 showErrorMessage('Erro ao salvar preferências');
             }
         })
         .catch(error => {
-            console.error('❌ Erro na requisição:', error);
             showErrorMessage('Erro ao salvar preferências');
         });
     }
 
     // Esconder banner
     function hideBanner() {
-        console.log('👻 Escondendo banner...');
-        console.log('🔍 Banner elemento:', banner);
-        console.log('🔍 Banner antes de esconder:', banner.style.transform);
-        
         if (banner) {
             banner.style.transform = 'translateY(100%)';
             banner.style.transition = 'transform 0.5s ease-in-out';
-            console.log('🔍 Banner depois de esconder:', banner.style.transform);
             // Esconder completamente após a transição
             setTimeout(() => {
                 banner.style.display = 'none';
             }, 500);
             showCookieIcon();
-        } else {
-            console.error('❌ Banner não encontrado!');
         }
     }
 
     // Mostrar banner
     function showBanner() {
-        console.log('👁️ Mostrando banner...');
-        console.log('🔍 Banner elemento:', banner);
-        
         if (banner) {
             banner.style.display = 'block';
             banner.style.transform = 'translateY(0)';
             banner.style.transition = 'transform 0.5s ease-in-out';
             hideCookieIcon();
-        } else {
-            console.error('❌ Banner não encontrado!');
         }
     }
 
     // Mostrar ícone flutuante de cookies
     function showCookieIcon() {
-        console.log('🍪 Mostrando ícone flutuante...');
         const existingIcon = document.getElementById('cookie-icon');
         if (existingIcon) {
-            console.log('⚠️ Ícone já existe, não criando novo');
             return;
         }
 
@@ -301,9 +272,8 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.innerHTML = '<i class="fas fa-cookie-bite text-lg"></i>';
         icon.title = 'Configurações de Cookies';
         icon.onclick = showModal;
-        
+
         document.body.appendChild(icon);
-        console.log('✅ Ícone flutuante criado!');
     }
 
     // Esconder ícone flutuante

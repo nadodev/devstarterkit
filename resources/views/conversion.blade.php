@@ -105,7 +105,7 @@
                         <div class="relative bg-black rounded-b-3xl overflow-hidden" style="height: 500px;">
                             <!-- Iframe do YouTube -->
                             <iframe width="100%" height="100%"
-                                src="https://www.youtube.com/embed/EdrQPJZ77vY?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1&origin={{ request()->getHost() }}"
+                                src="https://www.youtube.com/embed/KpTO4CUNE08?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1&origin={{ request()->getHost() }}"
                                 title="Laravel ProStarter Demo" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
@@ -907,10 +907,10 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(`✅ Evento ${eventType} enviado:`, data);
+                    // Evento enviado com sucesso
                 })
                 .catch(error => {
-                    console.error(`❌ Erro ao enviar evento ${eventType}:`, error);
+                    // Erro ao enviar evento
                 });
             }
             
@@ -926,8 +926,6 @@
             // Tracking de cliques nos botões CTA
             document.querySelectorAll('a[href*="checkout"], button[onclick*="checkout"], .cta-button, a[href*="kiwify"]').forEach(button => {
                 button.addEventListener('click', function() {
-                    console.log('🎯 CTA clicado!');
-                    
                     sendAnalyticsEvent('cta_click', 'CTA Button Clicked', {
                         button_text: this.textContent.trim(),
                         button_url: this.href || 'N/A',
@@ -944,10 +942,8 @@
             const videoContainer = document.querySelector('#youtube-video');
             if (videoContainer) {
                 videoContainer.addEventListener('click', function() {
-                    console.log('🎥 Vídeo clicado!');
-                    
                     sendAnalyticsEvent('video_click', 'Video Clicked', {
-                        video_id: 'EdrQPJZ77vY',
+                        video_id: 'KpTO4CUNE08',
                         video_title: 'Laravel ProStarter Demo'
                     });
                     
@@ -962,7 +958,6 @@
             window.addEventListener('scroll', function() {
                 const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
                 if (scrollPercent > 75 && !deepScrollTracked) {
-                    console.log('📜 Scroll profundo detectado!');
                     if (typeof trackConversion === 'function') {
                         trackConversion('deep_scroll');
                     }
@@ -972,7 +967,6 @@
             
             // Tracking de tempo na página (2 minutos)
             setTimeout(function() {
-                console.log('⏰ 2 minutos na página!');
                 if (typeof trackConversion === 'function') {
                     trackConversion('time_on_page');
                 }
@@ -982,7 +976,6 @@
             document.querySelectorAll('details').forEach(detail => {
                 detail.addEventListener('toggle', function() {
                     if (this.open) {
-                        console.log('❓ FAQ expandido!');
                         if (typeof trackConversion === 'function') {
                             trackConversion('faq_interaction');
                         }
@@ -995,24 +988,20 @@
             const videoLoading = document.getElementById('video-loading');
 
             if (videoIframe && videoLoading) {
-                console.log('🎥 Configurando vídeo do YouTube...');
-
                 // Esconder loading quando o vídeo carregar
                 videoIframe.addEventListener('load', function () {
-                    console.log('✅ Vídeo carregado!');
                     videoLoading.style.display = 'none';
                 });
 
                 // Se der erro, manter loading
                 videoIframe.addEventListener('error', function () {
-                    console.log('❌ Erro ao carregar vídeo');
                     videoLoading.innerHTML = `
                     <div class="text-center text-white">
                         <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-exclamation-triangle text-2xl"></i>
                         </div>
                         <p class="text-sm">Erro ao carregar vídeo</p>
-                        <a href="https://www.youtube.com/watch?v=EdrQPJZ77vY" target="_blank" class="mt-2 inline-block bg-white/20 text-white px-4 py-2 rounded text-xs hover:bg-white/30 transition-colors">
+                        <a href="https://www.youtube.com/watch?v=KpTO4CUNE08" target="_blank" class="mt-2 inline-block bg-white/20 text-white px-4 py-2 rounded text-xs hover:bg-white/30 transition-colors">
                             Abrir no YouTube
                         </a>
                     </div>
@@ -1022,7 +1011,6 @@
                 // Timeout para esconder loading após 5 segundos
                 setTimeout(function () {
                     if (videoLoading.style.display !== 'none') {
-                        console.log('⚠️ Vídeo demorou para carregar');
                         videoLoading.style.display = 'none';
                     }
                 }, 5000);

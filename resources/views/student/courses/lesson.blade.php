@@ -1310,14 +1310,12 @@ function toggleLessonCompletionFromIcon(iconElement) {
         return response.json();
     })
     .then(data => {
-        console.log('Response data:', data);
         if (data.success) {
             const lessonItem = iconElement.closest('.flex');
             if (lessonItem) {
                 const statusSpan = lessonItem.querySelector('.text-xs');
                 const iconContainer = lessonItem.querySelector('.flex-shrink-0');
                 
-                console.log('Found elements:', { lessonItem, statusSpan, iconContainer });
                 
                 if (iconContainer) {
                     iconContainer.innerHTML = `
@@ -1329,13 +1327,11 @@ function toggleLessonCompletionFromIcon(iconElement) {
                             onchange="toggleLessonCompletion(this)"
                         >
                     `;
-                    console.log('Replaced icon with checkbox');
                 }
                 
                 if (statusSpan) {
                     statusSpan.className = 'text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full';
                     statusSpan.textContent = 'Pendente';
-                    console.log('Updated status span');
                 }
             }
             
@@ -1345,7 +1341,6 @@ function toggleLessonCompletionFromIcon(iconElement) {
             
             setTimeout(() => {
                 if (!lessonItem.querySelector('.lesson-checkbox')) {
-                    console.log('Fallback: reloading page');
                     window.location.reload();
                 }
             }, 1000);

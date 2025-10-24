@@ -478,8 +478,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    console.log('%c🚀 DevStarter Kit - Página de Captura', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
-    console.log('%cReceba o guia gratuito e acelere seus projetos', 'color: #3B82F6; font-size: 14px;');
+    // Scripts carregados
 });
 </script>
 @endsection

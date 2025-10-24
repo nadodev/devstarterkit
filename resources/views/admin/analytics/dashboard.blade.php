@@ -202,18 +202,15 @@
 <script>
     // Carregar dados do dashboard
     document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚀 Dashboard carregado, iniciando dados...');
         loadDashboardData();
     });
 
     function loadDashboardData() {
-        console.log('📡 Carregando dados do dashboard...');
         
         // Carregar dados gerais
         fetch('/admin/analytics/api?type=overview')
             .then(response => response.json())
             .then(data => {
-                console.log('📊 Dados gerais recebidos:', data);
                 if (data.success) {
                     updateOverviewData(data.data);
                 }
@@ -226,7 +223,6 @@
         fetch('/admin/analytics/api?type=conversions')
             .then(response => response.json())
             .then(data => {
-                console.log('🔄 Dados de conversão recebidos:', data);
                 if (data.success) {
                     updateConversionData(data.data);
                 }
@@ -239,7 +235,6 @@
         fetch('/admin/analytics/api?type=traffic')
             .then(response => response.json())
             .then(data => {
-                console.log('🌐 Dados de tráfego recebidos:', data);
                 if (data.success) {
                     updateTrafficData(data.data);
                 }
@@ -270,7 +265,6 @@
     }
 
     function updateConversionData(data) {
-        console.log('📊 Dados de conversão recebidos:', data);
         
         if (!data.conversion_funnel || !Array.isArray(data.conversion_funnel)) {
             console.error('❌ Dados de conversão inválidos:', data);
@@ -282,8 +276,6 @@
             value: stage.value
         }));
         
-        console.log('🔄 Dados do funil:', funnelData);
-        console.log('🔢 Valores individuais:', funnelData.map(d => d.value));
         
         // NORMALIZAR DADOS: Converter para porcentagens para manter escala fixa
         const maxValue = Math.max(...funnelData.map(d => d.value));
@@ -293,13 +285,11 @@
             originalValue: d.value // Manter valor original para tooltip
         }));
         
-        console.log('📊 Dados normalizados:', normalizedData);
         
         // Verificar se os dados são os mesmos para evitar recriação desnecessária
         if (window.conversionChart && window.lastConversionData) {
             const currentData = JSON.stringify(normalizedData);
             if (currentData === window.lastConversionData) {
-                console.log('📊 Dados de conversão inalterados, pulando atualização');
                 return;
             }
         }
@@ -309,11 +299,9 @@
         const ctx = document.getElementById('conversion-funnel').getContext('2d');
         
         if (window.conversionChart) {
-            console.log('🗑️ Destruindo gráfico de conversão anterior');
             window.conversionChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de conversão (gauge)');
         window.conversionChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -357,7 +345,6 @@
     }
 
     function updateTrafficData(data) {
-        console.log('📊 Dados de tráfego recebidos:', data);
         
         if (!data.traffic_sources || !Array.isArray(data.traffic_sources)) {
             console.error('❌ Dados de tráfego inválidos:', data);
@@ -367,8 +354,6 @@
         const trafficLabels = data.traffic_sources.map(s => s.source);
         const trafficValues = data.traffic_sources.map(s => s.visitors);
         
-        console.log('🏷️ Labels:', trafficLabels);
-        console.log('📈 Valores:', trafficValues);
 
         // NORMALIZAR DADOS: Converter para porcentagens para manter escala fixa
         const totalVisitors = trafficValues.reduce((sum, val) => sum + val, 0);
@@ -376,13 +361,11 @@
             totalVisitors > 0 ? Math.round((val / totalVisitors) * 100) : 0
         );
         
-        console.log('📊 Dados normalizados:', normalizedValues);
 
         // Verificar se os dados são os mesmos para evitar recriação desnecessária
         const currentTrafficData = JSON.stringify({labels: trafficLabels, values: normalizedValues});
         if (window.trafficChart && window.lastTrafficData) {
             if (currentTrafficData === window.lastTrafficData) {
-                console.log('📊 Dados de tráfego inalterados, pulando atualização');
                 return;
             }
         }
@@ -392,11 +375,9 @@
         const ctx = document.getElementById('traffic-sources').getContext('2d');
         
         if (window.trafficChart) {
-            console.log('🗑️ Destruindo gráfico anterior');
             window.trafficChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de tráfego (gauge)');
         window.trafficChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -441,18 +422,15 @@
     }
 
     function refreshData() {
-        console.log('🔄 Atualizando dados...');
         loadDashboardData();
     }
 
     // Atualizar dados a cada 2 minutos (apenas uma instância)
     if (!window.dashboardInitialized) {
         window.dashboardInitialized = true;
-        console.log('🔄 Dashboard inicializado - atualização automática a cada 2 minutos');
         
         // Atualização automática com intervalo maior para evitar problemas
         window.dashboardRefreshInterval = setInterval(function() {
-            console.log('⏰ Atualização automática dos dados');
             loadDashboardData();
         }, 120000); // 2 minutos
     }
