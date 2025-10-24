@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CourseController;
@@ -75,6 +76,24 @@ Route::middleware('auth')->group(function () {
 
 // Analytics Tracking Routes
 Route::post('/analytics/track', [App\Http\Controllers\AnalyticsController::class, 'track'])->name('analytics.track');
+
+// Test route to create table
+Route::get('/test-analytics', function() {
+    if (!Schema::hasTable('analytics_events')) {
+        Schema::create('analytics_events', function ($table) {
+            $table->id();
+            $table->string('event_type');
+            $table->string('event_name');
+            $table->json('event_data')->nullable();
+            $table->string('session_id')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->string('ip_address')->nullable();
+            $table->timestamps();
+        });
+        return 'Tabela analytics_events criada com sucesso!';
+    }
+    return 'Tabela analytics_events já existe!';
+});
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/courses', [HomeController::class, 'courses'])->name('courses.index');
 Route::get('/courses/{course}', [HomeController::class, 'showCourse'])->name('courses.show');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use App\Helpers\CookieHelper;
 use App\Helpers\AnalyticsConfigHelper;
 use App\Models\AnalyticsEvent;
@@ -294,6 +295,8 @@ class AnalyticsController extends Controller
      */
     public function track(Request $request)
     {
+        \Log::info('📊 Evento de analytics recebido:', $request->all());
+        
         $request->validate([
             'event_type' => 'required|string',
             'event_name' => 'required|string',
@@ -301,15 +304,34 @@ class AnalyticsController extends Controller
         ]);
 
         try {
-            AnalyticsEvent::track(
+            // Verificar se a tabela existe, se não existir, criar
+            if (!Schema::hasTable('analytics_events')) {
+                \Log::info('📊 Criando tabela analytics_events...');
+                Schema::create('analytics_events', function ($table) {
+                    $table->id();
+                    $table->string('event_type');
+                    $table->string('event_name');
+                    $table->json('event_data')->nullable();
+                    $table->string('session_id')->nullable();
+                    $table->string('user_agent')->nullable();
+                    $table->string('ip_address')->nullable();
+                    $table->timestamps();
+                });
+                \Log::info('✅ Tabela analytics_events criada com sucesso');
+            }
+            
+            $event = AnalyticsEvent::track(
                 $request->event_type,
                 $request->event_name,
                 $request->event_data ?? [],
                 $request
             );
-
-            return response()->json(['success' => true]);
+            
+            \Log::info('✅ Evento salvo com sucesso:', ['id' => $event->id, 'type' => $event->event_type]);
+            
+            return response()->json(['success' => true, 'event_id' => $event->id]);
         } catch (\Exception $e) {
+            \Log::error('❌ Erro ao salvar evento:', ['error' => $e->getMessage()]);
             return response()->json(['success' => false, 'error' => $e->getMessage()], 500);
         }
     }
