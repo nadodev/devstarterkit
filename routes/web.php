@@ -56,6 +56,17 @@ Route::get('/suporte', function() {
 
 Route::post('/suporte/ticket', [App\Http\Controllers\SuporteController::class, 'enviarTicket'])->name('suporte.ticket');
 
+// Analytics Tracking Routes - Moved to top for priority
+Route::post('/analytics/track', [App\Http\Controllers\AnalyticsController::class, 'track'])->name('analytics.track');
+Route::get('/analytics/track', function() {
+    return response()->json(['error' => 'Use POST method for /analytics/track'], 405);
+});
+
+// Simple test route for analytics
+Route::post('/analytics/simple', function() {
+    return response()->json(['success' => true, 'message' => 'Simple analytics route working']);
+});
+
 // Cookie Consent Routes
 Route::post('/cookies/consent', [App\Http\Controllers\CookieController::class, 'saveConsent'])->name('cookies.consent');
 Route::get('/cookies/consent', [App\Http\Controllers\CookieController::class, 'getConsent'])->name('cookies.get');
@@ -73,9 +84,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/analytics/config', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'store'])->name('admin.analytics.config.store');
     Route::post('/admin/analytics/config/test', [App\Http\Controllers\Admin\AnalyticsConfigController::class, 'test'])->name('admin.analytics.config.test');
 });
-
-// Analytics Tracking Routes
-Route::post('/analytics/track', [App\Http\Controllers\AnalyticsController::class, 'track'])->name('analytics.track');
 
 // Test route for analytics
 Route::get('/analytics/test', function() {
