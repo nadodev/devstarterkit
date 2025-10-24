@@ -8,12 +8,7 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '{{ \App\Helpers\AnalyticsConfigHelper::getGoogleAnalyticsId() }}', {
-                'custom_map': {
-                    'custom_parameter_1': 'user_type',
-                    'custom_parameter_2': 'conversion_value'
-                }
-            });
+            gtag('config', '{{ \App\Helpers\AnalyticsConfigHelper::getGoogleAnalyticsId() }}');
 
             // Eventos personalizados
             function trackEvent(eventName, parameters = {}) {
