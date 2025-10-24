@@ -865,8 +865,8 @@
                 }
             }, true);
 
-    // Sticky CTA - Aparece quando sair da seção hero
-    const stickyCta = document.getElementById('sticky-cta');
+            // Sticky CTA - Aparece quando sair da seção hero
+            const stickyCta = document.getElementById('sticky-cta');
             const heroSection = document.querySelector('section[style*="background: linear-gradient"]');
 
             if (stickyCta && heroSection) {
@@ -886,19 +886,20 @@
                 });
             }
     
-    // Smooth scroll para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            // Smooth scroll para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 });
-            }
-        });
-        
+            });
+            
             // Eventos de Tracking
             
             // Função auxiliar para enviar eventos
@@ -1074,5 +1075,6 @@
                     }
                 });
             });
+        });
     </script>
 @endsection
