@@ -902,10 +902,12 @@
             
             // Eventos de Tracking
             
-            // Função auxiliar para enviar eventos
+            // Função auxiliar para enviar eventos - v2.0
             function sendAnalyticsEvent(eventType, eventName, eventData = {}) {
+                console.log('sendAnalyticsEvent called with:', eventType, eventName);
                 const csrfToken = document.querySelector('meta[name="csrf-token"]');
                 if (!csrfToken) {
+                    console.error('CSRF token not found');
                     return;
                 }
                 
