@@ -13,11 +13,6 @@ class AnalyticsController extends Controller
      */
     public function dashboard()
     {
-        // Verificar se o usuário tem consentimento para analytics
-        if (!CookieHelper::analyticsAccepted()) {
-            return redirect()->route('conversion')->with('error', 'Consentimento para analytics necessário.');
-        }
-
         $data = [
             'title' => 'Dashboard de Analytics - Laravel ProStarter',
             'analytics_enabled' => CookieHelper::analyticsAccepted(),
@@ -32,11 +27,6 @@ class AnalyticsController extends Controller
      */
     public function api(Request $request)
     {
-        // Verificar consentimento
-        if (!CookieHelper::analyticsAccepted()) {
-            return response()->json(['error' => 'Consentimento necessário'], 403);
-        }
-
         $type = $request->get('type', 'overview');
 
         switch ($type) {
