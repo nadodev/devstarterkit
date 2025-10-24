@@ -857,7 +857,7 @@
                     // Mostra quando sair da seção hero
                     if (scrollY > heroHeight - 100) {
                         stickyCta.style.transform = 'translateY(0)';
-        } else {
+                    } else {
                         stickyCta.style.transform = 'translateY(-100%)';
                     }
                 });
@@ -1041,14 +1041,15 @@
             }, 30000);
             
             // Tracking de interações com FAQ
-            document.querySelectorAll('#faq button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const question = this.textContent.trim();
-                    sendAnalyticsEvent('faq_interaction', 'FAQ Interaction', {
-                        question: question
-                    });
+            document.querySelectorAll('details').forEach(detail => {
+                detail.addEventListener('toggle', function() {
+                    if (this.open) {
+                        const question = this.querySelector('summary').textContent.trim();
+                        sendAnalyticsEvent('faq_interaction', 'FAQ Interaction', {
+                            question: question
+                        });
+                    }
                 });
             });
-        });
     </script>
 @endsection
