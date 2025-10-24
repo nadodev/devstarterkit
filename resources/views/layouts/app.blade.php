@@ -15,9 +15,9 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                    <a href="{{ route('conversion') }}" class="flex items-center space-x-2">
                         <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
-                        <span class="text-xl font-bold text-gray-900">EduPlatform</span>
+                        <span class="text-xl font-bold text-gray-900">Laravel ProStarter</span>
                     </a>
                 </div>
 
@@ -97,9 +97,9 @@
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <i class="fas fa-graduation-cap text-blue-400 text-2xl"></i>
-                        <span class="text-xl font-bold">EduPlatform</span>
+                        <span class="text-xl font-bold">Laravel ProStarter</span>
                     </div>
-                    <p class="text-gray-300">A melhor plataforma de cursos online do Brasil.</p>
+                    <p class="text-gray-300">Sistema base completo para acelerar seus projetos Laravel.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Cursos</h3>
@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-300">&copy; 2024 EduPlatform. Todos os direitos reservados.</p>
+                <p class="text-gray-300">&copy; 2024 Laravel ProStarter. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
