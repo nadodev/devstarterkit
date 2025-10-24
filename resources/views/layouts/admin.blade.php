@@ -151,7 +151,7 @@
                             
                             <!-- Quick Actions -->
                             <div class="flex items-center space-x-2">
-                                <a href="{{ route('home') }}" target="_blank" class="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200">
+                                <a href="{{ route('conversion') }}" target="_blank" class="px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200">
                                     <i class="fas fa-external-link-alt mr-1"></i>
                                     Ver Site
                                 </a>
