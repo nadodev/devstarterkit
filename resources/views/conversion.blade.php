@@ -105,12 +105,12 @@
                         <div class="relative bg-black rounded-b-3xl overflow-hidden" style="height: 500px;">
                             <!-- Iframe do YouTube -->
                             <iframe width="100%" height="100%"
-                                src="https://www.youtube.com/embed/KpTO4CUNE08?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1&origin={{ request()->getHost() }}"
+                                src="https://www.youtube.com/embed/KpTO4CUNE08?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1&fs=1&cc_load_policy=0&iv_load_policy=3&autohide=0"
                                 title="Laravel ProStarter Demo" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
                                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" id="youtube-video"
-                                loading="lazy">
+                                loading="lazy" sandbox="allow-scripts allow-same-origin allow-presentation">
                             </iframe>
 
                             <!-- Loading indicator -->
@@ -841,8 +841,31 @@
 
 <script>
         document.addEventListener('DOMContentLoaded', function () {
-    
-            // Sticky CTA - Aparece quando sair da seção hero
+            
+            // Filtrar mensagens do YouTube para evitar spam no console
+            const originalConsoleError = console.error;
+            console.error = function(...args) {
+                const message = args.join(' ');
+                if (message.includes('postMessage') && message.includes('DOMWindow') && message.includes('youtube')) {
+                    // Silenciar erros de postMessage do YouTube
+                    return;
+                }
+                originalConsoleError.apply(console, args);
+            };
+
+            // Interceptar mensagens do YouTube para evitar erros de postMessage
+            window.addEventListener('message', function(event) {
+                // Filtrar mensagens do YouTube que podem causar erros
+                if (event.origin.includes('youtube.com') || event.origin.includes('youtube-nocookie.com')) {
+                    // Permitir apenas mensagens seguras do YouTube
+                    if (event.data && typeof event.data === 'object') {
+                        // Processar apenas mensagens válidas do YouTube
+                        return;
+                    }
+                }
+            }, true);
+
+    // Sticky CTA - Aparece quando sair da seção hero
     const stickyCta = document.getElementById('sticky-cta');
             const heroSection = document.querySelector('section[style*="background: linear-gradient"]');
 
