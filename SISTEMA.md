@@ -1,257 +1,153 @@
-# 📚 EduPlatform - Sistema de Cursos Online
+1️⃣ Hero / Topo
 
-## 🎯 Visão Geral
+Objetivo: captar atenção imediata, comunicar valor e gerar primeira ação.
 
-A **EduPlatform** é uma plataforma completa de cursos online desenvolvida com Laravel, oferecendo uma experiência educacional rica e interativa para estudantes, instrutores e administradores.
+Background: gradiente ou imagem sutil de dev trabalhando (computador + dashboard)
 
-## 🏗️ Arquitetura do Sistema
+Título grande (headline): “Monte sistemas completos em horas, não em semanas”
 
-### 1. Sistema de Autenticação Multi-Role
+Subtítulo: “Laravel ProStarter: a base pronta de sistema profissional para acelerar seus projetos Laravel”
 
-#### 👨‍🎓 **Aluno (Student)**
-- Consome cursos e acompanha progresso
-- Dashboard personalizado com estatísticas
-- Sistema de favoritos e lista de desejos
-- Certificados de conclusão
-- Acesso a fóruns de discussão
+CTA principal (botão): “Quero o Laravel ProStarter Agora” — cor contrastante (ex: roxo escuro ou azul)
 
-#### 👨‍🏫 **Instrutor (Instructor)**
-- Cria e gerencia cursos
-- Painel de controle para estatísticas
-- Gestão de alunos inscritos
-- Ferramentas de correção e feedback
-- Relatórios de desempenho
+Elementos adicionais:
 
-#### ⚙️ **Administrador (Admin)**
-- Moderação de cursos e usuários
-- Analytics completos da plataforma
-- Gestão de categorias e configurações
-- Controle total do sistema
+Badge “Oferta limitada – primeiros 50 compradores”
 
-### 2. Estrutura de Cursos
+Pequeno número de usuários ou ícones de avaliação: “+120 devs já aceleraram projetos”
 
-#### 📖 **Categorias**
-- Organização por áreas de conhecimento
-- Cores e ícones personalizados
-- Sistema de ativação/desativação
-- Contagem automática de cursos
+2️⃣ Seção de Benefícios / Features
 
-#### 🎓 **Cursos**
-- **Metadados**: Título, descrição, imagem de capa
-- **Níveis**: Iniciante, Intermediário, Avançado
-- **Precificação**: Gratuito ou pago
-- **Status**: Rascunho, Publicado, Em destaque
-- **Avaliações**: Sistema de estrelas e reviews
-- **Progresso**: Acompanhamento de conclusão
+Objetivo: mostrar de forma rápida o que o produto oferece.
 
-#### 📚 **Módulos e Aulas**
-- **Módulos**: Divisão lógica do curso
-- **Aulas**: Múltiplos tipos de conteúdo
-  - 🎥 Vídeos (YouTube/Vimeo/upload)
-  - 📝 Textos e artigos
-  - 📄 PDFs e apostilas
-  - 🖥️ Apresentações
-  - 🔊 Áudios e podcasts
-  - ❓ Questionários
+Layout: 2–3 colunas com ícones + bullets
 
-### 3. Sistema de Progresso
+Itens:
 
-#### 📊 **Acompanhamento Individual**
-- Marcação de aulas como concluídas
-- Tempo gasto por aula
-- Percentual de progresso por curso
-- Histórico de atividades
+Autenticação completa
 
-#### 🏆 **Certificados**
-- Geração automática ao completar curso
-- Número único de certificado
-- Download em PDF
-- Verificação online
+Painel administrativo moderno
 
-### 4. Sistema de Exercícios
+Layouts Blade prontos
 
-#### ❓ **Questionários**
-- Múltipla escolha
-- Verdadeiro/Falso
-- Questões abertas
-- Correção automática ou manual
-- Limite de tempo configurável
+Dashboard inicial pronto
 
-#### 💪 **Exercícios Práticos**
-- Upload de arquivos
-- Códigos e projetos
-- Feedback personalizado
-- Sistema de pontuação
+Cadastro, edição e exclusão de dados
 
-## 🚀 Funcionalidades Principais
+Sistema de usuários e permissões
 
-### Para Estudantes
+Estrutura organizada
 
-#### 📊 **Dashboard Personalizado**
-- Estatísticas de progresso
-- Cursos em andamento
-- Certificados obtidos
-- Aulas recentes
+Responsivo
 
-#### 🔍 **Descoberta de Cursos**
-- Busca por título e descrição
-- Filtros por categoria e nível
-- Ordenação por popularidade
-- Sistema de recomendações
+Visual: ícones simples e coloridos, bullets curtos e fáceis de ler
 
-#### 📈 **Acompanhamento de Progresso**
-- Barra de progresso por curso
-- Histórico de atividades
-- Tempo total de estudo
-- Metas personalizadas
+CTA secundário: botão pequeno “Ver Demo” ou “Quero acelerar meu projeto”
 
-### Para Instrutores
+3️⃣ Seção de Economia de Tempo / Dinheiro
 
-#### 🛠️ **Criação de Cursos**
-- Editor visual de conteúdo
-- Upload de mídias
-- Organização em módulos
-- Preview em tempo real
+Objetivo: mostrar impacto real e mensurável.
 
-#### 📊 **Analytics Detalhados**
-- Número de alunos inscritos
-- Taxa de conclusão
-- Avaliações e feedback
-- Tempo médio de estudo
+Layout: tabela ou cards comparativos
 
-#### 👥 **Gestão de Alunos**
-- Lista de inscritos
-- Progresso individual
-- Mensagens diretas
-- Relatórios de engajamento
+Exemplo: tempo sem ProStarter vs. tempo com ProStarter + economia monetária
 
-### Para Administradores
+Visual: destaque números grandes, cores diferentes para “Economia”
 
-#### 🛡️ **Moderação**
-- Aprovação de cursos
-- Moderação de usuários
-- Gestão de conteúdo
-- Sistema de denúncias
+CTA: “Quero economizar tempo e dinheiro”
 
-#### 📈 **Analytics da Plataforma**
-- Usuários ativos
-- Cursos mais populares
-- Receita e faturamento
-- Crescimento mensal
+4️⃣ Bônus e Escassez
 
-## 🎨 Interface e Experiência
+Objetivo: aumentar urgência e valor percebido.
 
-### Design Responsivo
-- **Mobile First**: Otimizado para dispositivos móveis
-- **Desktop**: Interface completa para computadores
-- **Tablet**: Experiência adaptada para tablets
+Título: “Bônus exclusivos para os 10 primeiros compradores”
 
-### Acessibilidade
-- Navegação por teclado
-- Contraste adequado
-- Textos alternativos
-- Suporte a leitores de tela
+Itens:
 
-### Performance
-- Carregamento otimizado
-- Cache inteligente
-- Compressão de imagens
-- CDN para mídias
+1 hora de call individual
 
-## 🔧 Tecnologias e Ferramentas
+Guia passo a passo
 
-### Backend
-- **Laravel 12**: Framework PHP moderno
-- **MySQL**: Banco de dados relacional
-- **Redis**: Cache e sessões
-- **Queue**: Processamento assíncrono
+Templates prontos
 
-### Frontend
-- **Tailwind CSS**: Framework CSS utilitário
-- **Alpine.js**: JavaScript reativo
-- **Vite**: Build tool moderno
-- **Font Awesome**: Ícones
+Acesso à comunidade exclusiva
 
-### Integrações
-- **YouTube API**: Vídeos incorporados
-- **Vimeo API**: Streaming de vídeo
-- **AWS S3**: Armazenamento de arquivos
-- **SendGrid**: Envio de emails
+Visual: caixas coloridas com ícones de presente ou estrela
 
-## 📱 Recursos Avançados
+CTA destacado: “Garanta seu bônus agora”
 
-### Sistema de Notificações
-- Novos cursos disponíveis
-- Lembretes de prazos
-- Mensagens de instrutores
-- Atualizações de progresso
+Dica: usar contagem regressiva ou número de licenças restantes
 
-### Comunidade
-- Perfis de usuários
-- Sistema de seguir
-- Fóruns de discussão
-- Grupos de estudo
+5️⃣ História / Autoridade
 
-### Mobile
-- PWA (Progressive Web App)
-- Download offline
-- Notificações push
-- Sincronização automática
+Objetivo: humanizar o produto e gerar conexão.
 
-## 🚀 Roadmap Futuro
+Foto sua (ou avatar profissional)
 
-### Fase 1 - MVP ✅
-- [x] Sistema de autenticação
-- [x] Criação de cursos
-- [x] Dashboard básico
-- [x] Sistema de progresso
+Texto curto: “Criei o Laravel ProStarter porque sempre perdia horas configurando sistemas. Agora, você pode começar pronto e focar no que importa: lógica do seu projeto.”
 
-### Fase 2 - Funcionalidades Avançadas
-- [ ] Sistema de pagamentos
-- [ ] Certificados digitais
-- [ ] Mobile app nativo
-- [ ] Integração com LMS
+Layout: lado a lado com imagem ou card central
 
-### Fase 3 - Inteligência Artificial
-- [ ] Recomendações personalizadas
-- [ ] Chatbot de suporte
-- [ ] Análise de sentimento
-- [ ] Auto-correção de exercícios
+6️⃣ Prova social / Depoimentos
 
-## 📊 Métricas e Analytics
+Objetivo: gerar confiança e validação.
 
-### KPIs Principais
-- **Taxa de conclusão**: % de alunos que terminam cursos
-- **Engajamento**: Tempo médio de sessão
-- **Satisfação**: Avaliações e reviews
-- **Retenção**: Usuários ativos mensais
+Layout: slider ou 3 cards horizontais
 
-### Relatórios Disponíveis
-- Progresso por curso
-- Performance de instrutores
-- Análise de conteúdo
-- Tendências de mercado
+Nome + foto + cargo + depoimento curto
 
-## 🔒 Segurança e Privacidade
+Avaliações em estrelas (ex: 4.9/5)
 
-### Proteção de Dados
-- Criptografia de senhas
-- HTTPS obrigatório
-- Backup automático
-- LGPD compliance
+Destaque números: “+120 projetos entregues”
 
-### Controle de Acesso
-- Middleware de roles
-- Permissões granulares
-- Auditoria de ações
-- Rate limiting
+7️⃣ Oferta + CTA final
 
-## 🎯 Conclusão
+Objetivo: fechar a venda.
 
-A **EduPlatform** representa uma solução completa para educação online, combinando tecnologia moderna com uma experiência de usuário excepcional. O sistema foi projetado para ser escalável, seguro e fácil de usar, atendendo às necessidades de estudantes, instrutores e administradores.
+Texto curto e direto: “Oferta de lançamento — R$97, de R$197 — apenas 50 licenças”
 
-Com funcionalidades avançadas como sistema de progresso, certificados digitais, analytics detalhados e design responsivo, a plataforma está preparada para competir no mercado de educação online e oferecer uma experiência educacional de alta qualidade.
+Botão grande e contrastante: “Quero o Laravel ProStarter Agora”
 
----
+Pequena nota de garantia: “30 dias de devolução total, sem perguntas”
 
-**Desenvolvido com ❤️ para transformar vidas através da educação!** 🎓
+Elementos extras: selos de segurança, pagamento seguro, acesso imediato
+
+8️⃣ FAQ
+
+Objetivo: tirar objeções comuns.
+
+Layout em acordeão (toggle)
+
+Perguntas principais:
+
+Preciso saber Laravel?
+
+Funciona em hospedagem compartilhada?
+
+Posso personalizar tudo?
+
+Posso usar em vários projetos?
+
+E se eu não conseguir usar?
+
+Visual: ícones de interrogação + bullets curtos
+
+9️⃣ Footer
+
+Links importantes: Contato, Política de Privacidade, Suporte, Documentação
+
+Direitos autorais: “© 2025 Laravel ProStarter – Base pronta de sistema profissional”
+
+Dicas de design e cores
+
+CTA: cores quentes e contrastantes (roxo, azul escuro, laranja)
+
+Títulos: destaque com fonte maior e negrito
+
+Bullets/benefícios: ícones coloridos para guiar o olhar
+
+Bônus e escassez: caixas coloridas com ícones de presente, relógio ou estrela
+
+Depoimentos: use fotos reais se possível
+
+Layout responsivo: mobile-first, grid flexível para colunas que viram cards

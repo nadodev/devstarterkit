@@ -1,610 +1,765 @@
 @extends('layouts.landing')
 
-@section('title', 'DevStarter Kit - Crie Sistemas Completos em Horas | Laravel + Blade + Tailwind')
+@section('title', 'Laravel ProStarter - Crie Sistemas Completos em Horas | Laravel + Blade + Tailwind')
 
 @section('meta')
-<meta name="description" content="DevStarter Kit: Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind. Crie sistemas em horas, não em semanas!">
-<meta name="keywords" content="devstarter kit, laravel, Blade, tailwind, sistema base, desenvolvedor, projeto completo, dashboard, login, crud">
-<meta name="author" content="DevStarter Kit">
+    <meta name="description"
+        content="Laravel ProStarter: Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind. Crie sistemas em horas, não em semanas!">
+    <meta name="keywords"
+        content="laravel prostarter, laravel, Blade, tailwind, sistema base, desenvolvedor, projeto completo, dashboard, login, crud">
+    <meta name="author" content="Laravel ProStarter">
 <meta name="robots" content="index, follow">
 <meta name="language" content="pt-BR">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ request()->url() }}">
-<meta property="og:title" content="DevStarter Kit - Crie Sistemas Completos em Horas">
-<meta property="og:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
-<meta property="og:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
-<meta property="og:site_name" content="DevStarter Kit">
+    <meta property="og:title" content="Laravel ProStarter - Crie Sistemas Completos em Horas">
+    <meta property="og:description"
+        content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
+    <meta property="og:image" content="{{ asset('images/laravel-prostarter-og.jpg') }}">
+    <meta property="og:site_name" content="Laravel ProStarter">
 <meta property="og:locale" content="pt_BR">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ request()->url() }}">
-<meta property="twitter:title" content="DevStarter Kit - Crie Sistemas Completos em Horas">
-<meta property="twitter:description" content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
-<meta property="twitter:image" content="{{ asset('images/devstarter-kit-og.jpg') }}">
+    <meta property="twitter:title" content="Laravel ProStarter - Crie Sistemas Completos em Horas">
+    <meta property="twitter:description"
+        content="Sistema base completo que já ajudou +127 desenvolvedores a acelerar projetos com Laravel + Blade + Tailwind.">
+    <meta property="twitter:image" content="{{ asset('images/laravel-prostarter-og.jpg') }}">
 
 <link rel="canonical" href="{{ request()->url() }}">
 @endsection
 
 @section('content')
-<div id="sticky-cta" class="fixed top-0 left-0 right-0 bg-orange-500 text-white py-2 sm:py-3 px-2 sm:px-4 z-50 transform -translate-y-full transition-transform duration-300">
+    <!-- Sticky CTA -->
+    <div id="sticky-cta"
+        class="fixed top-0 left-0 right-0 bg-yellow-500 text-black py-2 sm:py-3 px-2 sm:px-4 z-50 transition-transform duration-300 shadow-lg">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
         <div class="flex items-center text-center sm:text-left">
             <i class="fas fa-fire mr-1 sm:mr-2 text-sm sm:text-base"></i>
-            <span class="font-bold text-sm sm:text-base">🔥 Oferta limitada - Só para os primeiros 50!</span>
+                <span class="font-bold text-sm sm:text-base">🔥 Oferta limitada - Primeiros 50 compradores!</span>
         </div>
-        <a href="#oferta" class="bg-white text-orange-500 px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg font-bold hover:bg-gray-100 transition-colors text-xs sm:text-sm whitespace-nowrap">
-            Quero o DevStarter Kit Agora
+            <a href="#compra"
+                class="bg-purple-700 text-white px-3 sm:px-6 py-1.5 sm:py-2 rounded-lg font-bold hover:bg-purple-800 transition-colors text-xs sm:text-sm whitespace-nowrap">
+                Quero o Laravel ProStarter Agora
         </a>
     </div>
 </div>
 
-<section class="pt-6 pb-6 relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+    <!-- Hero / Topo -->
+    <section class="relative text-white py-40 text-center overflow-hidden min-h-screen flex items-center"
+        style="background: linear-gradient(135deg, #6B21A8 0%, #7C3AED 50%, #1D4ED8 100%);">
+        <!-- Elementos geométricos animados -->
+        <div class="absolute inset-0 opacity-30">
     <div class="absolute inset-0">
-        <div class="absolute inset-0 opacity-20">
-            <div class="particle absolute w-2 h-2 bg-orange-400 rounded-full animate-float-1"></div>
+                <!-- Código difuso de fundo -->
+                <div class="absolute top-10 left-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
+                <div
+                    class="absolute top-32 right-20 w-24 h-24 bg-blue-400/20 rounded-full blur-lg animate-pulse delay-1000">
+        </div>
+                <div
+                    class="absolute bottom-20 left-1/4 w-40 h-40 bg-purple-400/20 rounded-full blur-2xl animate-pulse delay-2000">
+    </div>
+                <div
+                    class="absolute bottom-32 right-1/3 w-28 h-28 bg-pink-400/20 rounded-full blur-xl animate-pulse delay-500">
+                        </div>
+                    </div>
+                    
+            <!-- Partículas flutuantes -->
+            <div class="particle absolute w-2 h-2 bg-yellow-400 rounded-full animate-float-1"></div>
             <div class="particle absolute w-3 h-3 bg-blue-400 rounded-full animate-float-2"></div>
             <div class="particle absolute w-1 h-1 bg-purple-400 rounded-full animate-float-3"></div>
             <div class="particle absolute w-2 h-2 bg-green-400 rounded-full animate-float-4"></div>
-            <div class="particle absolute w-1 h-1 bg-yellow-400 rounded-full animate-float-5"></div>
-        </div>
-        
-        <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-blue-500/10"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="text-center lg:text-left">
-                <div class="inline-flex items-center bg-orange-500/20 backdrop-blur-sm border border-orange-500/30 rounded-full px-3 py-2 mb-4 sm:mb-6 text-xs font-medium">
-                    <span class="w-2 h-2 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
-                    <span class="text-center">🔥 +127 desenvolvedores já aceleraram</span>
-                </div>
-                
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
-                    <span class="block text-white">Crie sistemas</span>
-                    <span class="block text-white">completos em</span>
-                    <span class="block bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent animate-gradient">
-                        HORAS
-                    </span>
-                    <span class="block text-white">não em semanas!</span>
-                </h1>
-                
-                <p class="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 lg:mb-10 text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                    O <strong class="text-orange-400">DevStarter Kit</strong> é a base completa que você precisa para 
-                    entregar projetos profissionais em tempo recorde.
-                </p>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 lg:mb-10">
-                    <div class="flex items-center justify-center lg:justify-start space-x-3 bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10">
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                            <i class="fas fa-bolt text-white text-sm sm:text-lg"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-xs sm:text-sm">Rapidez</div>
-                            <div class="text-xs text-gray-400">Setup em minutos</div>
-                        </div>
+            <div class="particle absolute w-1 h-1 bg-pink-400 rounded-full animate-float-5"></div>
+            <div class="particle absolute w-2 h-2 bg-orange-400 rounded-full animate-float-6"></div>
                     </div>
                     
-                    <div class="flex items-center justify-center lg:justify-start space-x-3 bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10">
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-white text-sm sm:text-lg"></i>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div
+                class="inline-flex items-center bg-yellow-500 text-black rounded-full px-4 py-2 mb-4 mt-10  lg:mt-0 text-xs font-bold animate-bounce shadow-xl">
+                <span class="w-2 h-2 bg-yellow-600 rounded-full mr-2 animate-pulse"></span>
+                🔥 Oferta limitada — primeiros 50!
                         </div>
-                        <div>
-                            <div class="font-semibold text-xs sm:text-sm">Segurança</div>
-                            <div class="text-xs text-gray-400">Pronto para produção</div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center justify-center lg:justify-start space-x-3 bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10">
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center">
-                            <i class="fas fa-rocket text-white text-sm sm:text-lg"></i>
-                        </div>
-                        <div>
-                            <div class="font-semibold text-xs sm:text-sm">Performance</div>
-                            <div class="text-xs text-gray-400">Otimizado</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#oferta" class="group relative bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-orange-500/25 animate-pulse-border">
-                    <span class="relative z-10">Quero o DevStarter Kit Agora</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                    
-                    <a href="https://devkit-demo.leonardogeja.com.br" target="_blank" rel="noopener noreferrer"  class="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:bg-white/20 transition-all duration-300">
-                        <i class="fas fa-play mr-2"></i>Ver Demo
-                    </a>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-6 mt-6 sm:mt-8 lg:mt-10">
-                    <div class="flex items-center space-x-2">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star text-xs"></i>
-                            <i class="fas fa-star text-xs"></i>
-                            <i class="fas fa-star text-xs"></i>
-                            <i class="fas fa-star text-xs"></i>
-                            <i class="fas fa-star text-xs"></i>
-                        </div>
-                        <span class="text-xs sm:text-sm text-gray-300">4.9/5 (127+)</span>
-                    </div>
-                    <div class="text-xs sm:text-sm text-gray-400">
-                        ✅ Garantia 30 dias
-                    </div>
-                </div>
-            </div>
-            
-            <div class="relative">
-                <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div class="flex justify-center mb-4">
+                <div class="relative max-w-4xl w-full">
+                    <div
+                        class="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
                     <div class="bg-gray-100 px-4 py-3 flex items-center space-x-2">
                         <div class="w-3 h-3 bg-red-500 rounded-full"></div>
                         <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
                         <div class="flex-1 text-center">
-                            <span class="text-sm font-medium text-gray-600">DevStarter Kit Dashboard</span>
+                                <span class="text-sm font-medium text-gray-600">Laravel ProStarter Demo</span>
                         </div>
                     </div>
-                    
-                    <div class="p-6 bg-gradient-to-br from-gray-50 to-white">
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-blue-50 rounded-xl p-4">
-                                <div class="text-2xl font-bold text-blue-600">127</div>
-                                <div class="text-xs text-blue-500">Projetos</div>
+                        <!-- Vídeo do YouTube -->
+                        <div class="relative bg-black rounded-b-3xl overflow-hidden" style="height: 500px;">
+                            <!-- Iframe do YouTube -->
+                            <iframe width="100%" height="100%"
+                                src="https://www.youtube.com/embed/EdrQPJZ77vY?autoplay=0&rel=0&modestbranding=1&showinfo=0&controls=1&enablejsapi=1"
+                                title="Laravel ProStarter Demo" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" id="youtube-video">
+                            </iframe>
+
+                            <!-- Loading indicator -->
+                            <div class="absolute inset-0 bg-gray-900 flex items-center justify-center" id="video-loading">
+                                <div class="text-center text-white">
+                                    <div
+                                        class="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4">
+                                    </div>
+                                    <p class="text-sm">Carregando vídeo...</p>
+                                </div>
                             </div>
-                            <div class="bg-green-50 rounded-xl p-4">
-                                <div class="text-2xl font-bold text-green-600">98%</div>
-                                <div class="text-xs text-green-500">Satisfação</div>
                             </div>
                         </div>
                         
-                        <div class="space-y-3 mb-6">
-                            <div>
-                                <div class="flex justify-between text-xs text-gray-600 mb-1">
-                                    <span>Autenticação</span>
-                                    <span>100%</span>
+                    <!-- Efeitos de fundo -->
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-yellow-500/20 rounded-full blur-xl animate-pulse">
                                 </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-blue-500 h-2 rounded-full animate-progress" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-xs text-gray-600 mb-1">
-                                    <span>Dashboard</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-purple-500 h-2 rounded-full animate-progress" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-xs text-gray-600 mb-1">
-                                    <span>CRUD</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2">
-                                    <div class="bg-orange-500 h-2 rounded-full animate-progress" style="width: 90%"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse">
                                 </div>
                             </div>
                         </div>
                         
-                        <button class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105">
-                            <i class="fas fa-rocket mr-2"></i>Sistema Funcionando
-                        </button>
+            <!-- Conteúdo centralizado abaixo -->
+            <div class="text-center mb-10">
+                <!-- Subtítulo -->
+                <p class="text-xl md:text-2xl mb-10 font-medium text-gray-200 max-w-4xl mx-auto leading-relaxed">
+                    Laravel ProStarter: a base pronta de sistema profissional para acelerar seus projetos Laravel
+                </p>
+
+                <!-- CTA Principal -->
+                <a href="#compra"
+                    class="group relative text-black font-bold px-12 py-6 rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-110 inline-block mb-8 animate-pulse-border"
+                    style="background: linear-gradient(45deg, #FACC15, #F59E0B);">
+                    <span class="relative z-10 text-lg">Quero o Laravel ProStarter Agora</span>
+                </a>
+
+                <!-- Prova social -->
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 gap-4">
+                    <div class="flex items-center" style="margin-bottom: 0px;">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                     </div>
+                        <span class="text-lg font-semibold">4.9/5 (127+)</span>
                 </div>
-                
-                <div class="absolute -top-4 -right-4 w-20 h-20 bg-orange-500/20 rounded-full blur-xl animate-pulse"></div>
-                <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
+                    <div class="flex items-center space-x-4 text-lg">
+                        <span class="flex items-center">
+                            <i class="fas fa-shield-alt text-green-400 mr-2"></i>
+                            Garantia 30 dias
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-rocket text-blue-400 mr-2"></i>
+                            Acesso imediato
+                        </span>
+                    </div>
             </div>
         </div>
     </div>
     
+        <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
         </div>
     </div>
 </section>
+    <!-- Features / Benefícios -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 right-20 w-60 h-60 bg-purple-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-40 h-40 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
 
-<section class="py-12 sm:py-16 lg:py-20 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 font-display">
-                Quem já acelerou projetos com o DevStarter Kit
-            </h2>
-            <div class="flex items-center justify-center mb-6 sm:mb-8">
-                <div class="flex text-yellow-400 text-lg sm:text-xl lg:text-2xl mr-3 sm:mr-4">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800">4.9/5</span>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">O que você recebe</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tudo que você precisa para criar sistemas profissionais
+                    em tempo recorde</p>
             </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-lock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">Autenticação completa</h3>
+                    <p class="text-gray-600 leading-relaxed">Login, registro e painel seguro prontos para produção com
+                        sistema de permissões avançado</p>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-tachometer-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">Painel administrativo moderno</h3>
+                    <p class="text-gray-600 leading-relaxed">Dashboard inicial com CRUD funcional integrado e métricas em
+                        tempo real</p>
+                </div>
+
+                <div
+                    class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+            </div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">Layouts prontos</h3>
+                    <p class="text-gray-600 leading-relaxed">Templates Blade totalmente personalizáveis e responsivos com
+                        design moderno</p>
         </div>
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Lucas Pereira" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Lucas Pereira</h3>
-                <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Freelancer Full Stack</p>
-                <p class="text-gray-700 italic text-base sm:text-lg">
-                    "Economizei 25 horas no último projeto! O DevStarter Kit me permitiu focar na lógica de negócio desde o primeiro dia."
-                </p>
+                <div
+                    class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">Sistema de usuários e permissões</h3>
+                    <p class="text-gray-600 leading-relaxed">Controle completo sobre quem pode acessar o sistema com
+                        diferentes níveis de acesso</p>
             </div>
             
-            <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" alt="Marina Santos" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Marina Santos</h3>
-                <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Desenvolvedora Front-end</p>
-                <p class="text-gray-700 italic text-base sm:text-lg">
-                    "Em 1 dia, já tinha meu sistema no ar. A estrutura modular do DevStarter Kit é incrível!"
-                </p>
+                <div
+                    class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">Estrutura organizada</h3>
+                    <p class="text-gray-600 leading-relaxed">Código limpo seguindo boas práticas Laravel + Tailwind com
+                        documentação completa</p>
             </div>
             
-            <div class="bg-gray-50 rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 sm:col-span-2 lg:col-span-1">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Carlos Lima" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Carlos Lima</h3>
-                <p class="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Agência Digital</p>
-                <p class="text-gray-700 italic text-base sm:text-lg">
-                    "Nossa agência usa o DevStarter Kit em todos os projetos. Reduzimos o tempo de entrega de 2 semanas para 3 dias."
-                </p>
+                <div
+                    class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">100% Responsivo</h3>
+                    <p class="text-gray-600 leading-relaxed">Funciona perfeitamente em desktop, tablet e mobile sem
+                        necessidade de ajustes</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-100">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 font-display">
-                O que você recebe
-            </h2>
+    <!-- Economia / Impacto -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-40 h-40 bg-purple-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-32 h-32 bg-yellow-400 rounded-full blur-2xl"></div>
         </div>
         
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <i class="fas fa-puzzle-piece text-white text-lg sm:text-2xl"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Estrutura de sistema modular pronta para uso</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Base sólida e organizada para qualquer tipo de projeto, sem precisar começar do zero.</p>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Quanto tempo você economiza</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Veja o impacto real do Laravel ProStarter no seu
+                    desenvolvimento</p>
             </div>
             
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <i class="fas fa-lock text-white text-lg sm:text-2xl"></i>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div
+                    class="group bg-gradient-to-br from-purple-500 to-purple-600 p-10 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center rounded-full">
+                            <i class="fas fa-clock text-3xl"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Login, registro e dashboard integrados</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Sistema de autenticação completo e seguro, pronto para usar em produção.</p>
+            </div>
+                    <h4 class="font-bold text-4xl mb-4 text-center">33h30min</h4>
+                    <p class="text-xl text-center text-purple-100 mb-4">economizadas por projeto</p>
+                    <p class="text-lg text-center text-purple-200">Entrega até 6 dias mais rápida por projeto</p>
             </div>
             
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <i class="fas fa-globe text-white text-lg sm:text-2xl"></i>
+                <div
+                    class="group bg-gradient-to-br from-yellow-500 to-yellow-600 p-10 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center rounded-full">
+                            <i class="fas fa-dollar-sign text-3xl"></i>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Página pública pronta e templates reutilizáveis</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Landing page e templates profissionais que você pode personalizar facilmente.</p>
             </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <i class="fas fa-gift text-white text-lg sm:text-2xl"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Guia + bônus PDF exclusivo</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Documentação completa e bônus exclusivos para acelerar ainda mais seu desenvolvimento.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <i class="fas fa-users text-white text-lg sm:text-2xl"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Suporte e comunidade inclusos</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Acesso à comunidade exclusiva e suporte direto dos criadores do DevStarter Kit.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-indigo-500 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <i class="fas fa-rocket text-white text-lg sm:text-2xl"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">Performance otimizada</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Código otimizado e seguindo as melhores práticas de Laravel, Blade e Tailwind.</p>
+                    <h4 class="font-bold text-4xl mb-4 text-center">R$1.870</h4>
+                    <p class="text-xl text-center text-yellow-100 mb-4">economizados por projeto</p>
+                    <p class="text-lg text-center text-yellow-200">Dinheiro e tempo que você pode investir em mais projetos
+                    </p>
             </div>
         </div>
         
-        <div class="text-center">
-            <a href="#oferta" class="bg-orange-500 text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 rounded-2xl font-bold text-lg sm:text-xl lg:text-2xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block w-full sm:w-auto animate-pulse-border">
-                Quero o DevStarter Kit Agora
-            </a>
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-lg">
+                    <i class="fas fa-chart-line text-green-500 text-xl mr-3"></i>
+                    <span class="text-lg font-semibold text-gray-800">ROI médio de 1.900% em economia de tempo</span>
+                </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 px-4 bg-white">
-    @include('components.comparison-table')
-</section>
+    <!-- Bônus e Escassez -->
+    <section class="bg-gradient-to-br from-yellow-50 to-yellow-100 py-24 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-40 h-40 bg-yellow-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-32 h-32 bg-orange-400 rounded-full blur-2xl"></div>
+        </div>
 
-<section id="oferta" class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-800 text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="mb-12">
+                <div
+                    class="inline-flex items-center bg-yellow-500 text-black rounded-full px-6 py-3 mb-6 text-sm font-bold animate-pulse">
+                    <span class="w-2 h-2 bg-yellow-600 rounded-full mr-3 animate-pulse"></span>
+                    🎁 Bônus limitados
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Bônus exclusivos para os 10 primeiros
+                    compradores</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Valor total dos bônus: R$ 197 - Grátis para os primeiros
+                    compradores!</p>
     </div>
     
-    <div class="max-w-4xl mx-auto text-center relative">
-        <div class="inline-flex items-center bg-orange-500 text-white rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 text-sm sm:text-base lg:text-lg font-bold animate-pulse">
-            <i class="fas fa-fire mr-1 sm:mr-2"></i>
-            <span class="text-center">🔥 Oferta limitada - Só para os primeiros 50 compradores!</span>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-yellow-500 transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-gift text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">1 hora de call individual</h3>
+                    </div>
+                    <p class="text-gray-600">Para configuração e dúvidas com suporte direto</p>
         </div>
         
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 text-white font-display leading-tight">
-            Pare de começar do <span class="text-orange-400">ZERO</span> a cada projeto
-        </h2>
-        
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-12">
-            <div class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 text-orange-400">R$ 97</div>
-            <div class="text-lg sm:text-xl lg:text-2xl line-through opacity-75 mb-3 sm:mb-4">De R$ 197</div>
-            <div class="text-xl sm:text-2xl lg:text-3xl font-bold text-orange-400 mb-6 sm:mb-8">50% DE DESCONTO!</div>
-            
-            <div class="bg-orange-500/20 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
-                <h3 class="text-lg sm:text-xl lg:text-2xl font-bold text-orange-300 mb-3 sm:mb-4">🎁 Bônus Inclusos (R$ 197):</h3>
-                <ul class="text-left space-y-2 sm:space-y-3">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-green-400 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i>
-                        <span class="text-sm sm:text-base">Guia "Como Criar Estruturas de Sistema Profissionais do Zero"</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-green-400 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i>
-                        <span class="text-sm sm:text-base">Template prontos: Login, Dashboard e CRUD básico</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-green-400 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i>
-                        <span class="text-sm sm:text-base">1 hora de suporte comigo por call, para configurar o sistema e resolver qualquer dúvida.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-green-400 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i>
-                        <span class="text-sm sm:text-base">Suporte e comunidade exclusiva</span>
-                    </li>
-                </ul>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-500 transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-book text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Guia passo a passo</h3>
+                    </div>
+                    <p class="text-gray-600">Criando sistemas profissionais do zero</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-green-500 transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-palette text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Templates prontos</h3>
+                    </div>
+                    <p class="text-gray-600">Login, Dashboard e CRUD básico</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-purple-500 transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Comunidade exclusiva</h3>
+                    </div>
+                    <p class="text-gray-600">Acesso à comunidade de desenvolvedores</p>
+                </div>
             </div>
             
-            <a href="https://pay.kiwify.com.br/8FjTcKO" class="bg-orange-500 text-white px-6 sm:px-8 lg:px-16 py-4 sm:py-6 lg:py-8 rounded-2xl font-bold text-lg sm:text-xl lg:text-2xl xl:text-3xl hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block w-full sm:w-auto animate-pulse-border">
-                Quero o DevStarter Kit + Bônus Agora
+            <a href="#compra"
+                class="group relative text-white font-bold px-12 py-6 rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-110 inline-block animate-pulse-border"
+                style="background: linear-gradient(45deg, #7C3AED, #6B21A8);">
+                <span class="relative z-10 text-lg">Garanta seu bônus agora</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-800 to-purple-900 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
+    </div>
+</section>
+
+    <!-- Autoridade / História -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 right-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <div class="bg-white rounded-3xl p-12 shadow-2xl">
+                <img src="https://github.com/nadodev.png" alt="Leonardo Geja"
+                    class="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-purple-500 shadow-lg">
+                <blockquote class="text-2xl italic mb-6 text-gray-700 leading-relaxed">
+                    "Criei o Laravel ProStarter porque sempre perdia horas configurando sistemas. Agora, você pode começar
+                    pronto e focar na lógica do seu projeto."
+                </blockquote>
+                <p class="text-xl font-semibold text-gray-800">- Leonardo Geja</p>
+                <p class="text-gray-600 mt-2">Criador do Laravel ProStarter</p>
         </div>
     </div>
 </section>
 
-<section class="py-12 sm:py-16 lg:py-20 px-4 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8">
-            <i class="fas fa-shield-alt text-white text-2xl sm:text-3xl lg:text-4xl"></i>
+    <!-- Depoimentos -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-60 h-60 bg-green-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-40 h-40 bg-blue-400 rounded-full blur-2xl"></div>
         </div>
         
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 font-display">
-            Garantia Total de 30 Dias
-        </h2>
-        
-        <p class="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
-            Se você não conseguir entregar seu primeiro sistema, devolvemos 100% do valor. 
-            <strong>Sem perguntas, sem burocracia.</strong>
-        </p>
-        
-        <div class="bg-green-50 rounded-2xl p-6 sm:p-8 border-2 border-green-200">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="text-center">
-                    <i class="fas fa-undo text-green-500 text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Reembolso Total</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">100% do valor devolvido</p>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-clock text-green-500 text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">30 Dias</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">Tempo suficiente para testar</p>
-                </div>
-                <div class="text-center sm:col-span-2 lg:col-span-1">
-                    <i class="fas fa-question text-green-500 text-2xl sm:text-3xl mb-3 sm:mb-4"></i>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-2">Sem Perguntas</h3>
-                    <p class="text-gray-600 text-sm sm:text-base">Processo simples e rápido</p>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Quem já acelerou projetos com o Laravel
+                    ProStarter</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Veja o que nossos desenvolvedores estão dizendo</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face"
+                            alt="Lucas Pereira" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Lucas Pereira</h3>
+                            <p class="text-gray-600">Freelancer Full Stack</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">"Economizei 25 horas no último projeto! O ProStarter me
+                        permitiu focar na lógica de negócio desde o primeiro dia."</p>
+            </div>
+            
+                <div
+                    class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face"
+                            alt="Marina Santos" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Marina Santos</h3>
+                            <p class="text-gray-600">Desenvolvedora Front-end</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">"Em 1 dia, já tinha meu sistema no ar. A estrutura
+                        modular do ProStarter é incrível!"</p>
+            </div>
+            
+                <div
+                    class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+                            alt="Carlos Lima" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Carlos Lima</h3>
+                            <p class="text-gray-600">Agência Digital</p>
+                        </div>
+            </div>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+            </div>
+                    <p class="text-gray-700 italic leading-relaxed">"Nossa agência usa o ProStarter em todos os projetos.
+                        Reduzimos o tempo de entrega de 2 semanas para 3 dias."</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-100">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 font-display">
-                Perguntas Frequentes
-            </h2>
+    <!-- Oferta + CTA Final -->
+    <section id="compra" class="py-24 text-white text-center relative overflow-hidden"
+        style="background: linear-gradient(135deg, #6B21A8 0%, #7C3AED 50%, #1D4ED8 100%);">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-40 h-40 bg-yellow-400/30 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-32 h-32 bg-white/20 rounded-full blur-2xl animate-pulse"></div>
         </div>
-        
-        <div class="space-y-4 sm:space-y-6">
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">❓ Preciso saber Laravel?</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Não! O DevStarter Kit vem com documentação completa e exemplos práticos. Mesmo iniciantes conseguem usar em poucas horas.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">❓ Funciona em hospedagem compartilhada?</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Sim! O DevStarter Kit é otimizado para funcionar em qualquer hospedagem que suporte PHP 8.0+ e MySQL.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">❓ Posso personalizar tudo?</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Absolutamente! Cores, logos, textos, funcionalidades - tudo pode ser personalizado. É seu código, você tem total controle.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">❓ E se eu não conseguir usar?</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Temos garantia de 30 dias! Se você não conseguir entregar seu primeiro sistema, devolvemos 100% do valor.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">❓ Posso usar em vários projetos?</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Sim! Uma vez adquirido, você pode usar o DevStarter Kit em quantos projetos quiser, sem limitações.</p>
-            </div>
-            
-            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
-                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">❓ Tem suporte técnico?</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Sim! Incluímos suporte completo por email e acesso à nossa comunidade exclusiva de desenvolvedores.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="py-12 sm:py-16 lg:py-20 px-4 bg-orange-500 text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
+                <div class="mb-8">
+                    <div
+                        class="inline-flex items-center bg-yellow-500 text-black rounded-full px-6 py-3 mb-6 text-sm font-bold animate-pulse">
+                        <span class="w-2 h-2 bg-yellow-600 rounded-full mr-3 animate-pulse"></span>
+                        🔥 Oferta de Lançamento — Apenas 50 licenças!
+                    </div>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Pare de começar do ZERO a cada projeto</h2>
+                    <p class="text-base sm:text-lg mb-6">De R$197 por <span class="text-yellow-400 font-bold text-xl sm:text-2xl">R$97</span> — 50%
+                        de desconto!</p>
+                </div>
+
+                <!-- Bônus e Garantias - Design Limpo -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Bônus -->
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-gift text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Bônus Inclusos</h3>
+                                    <p class="text-yellow-300 text-sm">Valor: R$ 197</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span class="text-white text-sm">Guia completo de estruturas profissionais</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span class="text-white text-sm">Templates: Login, Dashboard e CRUD</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span class="text-white text-sm">1 hora de suporte personalizado</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-3"></i>
+                                    <span class="text-white text-sm">Comunidade exclusiva</span>
+                                </div>
+                            </div>
     </div>
     
-    <div class="max-w-4xl mx-auto text-center relative">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 text-white font-display leading-tight">
-            Pare de começar do <span class="text-yellow-300">ZERO</span>.
-        </h2>
-        <p class="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-12 text-orange-100 font-medium max-w-3xl mx-auto">
-            Tenha uma base sólida e entregue projetos profissionais hoje mesmo!
-        </p>
-        
-        <a href="https://pay.kiwify.com.br/8FjTcKO" class="bg-white text-orange-500 px-6 sm:px-8 lg:px-16 py-4 sm:py-6 lg:py-8 rounded-2xl font-bold text-lg sm:text-xl lg:text-2xl xl:text-3xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-block w-full sm:w-auto mb-6 sm:mb-8 animate-pulse-border">
-            Quero o DevStarter Kit Agora
-        </a>
-        
-        <div class="text-orange-200 space-y-2 sm:space-y-3">
-            <p class="text-base sm:text-lg">✅ Acesso imediato após pagamento</p>
-            <p class="text-base sm:text-lg">🎁 Bônus incluído</p>
-            <p class="text-base sm:text-lg">🛡️ Garantia de 30 dias</p>
+                        <!-- Garantias -->
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Garantias</h3>
+                                    <p class="text-green-300 text-sm">100% Seguro</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-shield-alt text-blue-400 mr-3"></i>
+                                    <span class="text-white text-sm">30 dias de garantia total</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-rocket text-blue-400 mr-3"></i>
+                                    <span class="text-white text-sm">Acesso imediato após pagamento</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users text-blue-400 mr-3"></i>
+                                    <span class="text-white text-sm">Comunidade inclusa vitalícia</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-headset text-blue-400 mr-3"></i>
+                                    <span class="text-white text-sm">Suporte técnico completo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/checkout"
+                    class="group relative text-black font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-6 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 inline-block mb-6 animate-pulse-border"
+                    style="background: linear-gradient(45deg, #FACC15, #F59E0B);">
+                    <span class="relative z-10 text-base sm:text-lg md:text-xl">Quero o Laravel ProStarter Agora</span>
+                </a>
+
+                <p class="text-xs sm:text-sm md:text-base text-center">✅ Garantia de 30 dias | Acesso imediato | Bônus incluídos</p>
         </div>
     </div>
 </section>
 
-<footer class="bg-gray-900 text-white py-12 px-4">
-    <div class="max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-8">
-            <div class="md:col-span-2">
-                <h3 class="text-xl font-bold mb-4 text-white font-display">DevStarter Kit</h3>
-                <p class="text-gray-300 mb-6 text-base">
-                    A base completa para desenvolvedores que querem entregar projetos profissionais em horas, não em semanas.
+    <!-- FAQ -->
+    <section class="py-20 bg-gray-50 max-w-4xl mx-auto text-left">
+        <h2 class="text-3xl font-bold mb-8 text-center">Perguntas Frequentes</h2>
+        <div class="space-y-4">
+            <details class="bg-white p-4 rounded shadow">
+                <summary class="font-bold cursor-pointer">Preciso saber Laravel?</summary>
+                <p class="mt-2">Não! O ProStarter vem com guia passo a passo e exemplos práticos.</p>
+            </details>
+            <details class="bg-white p-4 rounded shadow">
+                <summary class="font-bold cursor-pointer">Funciona em hospedagem simples?</summary>
+                <p class="mt-2">Sim! Compatível com PHP 8+ e MySQL.</p>
+            </details>
+            <details class="bg-white p-4 rounded shadow">
+                <summary class="font-bold cursor-pointer">Posso personalizar tudo?</summary>
+                <p class="mt-2">Absolutamente! Cores, textos e funcionalidades são totalmente ajustáveis.</p>
+            </details>
+            <details class="bg-white p-4 rounded shadow">
+                <summary class="font-bold cursor-pointer">E se eu não conseguir usar?</summary>
+                <p class="mt-2">Temos garantia de 30 dias. Se não entregar seu primeiro sistema, devolvemos 100% do valor.
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
+            </details>
                 </div>
-            </div>
-            <div>
-                <h4 class="text-base font-semibold mb-4 text-white">Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="{{ route(name: 'contact') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Contato</a></li>
-                    <li><a href="{{ route('privacy-policy') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Política de Privacidade</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-base font-semibold mb-4 text-white">Suporte</h4>
-                <ul class="space-y-2">
-                    <li><a href="{{ route('help-center') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Central de Ajuda</a></li>
-                    <li><a href="{{ route('documentation') }}" class="text-gray-300 hover:text-white transition-colors text-sm">Documentação</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p class="text-gray-300 text-sm">
-                © 2025 DevStarter Kit – A base completa para desenvolvedores profissionais.
-            </p>
-        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white text-center">
+        <p>© 2025 Laravel ProStarter – Base pronta de sistema profissional para desenvolvedores</p>
+        <div class="mt-4 space-x-4">
+            <a href="/politica" class="hover:underline">Política de Privacidade</a>
+            <a href="/suporte" class="hover:underline">Suporte</a>
     </div>
 </footer>
 
 <style>
-    .animate-fade-in {
-        animation: fadeIn 0.8s ease-in;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-slide-up {
-        animation: slideUp 0.6s ease-out;
-    }
-    @keyframes slideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .font-display {
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    /* New Hero Animations */
+        /* Hero Animations */
     .animate-float-1 {
         animation: float1 6s ease-in-out infinite;
         top: 20%;
         left: 10%;
     }
+
     .animate-float-2 {
         animation: float2 8s ease-in-out infinite;
         top: 60%;
         right: 15%;
     }
+
     .animate-float-3 {
         animation: float3 7s ease-in-out infinite;
         top: 30%;
         right: 20%;
     }
+
     .animate-float-4 {
         animation: float4 9s ease-in-out infinite;
         bottom: 20%;
         left: 20%;
     }
+
     .animate-float-5 {
         animation: float5 5s ease-in-out infinite;
         top: 80%;
         right: 30%;
     }
+
+        .animate-float-6 {
+            animation: float6 4s ease-in-out infinite;
+            top: 50%;
+            left: 30%;
+    }
     
     @keyframes float1 {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(180deg); }
-    }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
     @keyframes float2 {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-30px) rotate(-180deg); }
-    }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(-180deg);
+            }
+        }
+
     @keyframes float3 {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-15px) rotate(90deg); }
-    }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(90deg);
+            }
+        }
+
     @keyframes float4 {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-25px) rotate(-90deg); }
-    }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(-90deg);
+            }
+        }
+
     @keyframes float5 {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-10px) rotate(45deg); }
-    }
-    
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(45deg);
+            }
+        }
+
+        @keyframes float6 {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(120deg);
+            }
+        }
+
+        /* Gradient animations */
     .animate-gradient {
         background-size: 200% 200%;
         animation: gradient 3s ease infinite;
     }
     
     @keyframes gradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    
-    .animate-progress {
-        animation: progress 2s ease-in-out;
-    }
-    
-    @keyframes progress {
-        from { width: 0%; }
-        to { width: var(--target-width); }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Pulse border animation */
+        @keyframes pulse-border {
+            0% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+            }
+        }
+
+        .animate-pulse-border {
+            animation: pulse-border 2s infinite;
     }
     
     /* Responsive adjustments */
@@ -629,59 +784,43 @@
     }
     
     ::-webkit-scrollbar-thumb {
-        background: #f97316;
+            background: linear-gradient(45deg, #6B21A8, #1D4ED8);
         border-radius: 4px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-        background: #ea580c;
+            background: linear-gradient(45deg, #7C3AED, #2563EB);
+        }
+
+    /* Barra sticky visível */
+    #sticky-cta {
+        transform: translateY(0);
     }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
     
-    // Sticky CTA
+            // Sticky CTA - Aparece quando sair da seção hero
     const stickyCta = document.getElementById('sticky-cta');
-    const heroSection = document.querySelector('section.bg-gray-800');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > heroSection.offsetHeight) {
-            stickyCta.classList.remove('-translate-y-full');
+            const heroSection = document.querySelector('section[style*="background: linear-gradient"]');
+
+            if (stickyCta && heroSection) {
+                // Começar escondida
+                stickyCta.style.transform = 'translateY(-100%)';
+                
+                window.addEventListener('scroll', function () {
+                    const scrollY = window.scrollY;
+                    const heroHeight = heroSection.offsetHeight;
+
+                    // Mostra quando sair da seção hero
+                    if (scrollY > heroHeight - 100) {
+                        stickyCta.style.transform = 'translateY(0)';
         } else {
-            stickyCta.classList.add('-translate-y-full');
-        }
-    });
-    
-    // Countdown timer
-    function updateCountdown() {
-        const countdownElement = document.getElementById('countdown');
-        if (countdownElement) {
-            const now = new Date().getTime();
-            const endTime = now + (24 * 60 * 60 * 1000); // 24 horas
-            
-            const timer = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = endTime - now;
-                
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                countdownElement.innerHTML = hours.toString().padStart(2, '0') + ":" + 
-                                          minutes.toString().padStart(2, '0') + ":" + 
-                                          seconds.toString().padStart(2, '0');
-                
-                if (distance < 0) {
-                    clearInterval(timer);
-                    countdownElement.innerHTML = "EXPIRADO!";
-                }
-            }, 1000);
-        }
-    }
-    
-    // Iniciar countdown
-    updateCountdown();
+                        stickyCta.style.transform = 'translateY(-100%)';
+                    }
+                });
+            }
     
     // Smooth scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -698,27 +837,108 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Console welcome message
-    console.log('%c🚀 DevStarter Kit - Página de Conversão', 'color: #F59E0B; font-size: 20px; font-weight: bold;');
+            console.log('%c🚀 Laravel ProStarter - Página de Conversão', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
     console.log('%cCrie sistemas completos em horas, não em semanas!', 'color: #1F2937; font-size: 14px;');
-});
-</script>
 
-<style>
-    /* Animação de borda pulsante */
-    @keyframes pulse-border {
-        0% {
-            box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);
-        }
-        70% {
-            box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
-        }
-    }
-    
-    .animate-pulse-border {
-        animation: pulse-border 2s infinite;
-    }
-</style>
+            // Eventos de Tracking
+            console.log('📊 Inicializando tracking de eventos...');
+            
+            // Tracking de visualização da página
+            if (typeof trackConversion === 'function') {
+                trackConversion('page_view');
+            }
+            
+            // Tracking de cliques nos botões CTA
+            document.querySelectorAll('a[href*="checkout"], button[onclick*="checkout"], .cta-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('🎯 CTA clicado!');
+                    if (typeof trackConversion === 'function') {
+                        trackConversion('cta_click', 97.00);
+                    }
+                });
+            });
+            
+            // Tracking de cliques no vídeo
+            const videoContainer = document.querySelector('#youtube-video');
+            if (videoContainer) {
+                videoContainer.addEventListener('click', function() {
+                    console.log('🎥 Vídeo clicado!');
+                    if (typeof trackConversion === 'function') {
+                        trackConversion('video_click');
+                    }
+                });
+            }
+            
+            // Tracking de scroll profundo (75% da página)
+            let deepScrollTracked = false;
+            window.addEventListener('scroll', function() {
+                const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent > 75 && !deepScrollTracked) {
+                    console.log('📜 Scroll profundo detectado!');
+                    if (typeof trackConversion === 'function') {
+                        trackConversion('deep_scroll');
+                    }
+                    deepScrollTracked = true;
+                }
+            });
+            
+            // Tracking de tempo na página (2 minutos)
+            setTimeout(function() {
+                console.log('⏰ 2 minutos na página!');
+                if (typeof trackConversion === 'function') {
+                    trackConversion('time_on_page');
+                }
+            }, 120000);
+            
+            // Tracking de interação com FAQ
+            document.querySelectorAll('details').forEach(detail => {
+                detail.addEventListener('toggle', function() {
+                    if (this.open) {
+                        console.log('❓ FAQ expandido!');
+                        if (typeof trackConversion === 'function') {
+                            trackConversion('faq_interaction');
+                        }
+                    }
+                });
+            });
+
+            // Configuração do vídeo
+            const videoIframe = document.getElementById('youtube-video');
+            const videoLoading = document.getElementById('video-loading');
+
+            if (videoIframe && videoLoading) {
+                console.log('🎥 Configurando vídeo do YouTube...');
+
+                // Esconder loading quando o vídeo carregar
+                videoIframe.addEventListener('load', function () {
+                    console.log('✅ Vídeo carregado!');
+                    videoLoading.style.display = 'none';
+                });
+
+                // Se der erro, manter loading
+                videoIframe.addEventListener('error', function () {
+                    console.log('❌ Erro ao carregar vídeo');
+                    videoLoading.innerHTML = `
+                    <div class="text-center text-white">
+                        <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-exclamation-triangle text-2xl"></i>
+                        </div>
+                        <p class="text-sm">Erro ao carregar vídeo</p>
+                        <a href="https://www.youtube.com/watch?v=EdrQPJZ77vY" target="_blank" class="mt-2 inline-block bg-white/20 text-white px-4 py-2 rounded text-xs hover:bg-white/30 transition-colors">
+                            Abrir no YouTube
+                        </a>
+                    </div>
+                `;
+                });
+
+                // Timeout para esconder loading após 5 segundos
+                setTimeout(function () {
+                    if (videoLoading.style.display !== 'none') {
+                        console.log('⚠️ Vídeo demorou para carregar');
+                        videoLoading.style.display = 'none';
+                    }
+                }, 5000);
+            }
+        });
+    </script>
 @endsection

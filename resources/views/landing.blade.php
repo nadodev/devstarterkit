@@ -100,7 +100,6 @@
     </div>
 </section>
 
-<!-- Seção 2 — O que você vai aprender -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-white">
     <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 font-display">
@@ -154,7 +153,6 @@
     </div>
 </section>
 
-<!-- Seção 3 — O que o DevStarter Kit faz por você -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-gray-50">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12 sm:mb-16">
@@ -239,7 +237,6 @@
     </div>
 </section>
 
-<!-- Seção 4 — Prova social -->
 <section class="py-20 px-4 bg-white">
     <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 font-display">
@@ -276,9 +273,7 @@
     </div>
 </section>
 
-<!-- Seção 5 — Chamada final -->
 <section class="py-12 sm:py-16 lg:py-20 px-4 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
-    <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
         <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
     </div>
@@ -302,7 +297,6 @@
     </div>
 </section>
 
-<!-- Rodapé -->
 <footer class="bg-gray-900 text-white py-8 sm:py-12 px-4">
     <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-4 gap-6 sm:gap-8">
@@ -362,7 +356,6 @@
         to { opacity: 1; transform: translateY(0); }
     }
     
-    /* Animação de borda pulsante */
     @keyframes pulse-border {
         0% {
             box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7);

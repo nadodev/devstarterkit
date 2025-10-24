@@ -1,0 +1,119 @@
+# ===========================================
+# CONFIGURAÇÃO DE ANALYTICS - LARAVEL PROSTARTER
+# ===========================================
+
+# Google Analytics 4
+# Obtenha seu ID em: https://analytics.google.com/
+GA_MEASUREMENT_ID=G-XXXXXXXXXX
+GA_ENABLED=true
+
+# Facebook Pixel
+# Obtenha seu ID em: https://business.facebook.com/events_manager
+FB_PIXEL_ID=XXXXXXXXXXXXXXX
+FB_PIXEL_ENABLED=true
+
+# Google Tag Manager (Opcional)
+# Obtenha seu ID em: https://tagmanager.google.com/
+GTM_CONTAINER_ID=GTM-XXXXXXX
+GTM_ENABLED=false
+
+# Hotjar (Opcional - para heatmaps)
+# Obtenha seu ID em: https://www.hotjar.com/
+HOTJAR_SITE_ID=XXXXXXX
+HOTJAR_ENABLED=false
+
+# ===========================================
+# COMO CONFIGURAR:
+# ===========================================
+
+# 1. GOOGLE ANALYTICS 4:
+#    - Acesse: https://analytics.google.com/
+#    - Crie uma propriedade
+#    - Copie o "ID de medição" (G-XXXXXXXXXX)
+#    - Cole no GA_MEASUREMENT_ID
+
+# 2. FACEBOOK PIXEL:
+#    - Acesse: https://business.facebook.com/events_manager
+#    - Crie um pixel
+#    - Copie o "ID do Pixel" (números)
+#    - Cole no FB_PIXEL_ID
+
+# 3. GOOGLE TAG MANAGER (Opcional):
+#    - Acesse: https://tagmanager.google.com/
+#    - Crie um container
+#    - Copie o "ID do Container" (GTM-XXXXXXX)
+#    - Cole no GTM_CONTAINER_ID
+
+# 4. HOTJAR (Opcional):
+#    - Acesse: https://www.hotjar.com/
+#    - Crie uma conta
+#    - Copie o "Site ID" (números)
+#    - Cole no HOTJAR_SITE_ID
+
+# ===========================================
+# EVENTOS QUE SERÃO TRACKADOS:
+# ===========================================
+
+# AUTOMÁTICOS:
+# - page_view (visualização da página)
+# - scroll (scroll de 50%)
+# - engagement_time (30 segundos na página)
+# - deep_scroll (scroll de 75%)
+# - time_on_page (2 minutos na página)
+
+# INTERAÇÕES:
+# - cta_click (clique em botões de compra)
+# - video_click (clique no vídeo)
+# - faq_interaction (expansão de FAQ)
+
+# CONVERSÕES:
+# - purchase (compra realizada)
+# - lead (lead gerado)
+# - add_to_cart (adicionado ao carrinho)
+
+# ===========================================
+# DADOS COLETADOS:
+# ===========================================
+
+# GOOGLE ANALYTICS:
+# - Páginas visitadas
+# - Tempo de permanência
+# - Origem do tráfego
+# - Dispositivo usado
+# - Localização
+# - Comportamento de navegação
+# - Funil de conversão
+
+# FACEBOOK PIXEL:
+# - Produtos visualizados
+# - Interações com anúncios
+# - Perfil demográfico
+# - Histórico de compras
+# - Segmentação para remarketing
+
+# HOTJAR:
+# - Heatmaps de cliques
+# - Gravações de sessão
+# - Feedback de usuários
+# - Análise de comportamento
+
+# ===========================================
+# PRIVACIDADE E LGPD:
+# ===========================================
+
+# O sistema de cookies respeita:
+# - LGPD (Lei Geral de Proteção de Dados)
+# - GDPR (General Data Protection Regulation)
+# - Consentimento explícito do usuário
+# - Opção de opt-out a qualquer momento
+
+# ===========================================
+# PRÓXIMOS PASSOS:
+# ===========================================
+
+# 1. Configure os IDs acima no seu .env
+# 2. Teste os eventos no console do navegador
+# 3. Verifique os dados no Google Analytics
+# 4. Configure campanhas no Facebook Ads
+# 5. Analise os heatmaps no Hotjar
+# 6. Otimize baseado nos dados coletados

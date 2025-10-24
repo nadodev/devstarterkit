@@ -1,0 +1,26 @@
+# Configurações de Email para o Laravel ProStarter
+# Adicione estas linhas ao seu arquivo .env
+
+# Configurações básicas de email
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=seu-email@gmail.com
+MAIL_PASSWORD=sua-senha-de-app
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=seu-email@gmail.com
+MAIL_FROM_NAME="Laravel ProStarter"
+
+# Email específico para suporte (opcional)
+# Se não configurado, usará o MAIL_FROM_ADDRESS
+MAIL_SUPPORT_EMAIL=suporte@laravelprostarter.com
+
+# Exemplo para Gmail:
+# 1. Ative a verificação em 2 etapas na sua conta Google
+# 2. Gere uma "Senha de app" específica para este projeto
+# 3. Use essa senha no MAIL_PASSWORD
+
+# Exemplo para outros provedores:
+# Para Outlook/Hotmail: smtp-mail.outlook.com, porta 587
+# Para Yahoo: smtp.mail.yahoo.com, porta 587
+# Para provedores locais, consulte a documentação do seu provedor

@@ -242,8 +242,14 @@
         });
 
         // Console welcome message
-        console.log('%c🚀 DevStarter Kit Landing Page', 'color: #DC2626; font-size: 20px; font-weight: bold;');
-        console.log('%cDesenvolvido com ❤️ para desenvolvedores iniciantes', 'color: #EA580C; font-size: 14px;');
+        console.log('%c🚀 Laravel ProStarter Landing Page', 'color: #7C3AED; font-size: 20px; font-weight: bold;');
+        console.log('%cDesenvolvido com ❤️ para desenvolvedores profissionais', 'color: #1D4ED8; font-size: 14px;');
     </script>
+
+    <!-- Cookie Banner -->
+    @include('components.cookie-banner')
+    
+    <!-- Scripts condicionais baseados no consentimento -->
+    @include('components.cookie-scripts')
 </body>
 </html>

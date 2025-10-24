@@ -1,118 +1,152 @@
-📚 Plataforma de Cursos - Estrutura e Funcionalidades
-🔐 1. Sistema de Autenticação
-Registro: Email, senha, nome completo, tipo de perfil (aluno/instrutor)
+1️⃣ Hero / Topo
 
-Login: Email/senha com recuperação de senha
+Background: gradiente roxo → azul com leves formas geométricas transparentes ou código difuso (sutil)
 
-Perfis:
+Tipografia:
 
-🎓 Aluno (consome cursos)
+Título: text-5xl md:text-6xl font-extrabold tracking-tight
 
-👨‍🏫 Instrutor (cria cursos)
+Subtítulo: text-xl md:text-2xl font-medium
 
-⚙️ Admin (gerencia plataforma)
+CTA principal: botão grande com hover animado (mudança de cor + leve sombra)
 
-🏗️ 2. Estrutura Principal
-📖 Módulo de Cursos
-Categorias/Tags: Organização por áreas (programação, design, marketing)
+Extras:
 
-Curso:
+Badge animado: “🔥 Oferta limitada – primeiros 50 compradores”
 
-Título, descrição, imagem capa
+Micro-interação: ícones de usuários subindo/scroll animation
 
-Nível (iniciante, intermediário, avançado)
+Exemplo visual:
 
-⭐ Avaliação e reviews
+<section class="relative bg-gradient-to-r from-purple-700 to-blue-700 text-white py-28 text-center overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <!-- Elementos geométricos animados ou fundo com código blur -->
+  </div>
+  <h1 class="text-5xl md:text-6xl font-extrabold mb-4">Monte sistemas completos em horas, não em semanas</h1>
+  <p class="text-xl md:text-2xl mb-8">Laravel ProStarter: a base pronta de sistema profissional para acelerar seus projetos Laravel</p>
+  <a href="#compra" class="bg-yellow-500 text-black font-bold px-10 py-5 rounded-lg shadow-lg hover:bg-yellow-600 transition transform hover:scale-105">Quero o Laravel ProStarter Agora</a>
+  <p class="mt-4 text-sm">🔥 Oferta limitada — primeiros 50 compradores!</p>
+</section>
 
-📊 Progresso do aluno
+2️⃣ Features / Benefícios
 
-🎓 Certificado de conclusão
+Layout: grid 3x2 com ícones animados ao scroll (fade-in ou slide-in)
 
-📚 Módulo de Conteúdo
-Módulos/Seções: Divisão lógica do curso
+Destaque de hover: cada card aumenta levemente de escala + sombra
 
-Aulas:
+Bullets curtos e claros
 
-🎥 Vídeos (YouTube/Vimeo/upload próprio)
+Exemplo de design:
 
-📝 Textos/artigos
+<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto py-20">
+  <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+    <div class="text-4xl mb-4">🔐</div>
+    <h3 class="font-bold text-xl mb-2">Autenticação completa</h3>
+    <p>Login, registro e painel seguro prontos para produção</p>
+  </div>
+  <!-- repetir para os outros itens -->
+</div>
 
-📄 PDFs/apostilas
+3️⃣ Economia / Impacto
 
-🖥️ Apresentações
+Cards coloridos com destaque em números
 
-🔊 Áudios/podcasts
+Icones de relógio e cifrão
 
-💪 Módulo de Exercícios
-Questionários: Multipla escolha, verdadeiro/falso
+Animação de contador ao scroll
 
-Exercícios práticos: Upload de arquivos, códigos
+<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto py-20">
+  <div class="bg-purple-100 p-8 rounded-xl shadow-lg">
+    <h4 class="font-bold text-2xl mb-2">33h30min economizadas</h4>
+    <p>Entrega até 6 dias mais rápida por projeto</p>
+  </div>
+  <div class="bg-yellow-100 p-8 rounded-xl shadow-lg">
+    <h4 class="font-bold text-2xl mb-2">R$1.870 economizados</h4>
+    <p>Dinheiro e tempo que você pode investir em mais projetos</p>
+  </div>
+</div>
 
-Projetos: Trabalhos mais complexos
+4️⃣ Bônus e Escassez
 
-Correção: Automática ou manual por instrutores
+Fundo amarelo leve com sombras suaves
 
-🚀 3. Funcionalidades Principais
-🎯 Para Alunos:
-📊 Dashboard personalizado
+Contagem regressiva ou badge de licenças restantes
 
-📈 Progresso e estatísticas
+Cards com ícones animados (presentes, estrela, relógio)
 
-❤️ Favoritos e lista de desejos
+CTA animado e chamativo
 
-📜 Notas e certificados
+<section class="bg-yellow-50 py-20 text-center relative">
+  <h2 class="text-3xl font-bold mb-8">Bônus exclusivos para os 10 primeiros compradores</h2>
+  <ul class="max-w-3xl mx-auto space-y-4 text-left text-lg">
+    <li>🎁 1 hora de call individual para configuração e dúvidas</li>
+    <li>📘 Guia passo a passo: Criando sistemas profissionais</li>
+    <li>🎨 Templates prontos: Login, Dashboard e CRUD</li>
+    <li>💬 Acesso à comunidade exclusiva</li>
+  </ul>
+  <a href="#compra" class="mt-10 inline-block bg-purple-700 text-white font-bold px-10 py-4 rounded-lg shadow-lg hover:bg-purple-800 transition transform hover:scale-105">Garanta seu bônus agora</a>
+</section>
 
-💬 Fórum de discussão por curso
+5️⃣ Autoridade / História
 
-⭐ Sistema de notas e reviews
+Foto redonda com borda sutil
 
-👨‍🏫 Para Instrutores:
-🛠️ Painel de criação/edição de cursos
+Texto centralizado, fonte itálica para citação
 
-📊 Estatísticas de desempenho do curso
+Leve fade-in ao scroll
 
-👥 Gestão de alunos inscritos
+6️⃣ Depoimentos
 
-✏️ Ferramentas de correção
+Slider/carrossel horizontal
 
-📋 Relatórios de progresso
+Cards com sombras suaves
 
-⚙️ Para Administradores:
-🛡️ Moderação de cursos e usuários
+Estrelas animadas ou contadores de projetos entregues
 
-📈 Analytics da plataforma
+7️⃣ Oferta + CTA Final
 
-🗂️ Gestão de categorias
+Seção em roxo escuro
 
-⚙️ Configurações do sistema
+Botão grande e animado (hover + scale)
 
-🔥 4. Funcionalidades Avançadas
-✅ Sistema de progresso: Marcar aulas como concluídas
+Selos de garantia, segurança e acesso imediato
 
-🔍 Busca e filtros: Por categoria, nível, preço, avaliação
+8️⃣ FAQ
 
-💬 Sistema de comentários: Em cada aula
+Acordeão animado
 
-🔔 Notificações: Novos cursos, prazos, mensagens
+Icones de interrogação
 
-📱 Mobile responsive: Acesso em qualquer dispositivo
+Transições suaves de abrir/fechar
 
-📴 Offline: Download de materiais para estudo offline
+9️⃣ Footer
 
-🔄 5. Fluxo do Usuário
-🔐 Registro/Login
+Cor escura, links discretos
 
-🔍 Browse cursos → Filtros e busca
+Micro-interações (hover underline)
 
-📝 Inscrever-se no curso
+Copyright
 
-🎓 Consumir conteúdo: Vídeos, textos, exercícios
+Extras de Micro-UX
 
-✅ Completar atividades e receber feedback
+Scroll animations: fade-in / slide-in para seções e cards
 
-🎓 Finalizar curso e obter certificado
+Hover effects: botões e cards com leve scale e sombra
 
-⭐ Avaliar experiência
-🎁 6. Recursos Adicionais
-🏆 Sistema de achievements (conquistas)
-👥 Comunidade: Perfis, seguir outros usuários
+Badges animados: oferta limitada, contagem de licenças
+
+Cores:
+
+CTA principal: amarelo forte (#FACC15)
+
+Fundo hero: gradiente roxo → azul (#6B21A8 → #1D4ED8)
+
+Cards features: branco com sombra
+
+Bônus: amarelo claro (#FEF3C7)
+
+Tipografia:
+
+Títulos: extra-bold, fontes sans-serif modernas
+
+Corpo: medium weight, fácil leitura

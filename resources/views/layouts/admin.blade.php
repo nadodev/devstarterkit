@@ -80,6 +80,18 @@
                         Relatórios
                     </a>
 
+                    <!-- Analytics -->
+                    <div class="space-y-1">
+                        <a href="{{ route('analytics.dashboard') }}" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md {{ request()->routeIs('analytics.dashboard') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900' }}">
+                            <i class="fas fa-chart-line mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                            Analytics
+                        </a>
+                        <a href="{{ route('admin.analytics.config') }}" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md {{ request()->routeIs('admin.analytics.config') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900' }}">
+                            <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                            Config Analytics
+                        </a>
+                    </div>
+
     <!-- Templates de Email -->
     <a href="{{ route('admin.email-templates.index') }}" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md {{ request()->routeIs('admin.email-templates.*') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900' }}">
         <i class="fas fa-envelope mr-3 text-gray-400 group-hover:text-gray-500"></i>
