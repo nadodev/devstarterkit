@@ -263,7 +263,15 @@
         });
     }
 
-    // Funções updateConversionData e updateTrafficData movidas para @push('scripts')
+    function updateConversionData(data) {
+        // Esta função será implementada no @push('scripts')
+        console.log('Funil de conversão:', data);
+    }
+
+    function updateTrafficData(data) {
+        // Esta função será implementada no @push('scripts')
+        console.log('Fontes de tráfego:', data);
+    }
 
     function refreshData() {
         console.log('🔄 Atualizando dados...');
@@ -281,7 +289,8 @@
     let conversionChart = null;
     let trafficChart = null;
 
-    function updateConversionData(data) {
+    // Sobrescrever as funções com implementações dos gráficos
+    window.updateConversionData = function(data) {
         const funnelData = data.conversion_funnel.map(stage => ({
             name: stage.stage,
             value: stage.value
@@ -317,9 +326,9 @@
                 }
             }
         });
-    }
+    };
 
-    function updateTrafficData(data) {
+    window.updateTrafficData = function(data) {
         const trafficLabels = data.traffic_sources.map(s => s.source);
         const trafficValues = data.traffic_sources.map(s => s.visitors);
 
@@ -345,6 +354,6 @@
                 plugins: { legend: { position: 'right' } }
             }
         });
-    }
+    };
 </script>
 @endpush
