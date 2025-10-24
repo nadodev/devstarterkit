@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\CookieHelper;
+use App\Helpers\AnalyticsConfigHelper;
 
 class AnalyticsController extends Controller
 {
@@ -13,10 +14,14 @@ class AnalyticsController extends Controller
      */
     public function dashboard()
     {
+        // Debug: verificar configurações
+        $config = AnalyticsConfigHelper::getConfig();
+        
         $data = [
             'title' => 'Dashboard de Analytics - Laravel ProStarter',
-            'analytics_enabled' => CookieHelper::analyticsAccepted(),
-            'marketing_enabled' => CookieHelper::marketingAccepted(),
+            'analytics_enabled' => AnalyticsConfigHelper::isGoogleAnalyticsEnabled() || AnalyticsConfigHelper::isHotjarEnabled(),
+            'marketing_enabled' => AnalyticsConfigHelper::isFacebookPixelEnabled() || AnalyticsConfigHelper::isGTMEnabled(),
+            'debug_config' => $config, // Para debug
         ];
 
         return view('admin.analytics.dashboard', $data);
