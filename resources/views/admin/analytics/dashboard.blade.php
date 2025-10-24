@@ -313,57 +313,42 @@
             window.conversionChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de conversão (linha)');
+        console.log('🆕 Criando novo gráfico de conversão (gauge)');
         window.conversionChart = new Chart(ctx, {
-            type: 'line',
+            type: 'doughnut',
             data: {
                 labels: normalizedData.map(d => d.name),
                 datasets: [{
-                    label: 'Funil de Conversão',
                     data: normalizedData.map(d => d.value),
-                    borderColor: '#3B82F6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#3B82F6',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 2,
-                    pointRadius: 6
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(16, 185, 129, 0.8)', 
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(239, 68, 68, 0.8)'
+                    ],
+                    borderWidth: 0,
+                    cutout: '60%'
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                aspectRatio: 1,
                 plugins: { 
-                    legend: { display: false },
+                    legend: { 
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
                                 const originalValue = funnelData[context.dataIndex].value;
                                 return context.label + ': ' + originalValue.toLocaleString() + ' usuários';
                             }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        min: 0,
-                        grid: {
-                            color: 'rgba(0,0,0,0.1)'
-                        },
-                        ticks: { 
-                            maxTicksLimit: 6,
-                            callback: function(value) { 
-                                return value + '%';
-                            }
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
                         }
                     }
                 }
@@ -411,30 +396,36 @@
             window.trafficChart.destroy();
         }
         
-        console.log('🆕 Criando novo gráfico de tráfego (área)');
+        console.log('🆕 Criando novo gráfico de tráfego (gauge)');
         window.trafficChart = new Chart(ctx, {
-            type: 'line',
+            type: 'doughnut',
             data: {
                 labels: trafficLabels,
                 datasets: [{
-                    label: 'Fontes de Tráfego',
                     data: normalizedValues,
-                    borderColor: '#3B82F6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                    borderWidth: 2,
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#3B82F6',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 2,
-                    pointRadius: 5
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(239, 68, 68, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(245, 158, 11, 0.8)'
+                    ],
+                    borderWidth: 0,
+                    cutout: '60%'
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                aspectRatio: 1,
                 plugins: { 
-                    legend: { display: false },
+                    legend: { 
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
@@ -442,27 +433,6 @@
                                 const percentage = normalizedValues[context.dataIndex];
                                 return context.label + ': ' + originalValue.toLocaleString() + ' visitantes (' + percentage + '%)';
                             }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        min: 0,
-                        grid: {
-                            color: 'rgba(0,0,0,0.1)'
-                        },
-                        ticks: { 
-                            maxTicksLimit: 6,
-                            callback: function(value) { 
-                                return value + '%';
-                            }
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
                         }
                     }
                 }
