@@ -72,14 +72,14 @@
             <div class="particle absolute w-2 h-2 bg-green-400 rounded-full animate-float-4"></div>
             <div class="particle absolute w-1 h-1 bg-pink-400 rounded-full animate-float-5"></div>
             <div class="particle absolute w-2 h-2 bg-orange-400 rounded-full animate-float-6"></div>
-                    </div>
-                    
+        </div>
+        
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div
                 class="inline-flex items-center bg-yellow-500 text-black rounded-full px-4 py-2 mb-4 mt-10  lg:mt-0 text-xs font-bold animate-bounce shadow-xl">
                 <span class="w-2 h-2 bg-yellow-600 rounded-full mr-2 animate-pulse"></span>
                 🔥 Oferta limitada — primeiros 50!
-                        </div>
+    </div>
             <div class="flex justify-center mb-4">
                 <div class="relative max-w-4xl w-full">
                     <div
@@ -90,7 +90,7 @@
                         <div class="w-3 h-3 bg-green-500 rounded-full"></div>
                         <div class="flex-1 text-center">
                                 <span class="text-sm font-medium text-gray-600">Laravel ProStarter Demo</span>
-                        </div>
+                </div>
                     </div>
                         <!-- Vídeo do YouTube -->
                         <div class="relative bg-black rounded-b-3xl overflow-hidden" style="height: 500px;">
@@ -108,20 +108,20 @@
                                 <div class="text-center text-white">
                                     <div
                                         class="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4">
-                                    </div>
-                                    <p class="text-sm">Carregando vídeo...</p>
-                                </div>
-                            </div>
-                            </div>
                         </div>
-                        
+                                    <p class="text-sm">Carregando vídeo...</p>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    
                     <!-- Efeitos de fundo -->
                     <div class="absolute -top-4 -right-4 w-20 h-20 bg-yellow-500/20 rounded-full blur-xl animate-pulse">
-                                </div>
-                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse">
-                                </div>
-                            </div>
                         </div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse">
+                        </div>
+                    </div>
+                </div>
                         
             <!-- Conteúdo centralizado abaixo -->
             <div class="text-center mb-10">
@@ -146,9 +146,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                    </div>
+                        </div>
                         <span class="text-lg font-semibold">4.9/5 (127+)</span>
-                </div>
+                    </div>
                     <div class="flex items-center space-x-4 text-lg">
                         <span class="flex items-center">
                             <i class="fas fa-shield-alt text-green-400 mr-2"></i>
@@ -159,30 +159,30 @@
                             Acesso imediato
                         </span>
                     </div>
-            </div>
-        </div>
-    </div>
-    
+                </div>
+                        </div>
+                    </div>
+                    
         <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-        </div>
-    </div>
+                            </div>
+                            </div>
 </section>
     <!-- Features / Benefícios -->
     <section class="py-24 bg-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-20 right-20 w-60 h-60 bg-purple-400 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 left-20 w-40 h-40 bg-blue-400 rounded-full blur-2xl"></div>
-        </div>
-
+                        </div>
+                        
         <div class="max-w-7xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">O que você recebe</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tudo que você precisa para criar sistemas profissionais
                     em tempo recorde</p>
-            </div>
+                                </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div
@@ -190,45 +190,45 @@
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-lock text-white text-2xl"></i>
-                    </div>
+                                </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Autenticação completa</h3>
                     <p class="text-gray-600 leading-relaxed">Login, registro e painel seguro prontos para produção com
                         sistema de permissões avançado</p>
-                </div>
+                            </div>
 
                 <div
                     class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-tachometer-alt text-white text-2xl"></i>
-                    </div>
+                                </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Painel administrativo moderno</h3>
                     <p class="text-gray-600 leading-relaxed">Dashboard inicial com CRUD funcional integrado e métricas em
                         tempo real</p>
-                </div>
+                                </div>
 
                 <div
                     class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-palette text-white text-2xl"></i>
-            </div>
+                            </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Layouts prontos</h3>
                     <p class="text-gray-600 leading-relaxed">Templates Blade totalmente personalizáveis e responsivos com
                         design moderno</p>
-        </div>
+                                </div>
         
                 <div
                     class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-users text-white text-2xl"></i>
-                    </div>
+                                </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Sistema de usuários e permissões</h3>
                     <p class="text-gray-600 leading-relaxed">Controle completo sobre quem pode acessar o sistema com
                         diferentes níveis de acesso</p>
-            </div>
-            
+                        </div>
+                        
                 <div
                     class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     <div
@@ -238,19 +238,19 @@
                     <h3 class="font-bold text-xl mb-4 text-gray-800">Estrutura organizada</h3>
                     <p class="text-gray-600 leading-relaxed">Código limpo seguindo boas práticas Laravel + Tailwind com
                         documentação completa</p>
-            </div>
-            
+                </div>
+                
                 <div
                     class="group p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                     <div
                         class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-mobile-alt text-white text-2xl"></i>
-                    </div>
+            </div>
                     <h3 class="font-bold text-xl mb-4 text-gray-800">100% Responsivo</h3>
                     <p class="text-gray-600 leading-relaxed">Funciona perfeitamente em desktop, tablet e mobile sem
                         necessidade de ajustes</p>
-            </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -266,7 +266,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Quanto tempo você economiza</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Veja o impacto real do Laravel ProStarter no seu
                     desenvolvimento</p>
-            </div>
+    </div>
             
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div
@@ -279,27 +279,27 @@
                     <h4 class="font-bold text-4xl mb-4 text-center">33h30min</h4>
                     <p class="text-xl text-center text-purple-100 mb-4">economizadas por projeto</p>
                     <p class="text-lg text-center text-purple-200">Entrega até 6 dias mais rápida por projeto</p>
-            </div>
-            
+        </div>
+        
                 <div
                     class="group bg-gradient-to-br from-yellow-500 to-yellow-600 p-10 rounded-3xl shadow-2xl text-white transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center justify-center mb-6">
                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center rounded-full">
                             <i class="fas fa-dollar-sign text-3xl"></i>
-                </div>
+            </div>
             </div>
                     <h4 class="font-bold text-4xl mb-4 text-center">R$1.870</h4>
                     <p class="text-xl text-center text-yellow-100 mb-4">economizados por projeto</p>
                     <p class="text-lg text-center text-yellow-200">Dinheiro e tempo que você pode investir em mais projetos
                     </p>
             </div>
-        </div>
-        
+            </div>
+            
             <div class="text-center mt-12">
                 <div class="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-lg">
                     <i class="fas fa-chart-line text-green-500 text-xl mr-3"></i>
                     <span class="text-lg font-semibold text-gray-800">ROI médio de 1.900% em economia de tempo</span>
-                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -310,7 +310,7 @@
             <div class="absolute top-20 left-20 w-40 h-40 bg-yellow-400 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 right-20 w-32 h-32 bg-orange-400 rounded-full blur-2xl"></div>
         </div>
-
+        
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             <div class="mb-12">
                 <div
@@ -322,54 +322,54 @@
                     compradores</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Valor total dos bônus: R$ 197 - Grátis para os primeiros
                     compradores!</p>
-    </div>
-    
+            </div>
+            
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
                 <div
                     class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-yellow-500 transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-gift text-white text-xl"></i>
-                        </div>
+                </div>
                         <h3 class="text-xl font-bold text-gray-800">1 hora de call individual</h3>
-                    </div>
+            </div>
                     <p class="text-gray-600">Para configuração e dúvidas com suporte direto</p>
-        </div>
-        
+            </div>
+            
                 <div
                     class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-500 transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-book text-white text-xl"></i>
-                        </div>
+                </div>
                         <h3 class="text-xl font-bold text-gray-800">Guia passo a passo</h3>
                     </div>
                     <p class="text-gray-600">Criando sistemas profissionais do zero</p>
-                </div>
-
+            </div>
+            
                 <div
                     class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-green-500 transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-palette text-white text-xl"></i>
-                        </div>
+                </div>
                         <h3 class="text-xl font-bold text-gray-800">Templates prontos</h3>
                     </div>
                     <p class="text-gray-600">Login, Dashboard e CRUD básico</p>
-                </div>
-
+            </div>
+            
                 <div
                     class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-purple-500 transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-users text-white text-xl"></i>
-                        </div>
+                </div>
                         <h3 class="text-xl font-bold text-gray-800">Comunidade exclusiva</h3>
                     </div>
                     <p class="text-gray-600">Acesso à comunidade de desenvolvedores</p>
-                </div>
             </div>
-            
+        </div>
+        
             <a href="https://pay.kiwify.com.br/i0FGVRc"
                 class="group relative text-white font-bold px-12 py-6 rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-110 inline-block animate-pulse-border"
                 style="background: linear-gradient(45deg, #7C3AED, #6B21A8);">
@@ -381,11 +381,11 @@
 
     <!-- Autoridade / História -->
     <section class="py-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 right-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl"></div>
             <div class="absolute bottom-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-2xl"></div>
-        </div>
-        
+    </div>
+    
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <div class="bg-white rounded-3xl p-12 shadow-2xl">
                 <img src="https://github.com/nadodev.png" alt="Leonardo Geja"
@@ -423,8 +423,8 @@
                         <div>
                             <h3 class="font-bold text-lg text-gray-800">Lucas Pereira</h3>
                             <p class="text-gray-600">Freelancer Full Stack</p>
-                        </div>
-                    </div>
+        </div>
+    </div>
                     <div class="flex text-yellow-400 mb-4">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -455,8 +455,8 @@
                     </div>
                     <p class="text-gray-700 italic leading-relaxed">"Em 1 dia, já tinha meu sistema no ar. A estrutura
                         modular do ProStarter é incrível!"</p>
-            </div>
-            
+        </div>
+        
                 <div
                     class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
                     <div class="flex items-center mb-6">
@@ -465,15 +465,15 @@
                         <div>
                             <h3 class="font-bold text-lg text-gray-800">Carlos Lima</h3>
                             <p class="text-gray-600">Agência Digital</p>
-                        </div>
-            </div>
+                </div>
+                </div>
                     <div class="flex text-yellow-400 mb-4">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-            </div>
+                </div>
                     <p class="text-gray-700 italic leading-relaxed">"Nossa agência usa o ProStarter em todos os projetos.
                         Reduzimos o tempo de entrega de 2 semanas para 3 dias."</p>
             </div>
@@ -488,7 +488,7 @@
             <div class="absolute top-20 left-20 w-40 h-40 bg-yellow-400/30 rounded-full blur-3xl animate-pulse"></div>
             <div class="absolute bottom-20 right-20 w-32 h-32 bg-white/20 rounded-full blur-2xl animate-pulse"></div>
         </div>
-
+        
         <div class="max-w-5xl mx-auto px-4 relative z-10">
             <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
                 <div class="mb-8">
@@ -496,12 +496,12 @@
                         class="inline-flex items-center bg-yellow-500 text-black rounded-full px-6 py-3 mb-6 text-sm font-bold animate-pulse">
                         <span class="w-2 h-2 bg-yellow-600 rounded-full mr-3 animate-pulse"></span>
                         🔥 Oferta de Lançamento — Apenas 50 licenças!
-                    </div>
+            </div>
                     <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">Pare de começar do ZERO a cada projeto</h2>
                     <p class="text-base sm:text-lg mb-6">De R$197 por <span class="text-yellow-400 font-bold text-xl sm:text-2xl">R$97</span> — 50%
                         de desconto!</p>
-                </div>
-
+            </div>
+            
                 <!-- Bônus e Garantias - Design Limpo -->
                 <div class="max-w-4xl mx-auto mb-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -510,25 +510,25 @@
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
                                     <i class="fas fa-gift text-white"></i>
-                                </div>
+            </div>
                                 <div>
                                     <h3 class="text-white font-bold text-lg">Bônus Inclusos</h3>
                                     <p class="text-yellow-300 text-sm">Valor: R$ 197</p>
-                                </div>
-                            </div>
+            </div>
+            </div>
                             <div class="space-y-3">
                                 <div class="flex items-center">
                                     <i class="fas fa-check text-green-400 mr-3"></i>
                                     <span class="text-white text-sm">Guia completo de estruturas profissionais</span>
-                                </div>
+            </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check text-green-400 mr-3"></i>
                                     <span class="text-white text-sm">Templates: Login, Dashboard e CRUD</span>
-                                </div>
+        </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check text-green-400 mr-3"></i>
                                     <span class="text-white text-sm">1 hora de suporte personalizado</span>
-                                </div>
+    </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check text-green-400 mr-3"></i>
                                     <span class="text-white text-sm">Comunidade exclusiva</span>
@@ -567,8 +567,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
+    </div>
+    
                 <a href="https://pay.kiwify.com.br/i0FGVRc"
                     class="group relative text-black font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-6 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 inline-block mb-6 animate-pulse-border"
                     style="background: linear-gradient(45deg, #FACC15, #F59E0B);">

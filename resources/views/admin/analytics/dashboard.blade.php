@@ -202,44 +202,50 @@
 <script>
     // Carregar dados do dashboard
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 Dashboard carregado, iniciando dados...');
         loadDashboardData();
     });
 
     function loadDashboardData() {
+        console.log('📡 Carregando dados do dashboard...');
+        
         // Carregar dados gerais
         fetch('/admin/analytics/api?type=overview')
             .then(response => response.json())
             .then(data => {
+                console.log('📊 Dados gerais recebidos:', data);
                 if (data.success) {
                     updateOverviewData(data.data);
                 }
             })
             .catch(error => {
-                console.error('Erro ao carregar dados:', error);
+                console.error('❌ Erro ao carregar dados:', error);
             });
 
         // Carregar dados de conversão
         fetch('/admin/analytics/api?type=conversions')
             .then(response => response.json())
             .then(data => {
+                console.log('🔄 Dados de conversão recebidos:', data);
                 if (data.success) {
                     updateConversionData(data.data);
                 }
             })
             .catch(error => {
-                console.error('Erro ao carregar conversões:', error);
+                console.error('❌ Erro ao carregar conversões:', error);
             });
 
         // Carregar dados de tráfego
         fetch('/admin/analytics/api?type=traffic')
             .then(response => response.json())
             .then(data => {
+                console.log('🌐 Dados de tráfego recebidos:', data);
                 if (data.success) {
                     updateTrafficData(data.data);
                 }
             })
             .catch(error => {
-                console.error('Erro ao carregar tráfego:', error);
+                console.error('❌ Erro ao carregar tráfego:', error);
             });
     }
 
@@ -264,45 +270,41 @@
     }
 
     function updateConversionData(data) {
-        // Esta função será implementada no @push('scripts')
-        console.log('Funil de conversão:', data);
-    }
-
-    function updateTrafficData(data) {
-        // Esta função será implementada no @push('scripts')
-        console.log('Fontes de tráfego:', data);
-    }
-
-    function refreshData() {
-        console.log('🔄 Atualizando dados...');
-        loadDashboardData();
-    }
-
-    // Atualizar dados a cada 30 segundos
-    setInterval(loadDashboardData, 30000);
-</script>
-@endsection
-
-@push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    let conversionChart = null;
-    let trafficChart = null;
-
-    // Sobrescrever as funções com implementações dos gráficos
-    window.updateConversionData = function(data) {
+        console.log('📊 Dados de conversão recebidos:', data);
+        
+        if (!data.conversion_funnel || !Array.isArray(data.conversion_funnel)) {
+            console.error('❌ Dados de conversão inválidos:', data);
+            return;
+        }
+        
         const funnelData = data.conversion_funnel.map(stage => ({
             name: stage.stage,
             value: stage.value
         }));
         
-        const ctx = document.getElementById('conversion-funnel').getContext('2d');
+        console.log('🔄 Dados do funil:', funnelData);
+        console.log('🔢 Valores individuais:', funnelData.map(d => d.value));
         
-        if (conversionChart) {
-            conversionChart.destroy();
+        // Verificar se os dados são os mesmos para evitar recriação desnecessária
+        if (window.conversionChart && window.lastConversionData) {
+            const currentData = JSON.stringify(funnelData);
+            if (currentData === window.lastConversionData) {
+                console.log('📊 Dados de conversão inalterados, pulando atualização');
+                return;
+            }
         }
         
-        conversionChart = new Chart(ctx, {
+        window.lastConversionData = JSON.stringify(funnelData);
+        
+        const ctx = document.getElementById('conversion-funnel').getContext('2d');
+        
+        if (window.conversionChart) {
+            console.log('🗑️ Destruindo gráfico de conversão anterior');
+            window.conversionChart.destroy();
+        }
+        
+        console.log('🆕 Criando novo gráfico de conversão');
+        window.conversionChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: funnelData.map(d => d.name),
@@ -321,24 +323,57 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        ticks: { callback: function(value) { return value.toLocaleString(); } }
+                        max: 2000, // Limite máximo reduzido do eixo Y
+                        min: 0,
+                        ticks: { 
+                            maxTicksLimit: 6, // Limitar número de ticks
+                            callback: function(value) { 
+                                if (value >= 1000) {
+                                    return (value / 1000).toFixed(1) + 'k';
+                                }
+                                return value.toLocaleString(); 
+                            }
+                        }
                     }
                 }
             }
         });
-    };
+    }
 
-    window.updateTrafficData = function(data) {
+    function updateTrafficData(data) {
+        console.log('📊 Dados de tráfego recebidos:', data);
+        
+        if (!data.traffic_sources || !Array.isArray(data.traffic_sources)) {
+            console.error('❌ Dados de tráfego inválidos:', data);
+            return;
+        }
+        
         const trafficLabels = data.traffic_sources.map(s => s.source);
         const trafficValues = data.traffic_sources.map(s => s.visitors);
+        
+        console.log('🏷️ Labels:', trafficLabels);
+        console.log('📈 Valores:', trafficValues);
+
+        // Verificar se os dados são os mesmos para evitar recriação desnecessária
+        const currentTrafficData = JSON.stringify({labels: trafficLabels, values: trafficValues});
+        if (window.trafficChart && window.lastTrafficData) {
+            if (currentTrafficData === window.lastTrafficData) {
+                console.log('📊 Dados de tráfego inalterados, pulando atualização');
+                return;
+            }
+        }
+        
+        window.lastTrafficData = currentTrafficData;
 
         const ctx = document.getElementById('traffic-sources').getContext('2d');
         
-        if (trafficChart) {
-            trafficChart.destroy();
+        if (window.trafficChart) {
+            console.log('🗑️ Destruindo gráfico anterior');
+            window.trafficChart.destroy();
         }
         
-        trafficChart = new Chart(ctx, {
+        console.log('🆕 Criando novo gráfico de tráfego');
+        window.trafficChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: trafficLabels,
@@ -351,9 +386,42 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { position: 'right' } }
+                plugins: { 
+                    legend: { position: 'right' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = context.parsed;
+                                if (value >= 1000) {
+                                    return context.label + ': ' + (value / 1000).toFixed(1) + 'k visitantes';
+                                }
+                                return context.label + ': ' + value.toLocaleString() + ' visitantes';
+                            }
+                        }
+                    }
+                }
             }
         });
-    };
+    }
+
+    function refreshData() {
+        console.log('🔄 Atualizando dados...');
+        loadDashboardData();
+    }
+
+    // Atualizar dados a cada 2 minutos (apenas uma instância)
+    if (!window.dashboardInitialized) {
+        window.dashboardInitialized = true;
+        console.log('🔄 Dashboard inicializado - atualização automática a cada 2 minutos');
+        
+        // Atualização automática com intervalo maior para evitar problemas
+        window.dashboardRefreshInterval = setInterval(function() {
+            console.log('⏰ Atualização automática dos dados');
+            loadDashboardData();
+        }, 120000); // 2 minutos
+    }
 </script>
-@endpush
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@endsection
