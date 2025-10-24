@@ -18,15 +18,11 @@ class AnalyticsController extends Controller
         if (!auth()->check()) {
             return redirect()->route('login')->with('error', 'Você precisa estar logado para acessar o dashboard.');
         }
-
-        // Debug: verificar configurações
-        $config = AnalyticsConfigHelper::getConfig();
         
         $data = [
             'title' => 'Dashboard de Analytics - Laravel ProStarter',
             'analytics_enabled' => AnalyticsConfigHelper::isGoogleAnalyticsEnabled() || AnalyticsConfigHelper::isHotjarEnabled(),
             'marketing_enabled' => AnalyticsConfigHelper::isFacebookPixelEnabled() || AnalyticsConfigHelper::isGTMEnabled(),
-            'debug_config' => $config, // Para debug
         ];
 
         return view('admin.analytics.dashboard', $data);

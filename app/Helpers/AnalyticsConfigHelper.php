@@ -12,26 +12,29 @@ class AnalyticsConfigHelper
         $configFile = storage_path('app/analytics_config.json');
         
         if (file_exists($configFile)) {
-            return json_decode(file_get_contents($configFile), true);
+            $config = json_decode(file_get_contents($configFile), true);
+            if ($config) {
+                return $config;
+            }
         }
         
-        // Fallback para configurações do .env
-        return [
+        // Se não conseguir ler o arquivo, criar com configurações padrão
+        $defaultConfig = [
             'google_analytics' => [
-                'measurement_id' => env('GA_MEASUREMENT_ID', ''),
-                'enabled' => env('GA_ENABLED', false),
+                'measurement_id' => 'G-5WZ2TZP14V',
+                'enabled' => true,
             ],
             'facebook_pixel' => [
-                'pixel_id' => env('FB_PIXEL_ID', ''),
-                'enabled' => env('FB_PIXEL_ENABLED', false),
+                'pixel_id' => '',
+                'enabled' => false,
             ],
             'gtm' => [
-                'container_id' => env('GTM_CONTAINER_ID', ''),
-                'enabled' => env('GTM_ENABLED', false),
+                'container_id' => 'GTM-ND7QC9VT',
+                'enabled' => true,
             ],
             'hotjar' => [
-                'site_id' => env('HOTJAR_SITE_ID', ''),
-                'enabled' => env('HOTJAR_ENABLED', false),
+                'site_id' => '2600022',
+                'enabled' => true,
             ],
             'events' => [
                 'purchase_value' => 97.00,
@@ -39,6 +42,11 @@ class AnalyticsConfigHelper
                 'product_name' => 'Laravel ProStarter',
             ],
         ];
+        
+        // Salvar configuração padrão
+        file_put_contents($configFile, json_encode($defaultConfig, JSON_PRETTY_PRINT));
+        
+        return $defaultConfig;
     }
 
     /**

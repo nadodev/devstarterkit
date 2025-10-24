@@ -8,18 +8,6 @@
         <div class="mb-8">
             <h1 class="text-3xl font-bold text-gray-900">📊 Dashboard de Analytics</h1>
             <p class="mt-2 text-gray-600">Acompanhe o desempenho do Laravel ProStarter em tempo real</p>
-            
-            <!-- Debug Info -->
-            @if(isset($debug_config))
-            <div class="mt-4 p-4 bg-gray-100 rounded-lg">
-                <h3 class="font-bold text-sm">Debug - Configurações:</h3>
-                <pre class="text-xs mt-2">{{ json_encode($debug_config, JSON_PRETTY_PRINT) }}</pre>
-                <p class="text-sm mt-2">
-                    <strong>Analytics Enabled:</strong> {{ $analytics_enabled ? 'Sim' : 'Não' }}<br>
-                    <strong>Marketing Enabled:</strong> {{ $marketing_enabled ? 'Sim' : 'Não' }}
-                </p>
-            </div>
-            @endif
         </div>
 
         <!-- Status dos Cookies -->
