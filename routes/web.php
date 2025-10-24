@@ -77,6 +77,11 @@ Route::middleware('auth')->group(function () {
 // Analytics Tracking Routes
 Route::post('/analytics/track', [App\Http\Controllers\AnalyticsController::class, 'track'])->name('analytics.track');
 
+// Test route for analytics
+Route::get('/analytics/test', function() {
+    return response()->json(['status' => 'ok', 'message' => 'Analytics test route working']);
+});
+
 // Debug route to test analytics
 Route::get('/analytics/debug', function() {
     return response()->json([

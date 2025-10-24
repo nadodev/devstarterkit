@@ -875,8 +875,7 @@
                 });
             }
         });
-    });
-    
+        
             // Eventos de Tracking
             
             // Função auxiliar para enviar eventos
@@ -886,13 +885,12 @@
                     return;
                 }
                 
-                const url = '{{ url("/analytics/track") }}';
-                
-                fetch(url, {
+                fetch('{{ route("analytics.track") }}', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': csrfToken.getAttribute('content')
+                        'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify({
                         event_type: eventType,
@@ -907,10 +905,10 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    // Evento enviado com sucesso
+                    // Evento enviado
                 })
                 .catch(error => {
-                    // Erro ao enviar evento
+                    // Erro silencioso
                 });
             }
             
